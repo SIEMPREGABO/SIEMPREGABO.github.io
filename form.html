@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon</title>
+    <meta name="author" content="David Grzyb">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+    </style>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap');
+
+        .font-family-montserrat {
+            font-family: Montserrat;
+        }
+    </style>
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3c72140922.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-white font-family-montserrat">
+
+    <!-- Top Bar Nav -->
+    <nav class="w-full py-4 bg-blue-800 shadow">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-center">
+            <nav>
+                <ul class="flex text-xs items-center justify-center  font-bold  text-white uppercase no-underline">
+                    <li><a class="navbar-brand" style="padding-left: 8px;" href="https://www.gob.mx/">
+                            <img src="/assets/files/main/img/template/logob.svg" height="29" alt="">
+                        </a>
+                    </li>
+                    <li><a class="hover:text-gray-400  px-4" href="#">Registro de vacunacion</a></li>
+                    <li><a class="hover:text-gray-400  px-1" href="#">Informacion sobre dosis covid</a></li>
+                    <li><a class="hover:text-gray-400  px-1" href="#">Tramites</a></li>
+                    <li><a class="hover:text-gray-400  px-1" href="#">Gobierno</a></li>
+                    <li><a class="hover:text-gray-400  px-1" href="#">English</a></li>
+                    <li><a class="pl-6" href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Text Header -->
+    <div class= " p-2">
+        <ul class="flex text-xs items-center justify-end  font-bold  text-black uppercase no-underline">
+            <li><a class="navbar-brand" style="padding-left: 8px;" href="https://www.gob.mx/">
+                    <img src="/assets/files/main/img/template/logob.svg" height="29" alt="">
+                </a>
+            </li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Registro de vacunacion</a>|</li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Informacion sobre dosis covid</a>|</li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Tramites</a>|</li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Gobierno</a>|</li>
+            <li><a class="hover:text-gray-400  px-3" href="#">English</a>|</li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="container w-full mx-auto">
+            <div class="flex flex-col">
+                <div class="flex flex-row">
+
+                    <div class="px-2">
+                        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+                            <img src="images/Logo_COM.png" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="px-2">
+                        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+                            <img src="images/Logo_CUD.png" alt="Logo">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class= " p-2">
+        <ul class="flex text-xs items-center justify-end  font-bold  text-black uppercase no-underline">
+            <li><a class="navbar-brand" style="padding-left: 8px;" href="https://www.gob.mx/">
+                    <img src="/assets/files/main/img/template/logob.svg" height="29" alt="">
+                </a>
+            </li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Idioma</a></li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Monito </a></li>
+            <li><a class="hover:text-gray-400  px-3" href="#">Brillo</a></li>
+            <li><a class="hover:text-gray-400  px-3" href="#">A+</a></li>
+            <li><a class="hover:text-gray-400  px-3" href="#">A-</a></li>
+            <li><a class="hover:text-gray-400  px-3" href="#">A</a></li>
+        </ul>
+    </div>
+
+    <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
+        <div class="block sm:hidden">
+            <a href="#"
+                class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
+                @click="open = !open">
+                Topics <i :class="open ? 'fa-chevron-down' : 'fa-chevron-up'" class="fas ml-2"></i>
+            </a>
+        </div>
+        <div :class="open ? 'block' : 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
+            <div
+                class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Inicio</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Acerca de</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Proyectos</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Eventos</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Noticias</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Publicaciones</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Videoteca</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Topic Nav -->
+    <nav class="w-full mx-border-t border-b bg-gray-500" x-data="{ open: false }">
+        <div class=" bg-blue-900 p-5 shadow">
+            <p class=" font-extrabold text-center text-6xl  uppercase text-white">Hackathon</p>
+        </div>
+        <div class="container mx-auto flex flex-wrap  ">
+
+
+            
+            <section class="w-full md:w-1/2 flex flex-col items-center ">
+
+                <div class="w-full">
+                    <article class="flex flex-col shadow my-4">
+                        <!-- Article Image -->
+
+                        <div class="bg-white flex flex-col justify-start p-6 text-justify">
+                            <div class="md:w-1/16 pb-4">
+                                <p class=" text-xl font-bold uppercase ">Objetivo particular</p>
+                            </div>
+                            <p>Ampliar el acceso equitativo niñ@s y adolescentes para la propiocepción y reconocimiento
+                                emocional con linias de actuación.
+
+                            <p>De esta manera, nuestro reto se enfoca en desarrollar una solución y alternativas para
+                                que los usuarios de la aplicación conozcan soluciones y no solamente reconozcan
+                                problemas emocionales.</p>
+
+                            <p>El reconocimiento de problemas emocionales en edades tempranas es hoy en día un reto para
+                                la OPS quien destaca el suicidio, homicidio y accidentes de tráfico como las primeras 3
+                                causas de muerte en este grupo etario.</p>
+
+                        </div>
+                    </article>
+                </div>
+
+                <div class="w-full">
+                    <article class="flex flex-col shadow my-4">
+                        <!-- Article Image -->
+
+                        <div class="bg-white flex flex-col justify-start p-6 text-justify">
+                            <div class="md:w-1/16 pb-4">
+                                <p class=" text-xl font-bold uppercase ">Tipo de solución</p>
+                            </div>
+                            <p>Buscar herramientas digitales y tecnologías que nos ayuden a mejorar la experiencia de
+                                los usuarios,
+                                crear conciencia sobre curso de vida saludable para un óptimo estado de salud, a través
+                                de recomendaciones asertivas, mapas de actuación, blogs, seguimientos en línea, apoyo
+                                con otras tecnologías en clínicas y diferentes sitios (hospitales, clubs, centros de
+                                apoyo, médicos) a nivel nacional que ayuden a tener acceso inmediato y directo a
+                                seguimiento.
+                            </p>
+
+                        </div>
+                    </article>
+                </div>
+
+                <div class="w-full">
+                    <article class="flex flex-col shadow my-4">
+                        <!-- Article Image -->
+
+                        <div class="bg-white flex flex-col justify-start p-6 text-justify">
+                            <div class="md:w-1/16 pb-4">
+                                <p class=" text-xl font-bold uppercase ">Descripción del Track en su Entregable / Solución Esperada</p>
+                            </div>
+                            <p>Fase 1: explicación de la idea-solución, justificada, se sube la información en forma de texto a la plataforma de evaluación del Hackathon.
+                                Fase 2: desarrollo del prototipo, entrega de las evidencias del prototipo en un alto porcentaje de avance.
+                                Fase 3. explicación-demo del prototipo y pruebas funcionales del proyecto ante el jurado.
+                                Es importante que el entregable sea realista a las condiciones de tiempo y que cumpla con las especificaciones necesarias para cada fase.
+                            </p>
+
+                        </div>
+                    </article>
+                </div>
+
+                
+
+            </section>
+
+            <aside class="w-full md:w-1/2 flex flex-col items-center   pl-3">
+
+                <div class="w-full bg-white shadow flex flex-col my-4 py-4 px-6">
+                    <p class="text-xl font-bold pb-2 uppercase">Dirigido a</p>
+                    <p class="pb-2 text-justify">
+                        Este proyecto está dirigido a estudiantes o profesionistas de desarrollo de software.
+                        Interesados en resolver situaciones de prevención de la salud en jóvenes. </p>
+                    </p>
+
+                </div>
+
+                <div class="w-full bg-white shadow flex flex-col my-4 py-4 px-6">
+                    <p class="text-xl font-bold pb-2 uppercase">Elementos a evaluar</p>
+                    <p class="pb-2 text-justify"> </p>
+                    <ul>
+                        <li>Capacidad tecnológica</li>
+                        <li>Creatividad-Innovación</li>
+                        <li>Originalidad - Alto impacto</li>
+                        <li>Alcance de Implementación</li>
+                        <li>Funcionalidad - prototipo</li>
+                    </ul>
+                </div>
+
+                <div class="w-full bg-white shadow flex flex-col my-4 py-4 px-6">
+                    <p class="text-xl font-bold pb-2 uppercase">Especificaciones técnicas y tecnológicas</p>
+                    <p class="pb-2 text-justify">
+                        Las Tecnologías y metodologías de desarrollo son abiertas. Algunas de las tecnologías sugeridas
+                        a utilizar para este objetivo a resolver podrían ser la siguientes:
+
+                        Front End (React, Vue Js, Next JS, Angular). Back End (Node JS, .NET, Next JS ) DB (Postgresql,
+                        SQL Server) </p>
+                </div>
+
+                <div class="w-full bg-white shadow flex flex-col my-4 py-4 px-6">
+                    <p class="text-xl font-bold pb-2 uppercase">Motivación en el desarrollo del Hackathon</p>
+                    <p class="pb-2 text-justify">
+                        Estas herramientas digitales ayudarán a tener acceso a mayor número de jóvenes en instituciones educativas, para dar a conocer el estado que ocupan los adolescentes en relación a los problemas de conducata y crear conciencia sobre la importancia de un seguimiento emocional en el curso y desarrollo de su vida para un estado de salud óptimo y como prevención de múltiples alteraciones psicológicas y/o psiquiátricas.
+                    </p>
+                </div>
+
+                
+            </aside>
+
+            <div class="w-full justify-center">
+                <div class="flex flex-col items-center">
+                    <form class="w-full max-w-4xl bg-white p-5">
+                        <p class=" font-extrabold text-3xl text-center pb-2 mb-2">Formulario de registro</p>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                    for="Nombre">
+                                    Nombre
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    id="Nombre" type="text" placeholder="Nombre">
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                    for="Apellido">
+                                    Apellido
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="Apellido" type="text" placeholder="Apellido Paterno">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                    for="Correo">
+                                    Correo
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    id="Correo" type="text" placeholder="Correo">
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                    for="Telefono">
+                                    Teléfono
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="Telefono" type="text" placeholder="Telefono">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full  px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                    for="grid-state">
+                                    Rol en el evento
+                                </label>
+                                <div class="relative mb-2">
+                                    <select
+                                        class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                        id="grid-state">
+                                        <option>Programador</option>
+                                        <option>Médico</option>
+                                    </select>
+                                    <div
+                                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full  px-3">
+                                <label class="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                                    for="Descripcion">
+                                    Describe tu experiencia desarrollando
+                                </label>
+                                <textarea
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    id="Descripcion" placeholder="Descripcion"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-3">
+                            <div class="w-full justify-center px-3">
+                                <div class=" flex flex-col items-center">
+                                    <input
+                                        class="  justify-center bg-blue-800 text-white border border-gray-200 rounded py-3 px-4  hover:bg-gray-400 hover:text-black
+                                        id="Submit" type="submit" value="Enviar">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+            <div class="w-full justify-center">
+                <div class="my-4  flex flex-col p-6 items-center">
+                    <ul class="flex text-xs items-center  font-bold  text-black uppercase no-underline">
+                        <li><a><i class="fab fa-facebook mr-2 hover:text-gray-400 px-6 mx-5 fa-10x"></i></a></li>
+                        <li><a><i class="fab fa-instagram mr-2 hover:text-gray-400 px-6 mx-5 fa-10x"></i></a></li>
+                        <li><a><i class="fab fa-youtube mr-2 hover:text-gray-400 px-6 mx-5 fa-10x"></i></a></li>
+                        <li><a><i class="fab fa-twitter mr-2 hover:text-gray-400 px-6 mx-5 fa-10x"></i></a></li>
+                        <li><a><i class="fab fa-linkedin mr-2 hover:text-gray-400 px-6 mx-5 fa-10x"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full border-t bg-indigo-600 pb-12">
+
+            <div class="w-full container mx-auto flex flex-col items-center">
+                <div class="  py-6 w-full">
+                    <ul class="flex text-xs items-center  font-bold  text-white uppercase no-underline">
+                        <li class="mx-auto text-left">
+                            <p class=" text-lg py-5">OFICINAS CUDI</p>
+                            <p class=" ">Tamaulipas 141</p>
+                            <p class="  ">Piso 3</p>
+                            <p class="  ">Col. Condesa</p>
+                            <p class="  ">C.P.: 06140</p>
+                            <p class="  "> Ciudad de México</p>
+                        </li>
+                        <li class="mx-auto items-center">
+                            <p class="  text-lg text-center py-5">TELÉFONOS</p>
+                            <p class=" py-3 text-lg">+52 (55) 4425 1892</p>
+                            <p class=" py-1">Si tiene algún problema técnico para ver este sitio</p>
+                            <p> escríbanos a
+                                salud@cudi.edu.mx</p>
+                        </li>
+                        <li class="mx-auto text-lg">
+                            <p class=" py-2  hover:text-gray-400 ">Contactanos</p>
+                            <p class=" py-2 hover:text-gray-400">Registro</p>
+                            <p class=" py-2 hover:text-gray-400 ">Miembros</p>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="w-full border-t bg-gray-500 py-2">
+
+            <div class="w-full container mx-auto flex flex-col items-center font-bold">
+
+                <a href="#" class="  hover:text-gray-400 uppercase text-white"> Aviso de privacidad</a>
+            </div>
+        </footer>
+
+        <script>
+            function getCarouselData() {
+                return {
+                    currentIndex: 0,
+                    images: [
+                        'images/R47.jpg',
+                        'images/banner-enmh.jpg',
+                        'images/R47.jpg',
+                        'images/banner-enmh.jpg',
+                        'images/R47.jpg',
+                        'images/banner-enmh.jpg',
+                        'images/R47.jpg',
+                        'images/banner-enmh.jpg',
+                        'images/R47.jpg',
+                    ],
+                    increment() {
+                        this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex + 1;
+                    },
+                    decrement() {
+                        this.currentIndex = this.currentIndex === this.images.length - 6 ? 0 : this.currentIndex - 1;
+                    },
+                }
+            }
+        </script>
+    </nav>
+
+</body>
+
+</html>
