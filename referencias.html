@@ -242,7 +242,8 @@
 </head>
 
 <body>
-    
+
+    <div id="navbar-container" ></div>
 
     <div class="container">
 
@@ -1075,7 +1076,7 @@
 
     </div>
 
-   
+    <div id="footer-container" ></div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -1089,11 +1090,25 @@
 
     <script>
         $(document).ready(function () {
-    // Animación para los acordeones
-    $('.boton-disp').click(function () {
-        $(this).find('i').toggleClass('rotate-180');
-    });
-});
+
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+                });
+
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+            // Animación para los acordeones
+            $('.boton-disp').click(function () {
+                $(this).find('i').toggleClass('rotate-180');
+            });
+        });
     </script>
 </body>
 

@@ -278,10 +278,43 @@
             border-left: 4px solid #4285f4;
             margin: 20px 0;
         }
+
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .btn-paginacion {
+            padding: 10px 25px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-paginacion:hover {
+            background-color: #3498db;
+            text-decoration: none;
+        }
+        
+        .btn-paginacion:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+   
     </style>
 </head>
 
 <body>
+    <div id="navbar-container" ></div>
+
+
     <h1>Estructura y Tipos de Archivos en Sistemas Operativos</h1>
     
     <h2>4.1 Estructura del sistema de archivos</h2>
@@ -572,37 +605,29 @@
         <a href="index.html"  id="btn-anterior" class="btn-paginacion" disabled>Anterior sección</a>
         <a href="Cuestionario4_1.html" id="btn-siguiente" class="btn-paginacion">Siguiente sección</a>
     </div>
+
+    <div id="footer-container" ></div>
     
-    <style>
-        .paginacion {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .btn-paginacion {
-            padding: 10px 25px;
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        
-        .btn-paginacion:hover {
-            background-color: #3498db;
-            text-decoration: none;
-        }
-        
-        .btn-paginacion:disabled {
-            background-color: #95a5a6;
-            cursor: not-allowed;
-            text-decoration: none;
-        }
-    </style>
+    <script>
+        $(document).ready(function () {
+            // Animación para los acordeones
+
+            fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+            });
+
+
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+
+        });
+    </script>
 
 
    
