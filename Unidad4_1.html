@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>Estructura y Tipos de Archivos</title>
+    <style>
+
+
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand,
+        .nav-link,
+        .boton-disp {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .navbar-personalizado {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .disposicion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .disposicion-logos {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .disposicion-logos div {
+            display: flex;
+            align-items: center;
+        }
+
+        .disposicion-logos img {
+            max-height: 60px;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.5rem;
+            margin-right: 30px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            padding: 8px 15px !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .dropdown-item {
+            padding: 8px 20px;
+            transition: all 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--secondary-color);
+            color: white !important;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .presentacion {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .presentacion:hover {
+            transform: translateY(-5px);
+        }
+
+        .boton-disp {
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .boton-disp:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .boton-disp i {
+            transition: transform 0.3s ease;
+        }
+
+        .boton-disp.collapsed i {
+            transform: rotate(-90deg);
+        }
+
+        #div_1,
+        #div_2,
+        #div_3,
+        #div_4,
+        #div_5 {
+            padding: 25px;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 0;
+            margin-top: 50px;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        footer .nav-link {
+            color: rgba(255, 255, 255, 0.7) !important;
+            padding: 5px 0 !important;
+        }
+
+        footer .nav-link:hover {
+            color: white !important;
+            padding-left: 10px !important;
+        }
+
+        .border-top {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .color-text {
+            color: white;
+        }
+
+        .renglones{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .margin-padding{
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .disposicion {
+                flex-direction: column;
+            }
+
+            .navbar-brand {
+                margin-bottom: 15px;
+            }
+
+            .presentacion {
+                padding: 20px;
+            }
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #4285f4;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Estructura y Tipos de Archivos en Sistemas Operativos</h1>
+    
+    <h2>4.1 Estructura del sistema de archivos</h2>
+    <p>Según Tanenbaum (2009), la estructura del sistema de archivos es una organización jerárquica basada en directorios que usa inodos para almacenar los metadatos de los archivos, con una tabla de inodos que permite gestionar los archivos de manera eficiente. Los bloques de datos almacenan la información de los archivos, y el acceso a estos datos se realiza a través de las estructuras de directorios.</p>
+    
+    <h3>Nomenclatura de archivos</h3>
+    <p>Tanenbaum (1998) define la nomenclatura de archivos como el sistema mediante el cual los archivos son nombrados, gestionados y accedidos en un sistema de archivos. Un nombre de archivo es una cadena alfanumérica utilizada para identificarlo en el directorio, pero no contiene información sobre su ubicación física.</p>
+    
+    <div class="highlight">
+        <p><strong>Características clave:</strong></p>
+        <ul>
+            <li><strong>Ruta de archivo</strong>: Puede ser absoluta (desde la raíz) o relativa (desde el directorio actual)</li>
+            <li><strong>Inodos</strong>: Almacenan metadatos pero no el nombre del archivo</li>
+            <li><strong>Directorios</strong>: Estructuras que vinculan nombres de archivos con sus inodos</li>
+            <li><strong>Convenciones</strong>: Longitud del nombre, extensiones para tipos de archivo, distinción mayúsculas/minúsculas</li>
+            <li><strong>Organización</strong>: Jerarquía de directorios en forma de árbol</li>
+        </ul>
+    </div>
+    
+    <h3>Estructura de archivos</h3>
+    <p>Tanenbaum (1998) describe la estructura de archivos mediante los siguientes componentes principales:</p>
+    
+    <table>
+        <tr>
+            <th>Componente</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>Inodos (Inodes)</td>
+            <td>Estructuras que almacenan metadatos (tamaño, fechas, permisos, ubicación de bloques)</td>
+        </tr>
+        <tr>
+            <td>Directorio (Directory)</td>
+            <td>Lista de nombres de archivos y sus referencias a inodos</td>
+        </tr>
+        <tr>
+            <td>Superbloque (Superblock)</td>
+            <td>Información crítica sobre el sistema de archivos (tamaño total, bloques libres, etc.)</td>
+        </tr>
+        <tr>
+            <td>Bloques de Datos</td>
+            <td>Unidades donde se guardan los datos reales de los archivos</td>
+        </tr>
+        <tr>
+            <td>Estructura Jerárquica</td>
+            <td>Organización en árbol desde la raíz del sistema</td>
+        </tr>
+        <tr>
+            <td>Caché</td>
+            <td>Almacenamiento temporal para mejorar rendimiento</td>
+        </tr>
+    </table>
+    
+    <h2>Tipos de Archivos</h2>
+    
+    <h3>Tres estructuras básicas de archivos</h3>
+    <figure>
+        <img src="images/figura1.png" alt="Tres tipos de archivos según Tanenbaum">
+        <figcaption>Figura 1. Tres tipos de archivos: (a) Secuencia de bytes, (b) Secuencia de registros, (c) Árbol (Tanenbaum, 2009, p. 259)</figcaption>
+    </figure>
+    
+    <h3>Clasificación funcional</h3>
+    <p>Tanenbaum describe tres tipos principales:</p>
+    
+    <div class="highlight">
+        <p><strong>1. Archivos de Datos</strong></p>
+        <ul>
+            <li>Contienen información para usuarios o aplicaciones</li>
+            <li>Ejemplos: .txt, .jpg, .mp3</li>
+            <li>Características: Accesibles, modificables según permisos</li>
+        </ul>
+        
+        <p><strong>2. Archivos de Programa</strong></p>
+        <ul>
+            <li>Contienen código ejecutable</li>
+            <li>Ejemplos: .exe, .bin</li>
+            <li>Características: Permisos de ejecución</li>
+        </ul>
+        
+        <p><strong>3. Archivos Especiales</strong></p>
+        <ul>
+            <li>Representan dispositivos físicos o recursos del sistema</li>
+            <li>Ejemplos: /dev/sda, /dev/tty</li>
+            <li>Características: Acceso mediante llamadas al sistema</li>
+        </ul>
+    </div>
+    
+    <h3>Tipos en UNIX y Windows</h3>
+    <p>Tanenbaum (2009, p. 260) explica que:</p>
+    <ul>
+        <li><strong>Archivos regulares</strong>: Almacenan información del usuario</li>
+        <li><strong>Directorios</strong>: Mantienen la organización del sistema</li>
+        <li><strong>Archivos especiales</strong>:
+            <ul>
+                <li>De caracteres: Dispositivos de E/S en serie (terminales, impresoras)</li>
+                <li>De bloques: Representan discos</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h4>Archivos regulares</h4>
+    <ul>
+        <li><strong>ASCII</strong>: Texto legible, líneas terminadas con retorno de carro/avance de línea
+            <ul>
+                <li>Ventajas: Editables, conectables entre programas</li>
+            </ul>
+        </li>
+        <li><strong>Binarios</strong>: Estructura interna específica, no legibles directamente</li>
+    </ul>
+    
+    <h2>Acceso a Archivos</h2>
+    <p>Tanenbaum (2009, p. 262) describe dos métodos principales:</p>
+    <ol>
+        <li><strong>Acceso secuencial</strong>: Lectura en orden desde el principio (típico en cintas magnéticas)</li>
+        <li><strong>Acceso aleatorio</strong>: Lectura en cualquier orden (esencial para bases de datos)
+            <ul>
+                <li>Métodos para posicionamiento:
+                    <ul>
+                        <li>Especificar posición en cada operación de lectura</li>
+                        <li>Usar operación seek (común en UNIX/Windows)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Atributos de Archivos</h2>
+    <p>Cada archivo tiene metadatos asociados. La Figura 2 muestra algunos posibles atributos:</p>
+    <figure>
+        <img src="images/figura2.png" alt="Atributos de archivos según Tanenbaum">
+        <figcaption>Figura 2. Algunos posibles atributos de archivos (Tanenbaum, 2009, p. 263)</figcaption>
+    </figure>
+    
+    <h2>Nombres y Extensiones</h2>
+    <p>Los sistemas operativos permiten nombres compuestos por dos partes separadas por punto (ej: "prog.c"). La extensión indica el tipo de archivo:</p>
+    <figure>
+        <img src="images/figura3.png" alt="Extensiones comunes de archivos">
+        <figcaption>Figura 3. Algunas extensiones de archivos comunes (Tanenbaum, 2009, p. 258)</figcaption>
+    </figure>
+    
+    <h2>Archivos Binarios</h2>
+    <p>Tanenbaum (2009) describe los archivos binarios como:</p>
+    <ul>
+        <li>No legibles directamente por humanos (secuencias de 1s y 0s)</li>
+        <li>Estructura interna interpretable solo por programas específicos</li>
+        <li>Tipos comunes:
+            <ul>
+                <li>Ejecutables (.exe, .bin)</li>
+                <li>Imágenes (.jpg, .png)</li>
+                <li>Audio (.mp3, .wav)</li>
+                <li>Comprimidos (.zip, .tar)</li>
+                <li>Bases de datos (.db, .sqlite)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>Codificación de Archivos</h2>
+    <p>Tanenbaum (2009) explica los aspectos clave:</p>
+    <ol>
+        <li><strong>Archivos de texto</strong>: ASCII, UTF-8 (legibles por humanos)</li>
+        <li><strong>Archivos binarios</strong>: Representación directa en bits (requieren programas específicos)</li>
+        <li><strong>Compresión</strong>: Algoritmos como ZIP o gzip para optimizar espacio</li>
+        <li><strong>Dispositivos</strong>: Archivos que representan hardware (/dev)</li>
+    </ol>
+
+    <h1>4.1.1 Capa del Sistema de Archivos</h1>
+    
+    <div class="section">
+        <p>La capa del sistema de archivos es un componente crítico de los sistemas operativos, responsable de organizar, almacenar y recuperar datos en dispositivos de almacenamiento.</p>
+    </div>
+
+    <div class="section">
+        <h2>Interfaz del Sistema de Archivos</h2>
+        <div class="feature-box">
+            <p>La interfaz del sistema de archivos actúa como un puente entre las aplicaciones y el almacenamiento físico. Proporciona llamadas al sistema fundamentales para la manipulación de archivos:</p>
+            <ul>
+                <li><strong>open()</strong>: Abre un archivo para lectura/escritura</li>
+                <li><strong>read()</strong>: Lee datos de un archivo</li>
+                <li><strong>write()</strong>: Escribe datos en un archivo</li>
+                <li><strong>close()</strong>: Cierra un archivo abierto</li>
+            </ul>
+            <p>Estas funciones permiten a los programas interactuar con archivos sin manejar detalles de bajo nivel.</p>
+            <div class="citation">(Tanenbaum & Woodhull, 2006, p. 210)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Gestión de Nombres y Directorios</h2>
+        <div class="feature-box">
+            <p>Organiza archivos en una estructura jerárquica (directorios y subdirectorios) y utiliza diversos mecanismos para optimizar el acceso:</p>
+            <ul>
+                <li><strong>Tabla de Archivos Abiertos (TFA)</strong>: Rastrea ubicaciones y metadatos de archivos en uso</li>
+                <li><strong>Tablas hash</strong>: Aceleran búsquedas en directorios grandes</li>
+                <li><strong>Estructuras de árbol</strong>: Organizan jerárquicamente los directorios</li>
+            </ul>
+            <div class="citation">(Silberschatz, Galvin & Gagne, 2018, p. 485)</div>
+        </div>
+        
+        <h3>Ventajas y Desventajas de Tablas Hash</h3>
+        <table class="comparison-table">
+            <tr>
+                <th>Ventajas</th>
+                <th>Desventajas</th>
+            </tr>
+            <tr>
+                <td>Búsquedas rápidas (tiempo constante O(1) en casos ideales)</td>
+                <td>Mayor complejidad de implementación</td>
+            </tr>
+            <tr>
+                <td>Eficiente para directorios con muchos archivos</td>
+                <td>Requiere manejo de colisiones</td>
+            </tr>
+            <tr>
+                <td>Escalabilidad mejorada</td>
+                <td>Mayor consumo de memoria</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Gestión del Espacio en Disco</h2>
+        <div class="feature-box">
+            <p>Asigna bloques de almacenamiento a archivos y optimiza el espacio para minimizar la fragmentación:</p>
+            <ul>
+                <li><strong>Asignación contigua</strong>:
+                    <ul>
+                        <li>Archivos almacenados en bloques consecutivos</li>
+                        <li>Usado por NTFS con clústeres</li>
+                        <li>Ventaja: Acceso secuencial rápido</li>
+                        <li>Desventaja: Fragmentación externa</li>
+                    </ul>
+                </li>
+                <li><strong>Asignación enlazada</strong>:
+                    <ul>
+                        <li>Archivos almacenados en bloques dispersos con punteros</li>
+                        <li>Usado por ext4 con bloques y extents</li>
+                        <li>Ventaja: No sufre de fragmentación externa</li>
+                        <li>Desventaja: Acceso aleatorio más lento</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="citation">(Carrier, 2005, p. 95)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Gestión de Metadatos</h2>
+        <div class="feature-box">
+            <p>Administra información descriptiva sobre los archivos:</p>
+            <ul>
+                <li><strong>Permisos de acceso</strong>: Controla quién puede leer, escribir o ejecutar</li>
+                <li><strong>Fechas</strong>: Creación, modificación y último acceso</li>
+                <li><strong>Tamaño</strong>: En bytes o bloques</li>
+                <li><strong>Propietario</strong>: Usuario y grupo dueño del archivo</li>
+                <li><strong>Tipo</strong>: Archivo regular, directorio, enlace, etc.</li>
+            </ul>
+            <p>En sistemas UNIX/Linux, esta información se almacena en estructuras llamadas <strong>inodos</strong>.</p>
+            <div class="citation">(Silberschatz et al., 2018, p. 467)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Gestión de Acceso y Permisos</h2>
+        <div class="feature-box">
+            <p>Controla quién puede realizar qué operaciones sobre un archivo:</p>
+            <ul>
+                <li><strong>Sistemas UNIX/Linux</strong>:
+                    <ul>
+                        <li>Permisos numéricos (ej. 755)</li>
+                        <li>Permisos simbólicos (ej. rwxr-xr-x)</li>
+                        <li>Tres categorías: Usuario, Grupo, Otros</li>
+                        <li>Tres permisos básicos: Lectura (r), Escritura (w), Ejecución (x)</li>
+                    </ul>
+                </li>
+                <li><strong>Sistemas Windows</strong>:
+                    <ul>
+                        <li>Listas de Control de Acceso (ACLs)</li>
+                        <li>Permisos más granulares</li>
+                        <li>Herencias de permisos</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="citation">(Tanenbaum & Woodhull, 2006, p. 232)</div>
+        </div>
+    </div>
+
+    <div class="paginacion">
+        <a href="index.html"  id="btn-anterior" class="btn-paginacion" disabled>Anterior sección</a>
+        <a href="Cuestionario4_1.html" id="btn-siguiente" class="btn-paginacion">Siguiente sección</a>
+    </div>
+    
+    <style>
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .btn-paginacion {
+            padding: 10px 25px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-paginacion:hover {
+            background-color: #3498db;
+            text-decoration: none;
+        }
+        
+        .btn-paginacion:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+    </style>
+
+
+   
+</body>
+</html>
