@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Asignación de Espacio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand,
+        .nav-link,
+        .boton-disp {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .navbar-personalizado {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .presentacion {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .presentacion:hover {
+            transform: translateY(-5px);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .subsection {
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .feature-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .paginacion {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .btn-paginacion {
+            padding: 10px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-paginacion:hover {
+            background-color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .btn-paginacion:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 0;
+            margin-top: 50px;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .border-top {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        @media (max-width: 768px) {
+            .subsection {
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="presentacion">
+            <h1>Métodos de Asignación de Espacio</h1>
+            <p>Gestión eficiente del almacenamiento en sistemas de archivos</p>
+        </div>
+
+        <div class="section">
+            <p>Durante el estudio de este tema, es fundamental comprender la gestión del espacio en el que se almacenan los archivos en el disco duro. En este contexto, los diversos métodos para determinar y administrar el espacio serán clave para organizar los datos de manera eficiente y estructurarlos adecuadamente dentro del mismo dispositivo de almacenamiento.</p>
+            
+            <p>A lo largo de este tema, exploraremos la relevancia de métodos como la asignación contigua, ligada e indexada, cada uno con sus respectivas ventajas y desventajas. Además, se adaptan de manera más efectiva a distintos tipos de sistemas de archivos y situaciones específicas, las cuales se detallarán a continuación.</p>
+            
+            <p>Por último, es importante que reconozcas el papel fundamental que juegas en este aprendizaje, ya que tu docente será el encargado de facilitar y guiar tu comprensión a lo largo de esta unidad. Por ello, se recomienda seguir sus indicaciones con atención.</p>
+        </div>
+
+        <div class="section" id="metodos-asignacion">
+            <h2>4.3 Métodos de asignación de espacio</h2>
+            
+            <p>La asignación de espacio en sistemas de archivos determina cómo se distribuyen los datos en un dispositivo de almacenamiento, influyendo directamente en el rendimiento, la fragmentación y la capacidad de recuperación. Tres métodos principales se utilizan en la práctica: asignación contigua, ligada e indexada. Cada uno equilibra de manera distinta la eficiencia de acceso, la gestión de espacio y la escalabilidad.</p>
+        </div>
+
+        <div class="section" id="asignacion-contigua">
+            <h2>4.3.1 Asignación Contigua</h2>
+            
+            <div class="quote">
+                Asignación Contigua (Silberschatz, Galvin & Gagne, 2018, p. 500).
+            </div>
+            
+            <h3>Definición</h3>
+            <p>Almacena archivos en bloques de disco consecutivos. Cada archivo ocupa una secuencia continua de sectores.</p>
+            
+            <h3>Funcionamiento</h3>
+            <ul class="feature-list">
+                <li>Se requiere especificar el tamaño del archivo al crearlo (ejemplo histórico: sistemas de cintas magnéticas).</li>
+                <li>La tabla de asignación registra la dirección inicial y la longitud del archivo.</li>
+            </ul>
+            
+            <h3>Ventajas:</h3>
+            <ul class="feature-list">
+                <li>Acceso rápido: Lectura secuencial eficiente (ideal para medios como CD-ROM).</li>
+                <li>Baja sobrecarga de metadatos: Solo se almacena la dirección inicial y el tamaño.</li>
+            </ul>
+            
+            <h3>Desventajas:</h3>
+            <ul class="feature-list">
+                <li>Fragmentación externa: Espacio libre disperso entre archivos, reduciendo la capacidad de almacenamiento.</li>
+                <li>Dificultad para expandir archivos: Requiere reubicación si no hay espacio contiguo disponible.</li>
+            </ul>
+            
+            <p>Ejemplo: Sistemas antiguos como IBM OS/360.</p>
+            
+            <p>Además, localizar cualquier parte del archivo es sencillo; solo necesitas conocer el punto de inicio y la cantidad total de bloques que ocupa, como se ilustra en la Figura 4.</p>
+            
+            <figure>
+                <figcaption>Figura 4. Asignación Contigua de espacio en disco (Silberschatz, Galvin & Gagne, 2018, p. 573).</figcaption>
+            </figure>
+            
+            <div class="highlight">
+                <p>En caso de requerir más información sobre el tema, se proporciona el siguiente material audiovisual.</p>
+                <p>Optimización del sistema de archivos. (López, Rivera, Rodríguez y Sandoval, 2024). <a href="https://www.youtube.com/watch?v=LvQWKYcMVGc">https://www.youtube.com/watch?v=LvQWKYcMVGc</a></p>
+            </div>
+        </div>
+
+        <div class="section" id="asignacion-ligada">
+            <h2>4.3.2 Asignación Ligada (Enlazada)</h2>
+            
+            <div class="quote">
+                Asignación Ligada (Enlazada) (Tanenbaum & Woodhull, 2006, p.220; Microsoft, s.f.)
+            </div>
+            
+            <h3>Definición</h3>
+            <p>Almacena archivos en bloques no contiguos, vinculados mediante punteros al siguiente bloque.</p>
+            
+            <h3>Funcionamiento</h3>
+            <ul class="feature-list">
+                <li>Cada bloque contiene datos y un puntero al siguiente bloque.</li>
+                <li>La tabla de asignación solo guarda la dirección del primer bloque.</li>
+            </ul>
+            
+            <h3>Ventajas</h3>
+            <ul class="feature-list">
+                <li>Sin fragmentación externa: El espacio libre se aprovecha completamente.</li>
+                <li>Flexibilidad: Los archivos pueden crecer dinámicamente sin reubicación.</li>
+            </ul>
+            
+            <h3>Desventajas</h3>
+            <ul class="feature-list">
+                <li>Acceso secuencial obligatorio: Lectura aleatoria lenta (debe seguirse la cadena de punteros).</li>
+                <li>Sobrecarga de espacio: Cada bloque reserva espacio para el puntero (ejemplo: 4 bytes en FAT32).</li>
+            </ul>
+            
+            <p>Ejemplo: Sistemas FAT32 (File Allocation Table).</p>
+        </div>
+
+        <div class="section" id="asignacion-indexada">
+            <h2>4.3.3 Asignación Indexada</h2>
+            
+            <div class="quote">
+                Asignación Indexada (Linux Kernel Documentation, s. f., Ext 4; Silberschatz et al., 2018, p. 505).
+            </div>
+            
+            <h3>Definición</h3>
+            <p>Utiliza un bloque índice que contiene punteros a todos los bloques de un archivo.</p>
+            
+            <h3>Funcionamiento</h3>
+            <ul class="feature-list">
+                <li>El bloque índice se almacena en el inodo (UNIX/Linux) o en la MFT (NTFS).</li>
+                <li>Soporta acceso aleatorio eficiente y archivos de gran tamaño mediante índices multinivel.</li>
+            </ul>
+            
+            <h3>Ventajas</h3>
+            <ul class="feature-list">
+                <li>Acceso aleatorio rápido: Los bloques se localizan directamente desde el índice.</li>
+                <li>Escalabilidad: Admite archivos enormes con índices jerárquicos (ejemplo: ext4 con extents).</li>
+            </ul>
+            
+            <h3>Desventajas</h3>
+            <ul class="feature-list">
+                <li>Sobrecarga de metadatos: El bloque índice consume espacio adicional.</li>
+                <li>Complejidad: Gestión de índices multinivel requiere más cálculos.</li>
+            </ul>
+            
+            <p>Ejemplo: Sistemas NTFS (Windows) y ext4 (Linux).</p>
+            
+            <table>
+                <caption>Tabla 1. Comparativa Resumida</caption>
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Ventajas</th>
+                        <th>Desventajas</th>
+                        <th>Caso de Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Contigua</td>
+                        <td>Acceso rápido, simple</td>
+                        <td>Fragmentación externa, inflexibilidad</td>
+                        <td>Medios de solo lectura</td>
+                    </tr>
+                    <tr>
+                        <td>Ligada</td>
+                        <td>Sin fragmentación, flexible</td>
+                        <td>Acceso lento, sobrecarga de punteros</td>
+                        <td>Sistemas FAT, dispositivos USB</td>
+                    </tr>
+                    <tr>
+                        <td>Indexada</td>
+                        <td>Acceso aleatorio rápido, escalabilidad</td>
+                        <td>Sobrecarga de metadatos, complejidad</td>
+                        <td>Sistemas modernos (NTFS/ext4)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>La elección del método de asignación depende del equilibrio entre rendimiento, gestión de espacio y requisitos del sistema. Mientras la asignación contigua es óptima para entornos estáticos, la ligada prevalece en dispositivos removibles, y la indexada domina en sistemas modernos que priorizan velocidad y escalabilidad. Estudiar estos métodos permite diseñar sistemas de archivos eficientes adaptados a cargas de trabajo específicas.</p>
+        </div>
+
+        <div class="section" id="administracion-espacio">
+            <h2>4.3.4 Administración del espacio en disco</h2>
+            
+            <p>La gestión eficiente del espacio en disco es crucial para optimizar el almacenamiento, minimizar la fragmentación y acelerar el acceso a datos. Esta investigación explora tres métodos principales: listas enlazadas, mapas de bits y bloques de grupo, detallando sus ventajas, desventajas y aplicaciones prácticas.</p>
+
+            <div class="subsection">
+                <h3>1. Listas Enlazadas (Tanenbaum & Woodhull, 2006, p 218).</h3>
+                
+                <h4>Definición</h4>
+                <p>Método que utiliza punteros para vincular bloques libres en una cadena. Cada bloque libre contiene la dirección del siguiente bloque disponible.</p>
+                
+                <h4>Funcionamiento</h4>
+                <ul class="feature-list">
+                    <li>La tabla de asignación (ej. FAT en sistemas Windows) almacena los punteros.</li>
+                    <li>El sistema recorre la lista para encontrar bloques libres al asignar espacio.</li>
+                </ul>
+                
+                <h4>Ventajas</h4>
+                <ul class="feature-list">
+                    <li>Simplicidad: Fácil implementación y bajo consumo de metadatos.</li>
+                    <li>Flexibilidad: Permite manejar espacios libres no contiguos.</li>
+                </ul>
+                
+                <h4>Desventajas</h4>
+                <ul class="feature-list">
+                    <li>Acceso secuencial lento: Encontrar bloques libres requiere recorrer la lista.</li>
+                    <li>Fragmentación interna: Si los bloques libres son pequeños, se desperdicia espacio.</li>
+                </ul>
+                
+                <p>Ejemplo: Sistema de archivos FAT32.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>2. Mapas de Bits (Silberschatz, Galvin & Gagne, 2018, p. 503):</h3>
+                
+                <h4>Definición</h4>
+                <p>Usa un arreglo de bits donde cada bit representa un bloque de disco (1 = ocupado, 0 = libre).</p>
+                
+                <h4>Funcionamiento</h4>
+                <ul class="feature-list">
+                    <li>El mapa se almacena en un bloque reservado del disco.</li>
+                    <li>Operaciones rápidas de búsqueda mediante operaciones bit a bit.</li>
+                </ul>
+                
+                <h4>Ventajas</h4>
+                <ul class="feature-list">
+                    <li>Velocidad: Localiza bloques libres en tiempo constante usando hardware optimizado.</li>
+                    <li>Eficiencia espacial: El mapa consume poco espacio (ej. 1 bit por bloque).</li>
+                </ul>
+                
+                <h4>Desventajas</h4>
+                <ul class="feature-list">
+                    <li>Alto consumo de memoria RAM: El mapa completo debe cargarse en memoria para operar.</li>
+                    <li>Ineficiente en discos grandes: El tamaño del mapa crece linealmente con la capacidad del disco.</li>
+                </ul>
+                
+                <p>Ejemplo: Sistemas NTFS (Windows) y ext2/ext3 (Linux).</p>
+            </div>
+
+            <div class="subsection">
+                <h3>3. Bloques de Grupo (Group Blocks) (Linux Kernel Documentation, s. f.):</h3>
+                
+                <h4>Definición</h4>
+                <p>Agrupa bloques libres en "clusters" para reducir la fragmentación y acelerar las asignaciones.</p>
+                
+                <h4>Funcionamiento</h4>
+                <ul class="feature-list">
+                    <li>Divide el disco en grupos de bloques, cada uno con su propio mapa de bits o lista enlazada.</li>
+                    <li>Usado en sistemas modernos como ext4 para optimizar localidad espacial.</li>
+                </ul>
+                
+                <h4>Ventajas</h4>
+                <ul class="feature-list">
+                    <li>Reducción de fragmentación: Asigna bloques cercanos entre sí.</li>
+                    <li>Rendimiento mejorado: Minimiza los movimientos del cabezal del disco.</li>
+                </ul>
+                
+                <h4>Desventajas</h4>
+                <ul class="feature-list">
+                    <li>Complejidad: Requiere gestión adicional de grupos.</li>
+                    <li>Espacio reservado: Cada grupo almacena metadatos redundantes.</li>
+                </ul>
+                
+                <p>Ejemplo: Sistema de archivos ext4 (Linux).</p>
+            </div>
+
+            <table>
+                <caption>Tabla 2. Comparativa Resumida</caption>
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Ventajas</th>
+                        <th>Desventajas</th>
+                        <th>Caso de Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Listas Enlazadas</td>
+                        <td>Simple, flexible</td>
+                        <td>Lento en discos grandes</td>
+                        <td>Sistemas FAT, dispositivos USB</td>
+                    </tr>
+                    <tr>
+                        <td>Mapas de Bits</td>
+                        <td>Rápido, eficiente en espacio</td>
+                        <td>Consumo de RAM, ineficiente en discos grandes</td>
+                        <td>NTFS, ext2/ext3</td>
+                    </tr>
+                    <tr>
+                        <td>Bloques de Grupo</td>
+                        <td>Reduce fragmentación, optimiza rendimiento</td>
+                        <td>Complejidad de implementación</td>
+                        <td>ext4, sistemas modernos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="paginacion">
+            <a href="#" class="btn-paginacion">Anterior</a>
+            <a href="#" class="btn-paginacion">Siguiente</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sistemas Operativos</h5>
+                    <p>Métodos de Asignación de Espacio</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top pt-3">
+                <p class="text-center color-text">© 2023 Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
