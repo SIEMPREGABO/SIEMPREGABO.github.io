@@ -385,6 +385,21 @@
     <div id="footer-container" ></div>
 
     <script>
+        $(document).ready(function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+                });
+
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
         const respuestas = {
             pregunta1: 'true',
             pregunta2: 'true',
