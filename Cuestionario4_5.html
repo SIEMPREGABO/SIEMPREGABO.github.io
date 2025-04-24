@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Sistemas de Archivos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .instrucciones {
+            background-color: #e8f4fd;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .pregunta {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .pregunta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .opciones {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .opciones label {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .opciones label:hover {
+            background-color: #e8f4fd;
+        }
+        
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-validar {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-validar:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41,128,185,0.3);
+        }
+        
+        .btn-reset {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-reset:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(192,57,43,0.3);
+        }
+        
+        .resultados {
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            display: none;
+        }
+        
+        .progress {
+            height: 12px;
+            margin-bottom: 20px;
+            background-color: #e9ecef;
+        }
+        
+        .progress-bar {
+            background-color: var(--secondary-color);
+            transition: width 1s ease-in-out;
+        }
+        
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .opciones {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .botones {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <h1>Optimización de Sistemas de Archivos</h1>
+        <h2>Cuestionario sobre técnicas de optimización</h2>
+        
+        <div class="instrucciones">
+            <h3><i class="bi bi-info-circle"></i> Instrucciones</h3>
+            <ol>
+                <li>Lee cuidadosamente cada afirmación sobre técnicas de optimización de sistemas de archivos</li>
+                <li>Selecciona "Verdadero" si la afirmación es correcta o "Falso" si es incorrecta</li>
+                <li>Responde todas las preguntas antes de validar tus respuestas</li>
+                <li>Al finalizar, recibirás una evaluación detallada de tu desempeño</li>
+            </ol>
+        </div>
+        
+        <form id="cuestionario">
+            <!-- Pregunta 1 -->
+            <div class="pregunta">
+                <p>1. La optimización de estos sistemas busca maximizar el rendimiento, reducir la latencia y garantizar la integridad de los datos, especialmente en entornos con altas demandas de acceso.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta1" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta1" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 2 -->
+            <div class="pregunta">
+                <p>2. Almacenamiento en Caché: Uso de memoria RAM para almacenar datos accedidos frecuentemente, reduciendo las operaciones de lectura/escritura en disco.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta2" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta2" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 3 -->
+            <div class="pregunta">
+                <p>3. Linux utiliza el Page Cache para almacenar datos de archivos en memoria.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta3" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta3" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 4 -->
+            <div class="pregunta">
+                <p>4. Windows emplea el Cache Manager integrado en el kernel.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta4" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta4" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 5 -->
+            <div class="pregunta">
+                <p>5. Reducción de la Fragmentación: técnicas para evitar que los archivos se almacenen en bloques no contiguos, lo que ralentiza el acceso.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta5" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta5" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 6 -->
+            <div class="pregunta">
+                <p>6. Asignación contigua: Usada en sistemas como NTFS.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta6" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta6" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 7 -->
+            <div class="pregunta">
+                <p>7. Algoritmos de colocación, como el best-fit o worst-fit.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta7" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta7" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 8 -->
+            <div class="pregunta">
+                <p>8. Uso de RAID y SSDs: combinación de discos (RAID) o uso de unidades de estado sólido (SSDs) para mejorar velocidad y redundancia.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta8" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta8" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 9 -->
+            <div class="pregunta">
+                <p>9. Métodos de Recuperación de Archivos: recuperación mediante Software en donde se usan herramientas como Recuva, TestDisk o PhotoRec para escanear el dispositivo y reconstruir archivos eliminados.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta9" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta9" value="false"> Falso</label>
+                </div>
+            </div>
+            
+            <!-- Pregunta 10 -->
+            <div class="pregunta">
+                <p>10. Existen dos métodos como mecanismos de implementación por transacciones ACID y protocolos de consenso.</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta10" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta10" value="false"> Falso</label>
+                </div>
+            </div>
+        </form>
+        
+        <div class="botones">
+            <button class="btn btn-validar" id="validar">Validar respuestas</button>
+            <button class="btn btn-reset" id="resetear">Reiniciar cuestionario</button>
+        </div>
+        
+        <div class="resultados" id="resultados">
+            <h3><i class="bi bi-graph-up"></i> Resultados</h3>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar" role="progressbar"></div>
+            </div>
+            <div id="puntaje-detalle"></div>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+                });
+
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            // Respuestas correctas (todas son verdaderas según el enunciado)
+            const respuestasCorrectas = {
+                pregunta1: 'true',
+                pregunta2: 'true',
+                pregunta3: 'true',
+                pregunta4: 'true',
+                pregunta5: 'true',
+                pregunta6: 'true',
+                pregunta7: 'true',
+                pregunta8: 'true',
+                pregunta9: 'true',
+                pregunta10: 'true'
+            };
+            
+            // Validar respuestas al hacer clic en el botón
+            $('#validar').click(function() {
+                const totalPreguntas = Object.keys(respuestasCorrectas).length;
+                let correctas = 0;
+                let todasRespondidas = true;
+                
+                // Verificar cada pregunta
+                for (let i = 1; i <= totalPreguntas; i++) {
+                    const pregunta = 'pregunta' + i;
+                    const respuestaSeleccionada = $(`input[name=${pregunta}]:checked`).val();
+                    
+                    if (!respuestaSeleccionada) {
+                        todasRespondidas = false;
+                        $(`input[name=${pregunta}]`).parent().css('background-color', '#ffebee');
+                    } else {
+                        $(`input[name=${pregunta}]`).parent().css('background-color', '');
+                        
+                        if (respuestaSeleccionada === respuestasCorrectas[pregunta]) {
+                            correctas++;
+                        }
+                    }
+                }
+                
+                if (!todasRespondidas) {
+                    alert('Por favor responde todas las preguntas antes de validar.');
+                    return;
+                }
+                
+                // Calcular resultados
+                const porcentaje = Math.round((correctas / totalPreguntas) * 100);
+                
+                // Mostrar resultados
+                $('#progress-bar').css('width', porcentaje + '%').attr('aria-valuenow', porcentaje);
+                $('#puntaje-detalle').html(`
+                    <p><strong>Puntaje obtenido:</strong> ${correctas} de ${totalPreguntas} respuestas correctas</p>
+                    <p><strong>Porcentaje:</strong> ${porcentaje}%</p>
+                `);
+                
+                // Mostrar retroalimentación según el puntaje
+                let feedback = '';
+                if (porcentaje >= 90) {
+                    feedback = `
+                        <div class="alert alert-success">
+                            <i class="bi bi-check-circle-fill"></i> <strong>¡Excelente!</strong> 
+                            Demuestras un conocimiento excepcional sobre optimización de sistemas de archivos.
+                        </div>
+                    `;
+                } else if (porcentaje >= 70) {
+                    feedback = `
+                        <div class="alert alert-info">
+                            <i class="bi bi-check-circle"></i> <strong>¡Buen trabajo!</strong> 
+                            Tienes un buen conocimiento, pero podrías repasar algunos conceptos específicos.
+                        </div>
+                    `;
+                } else if (porcentaje >= 50) {
+                    feedback = `
+                        <div class="alert alert-warning">
+                            <i class="bi bi-exclamation-triangle"></i> <strong>Puedes mejorar</strong> 
+                            Entiendes algunos conceptos básicos, pero necesitas estudiar más sobre técnicas de optimización.
+                        </div>
+                    `;
+                } else {
+                    feedback = `
+                        <div class="alert alert-danger">
+                            <i class="bi bi-exclamation-octagon"></i> <strong>Necesitas repasar</strong> 
+                            Te recomendamos estudiar más a fondo los conceptos de optimización de sistemas de archivos.
+                        </div>
+                    `;
+                }
+                
+                $('#feedback').html(feedback);
+                $('#resultados').fadeIn();
+                
+                // Desplazarse a los resultados
+                $('html, body').animate({
+                    scrollTop: $('#resultados').offset().top
+                }, 800);
+            });
+            
+            // Reiniciar cuestionario
+            $('#resetear').click(function() {
+                $('input[type="radio"]').prop('checked', false);
+                $('input[type="radio"]').parent().css('background-color', '');
+                $('#resultados').fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>

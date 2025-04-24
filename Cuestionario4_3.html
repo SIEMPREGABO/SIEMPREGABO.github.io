@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 - Asignación de Espacio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand,
+        .nav-link,
+        .boton-disp {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .navbar-personalizado {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .instrucciones {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .pregunta {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn-validar {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-reset {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .resultados {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <h1>Actividad: Asignación de Espacio en Sistemas de Archivos</h1>
+        <h2>Cuestionario de Verdadero y Falso</h2>
+
+        <div class="instrucciones">
+            <h3>Instrucciones</h3>
+            <ol>
+                <li>Responda el cuestionario marcando Verdadero o Falso según corresponda</li>
+                <li>Al finalizar, haga clic en "Validar respuestas" para ver su puntaje</li>
+                <li>Puede reiniciar el cuestionario en cualquier momento con "Resetear marcas"</li>
+            </ol>
+        </div>
+
+        <form id="cuestionario">
+            <div class="pregunta">
+                <p>1. La asignación de espacio en sistemas de archivos determina cómo se distribuyen los datos en un
+                    dispositivo de almacenamiento, influyendo directamente en el rendimiento, la fragmentación y la
+                    capacidad de recuperación.</p>
+                <label><input type="radio" name="pregunta1" value="true"> Verdadero</label>
+                <label><input type="radio" name="pregunta1" value="false"> Falso</label>
+            </div>
+
+            <div class="pregunta">
+                <p>2. Tres métodos principales se utilizan en la práctica: asignación contigua, ligada e indexada. Cada
+                    uno equilibra de manera distinta la eficiencia de acceso, la gestión de espacio y la escalabilidad.
+                </p>
+                <label><input type="radio" name="pregunta2" value="true"> Verdadero</label>
+                <label><input type="radio" name="pregunta2" value="false"> Falso</label>
+            </div>
+
+            <div class="pregunta">
+                <p>3. Asignación Contigua: Almacena archivos en bloques de disco consecutivos.</p>
+                <label><input type="radio" name="pregunta3" value="true"> Verdadero</label>
+                <label><input type="radio" name="pregunta3" value="false"> Falso</label>
+            </div>
+
+            <div class="pregunta">
+                <p>4. Asignación Ligada: almacena archivos en bloques no contiguos, vinculados mediante punteros al
+                    siguiente bloque.</p>
+                <label><input type="radio" name="pregunta4" value="true"> Verdadero</label>
+                <label><input type="radio" name="pregunta4" value="false"> Falso</label>
+            </div>
+
+            <div class="pregunta">
+                <p>5. Mapas de Bits: usa un arreglo de bits donde cada bit representa un bloque de disco (1 = ocupado, 0
+                    = libre).</p>
+                <label><input type="radio" name="pregunta5" value="true"> Verdadero</label>
+                <label><input type="radio" name="pregunta5" value="false"> Falso</label>
+            </div>
+
+            <div class="pregunta">
+                <p>6. Bloques de Grupo: agrupa bloques libres en "clusters" para reducir la fragmentación y acelerar las
+                    asignaciones.</p>
+                <label><input type="radio" name="pregunta6" value="true"> Verdadero</label>
+                <label><input type="radio" name="pregunta6" value="false"> Falso</label>
+            </div>
+        </form>
+
+        <div class="botones">
+            <button class="btn btn-validar" type="button" id="validar" onclick="submitForm()">Validar
+                respuestas</button>
+            <button class="btn btn-reset" type="button" id="resetear" onclick="reset()">Resetear marcas</button>
+        </div>
+
+        <div class="resultados" id="resultados">
+            <!-- Aquí se mostrarán los resultados -->
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        $(document).ready(function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+                });
+
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+
+        const respuestas = {
+            pregunta1: 'true',
+            pregunta2: 'true',
+            pregunta3: 'true',
+            pregunta4: 'true',
+            pregunta5: 'true',
+            pregunta6: 'true'
+        }
+
+        function submitForm() {
+            const totalPreguntas = Object.keys(respuestas).length;
+            var aciertos = 0;
+
+            for (const pregunta in respuestas) {
+                let usuarioRes = $(`input[name=${pregunta}]:checked`).val();
+
+                if (usuarioRes === undefined) {
+                    $('#resultados').html(`<div class="alert alert-danger">¡Debes responder todas las preguntas!</div>`);
+                    return;
+                }
+
+                if (usuarioRes == respuestas[pregunta]) {
+                    aciertos++;
+                }
+            }
+
+            const porcentaje = Math.round((aciertos / totalPreguntas) * 100);
+            let mensaje = '';
+
+            if (porcentaje >= 80) {
+                mensaje = `<div class="alert alert-success">Excelente! Obtuviste ${aciertos} de ${totalPreguntas} (${porcentaje}%)</div>`;
+            } else if (porcentaje >= 60) {
+                mensaje = `<div class="alert alert-info">Bien! Obtuviste ${aciertos} de ${totalPreguntas} (${porcentaje}%)</div>`;
+            } else {
+                mensaje = `<div class="alert alert-warning">Obtuviste ${aciertos} de ${totalPreguntas} (${porcentaje}%). ¡Sigue practicando!</div>`;
+            }
+
+            $('#resultados').html(mensaje);
+        }
+
+        function reset() {
+            $('#resultados').html('');
+            $('input[type="radio"]').prop('checked', false);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
