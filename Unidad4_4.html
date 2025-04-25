@@ -182,6 +182,8 @@
     </style>
 </head>
 <body>
+    <div id="navbar-container"></div>
+
     <div class="container">
         <div class="presentacion">
             <h1>Sistemas de Archivos Estructurados</h1>
@@ -357,25 +359,25 @@
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Sistemas Operativos</h5>
-                    <p>Sistemas de Archivos Estructurados</p>
-                </div>
-                <div class="col-md-6 text-right">
-                    <div class="social-icons">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-top pt-3">
-                <p class="text-center color-text">© 2023 Todos los derechos reservados</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
+
+    
 </body>
+
+<script>
+    $(document).ready(function () {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    });
+</script>
 </html>
