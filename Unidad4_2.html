@@ -308,7 +308,7 @@
 
     <div class="container">
         <div class="presentacion" style="color: #f8f9fa;">
-            <h1>4.2 Implementación de Archivos y Directorios</h1>
+            <h2>4.2 Implementación de Archivos y Directorios</h2>
             <p>Organización, almacenamiento y gestión de datos en dispositivos de almacenamiento secundario</p>
         </div>
 
@@ -332,7 +332,7 @@
         </div>
 
         <div class="section" id="estructuras">
-            <h2>4.2.1 Estructuras de Archivos y Directorios</h2>
+            <h3>4.2.1 Estructuras de Archivos y Directorios</h3>
 
             <div class="subsection">
                 <p>Los sistemas operativos organizan los archivos en directorios para facilitar su acceso y gestión.
@@ -342,7 +342,7 @@
             </div>
 
             <div class="subsection">
-                <h3>2.1 Asignación Contigua</h3>
+                <h4>2.1 Asignación Contigua</h4>
                 <p>En este método, los archivos se almacenan en bloques contiguos del disco, lo que permite acceso
                     rápido mediante aritmética de direcciones. Sin embargo, puede sufrir de fragmentación externa.</p>
 
@@ -351,13 +351,13 @@
                     espacio debido a la fragmentación" (Tanenbaum & Bos, 2015, p. 312).
                 </div>
 
-                <h4>Ventajas:</h4>
+                <h5>Ventajas:</h5>
                 <ul class="feature-list">
                     <li>Lectura secuencial rápida.</li>
                     <li>Bajo overhead en metadatos.</li>
                 </ul>
 
-                <h4>Desventajas:</h4>
+                <h5>Desventajas:</h5>
                 <ul class="feature-list">
                     <li>Fragmentación externa.</li>
                     <li>Dificultad para expandir archivos.</li>
@@ -365,7 +365,7 @@
             </div>
 
             <div class="subsection">
-                <h3>2.2. Asignación Enlazada</h3>
+                <h4>2.2. Asignación Enlazada</h4>
                 <p>Cada bloque del archivo contiene un puntero al siguiente bloque, formando una lista enlazada. No hay
                     fragmentación externa, pero el acceso aleatorio es ineficiente.</p>
 
@@ -374,13 +374,13 @@
                     la necesidad de recorrer la cadena de bloques" (Stallings, 2018, p. 567).
                 </div>
 
-                <h4>Ventajas:</h4>
+                <h5>Ventajas:</h5>
                 <ul class="feature-list">
                     <li>No hay fragmentación externa.</li>
                     <li>Fácil expansión de archivos.</li>
                 </ul>
 
-                <h4>Desventajas:</h4>
+                <h5>Desventajas:</h5>
                 <ul class="feature-list">
                     <li>Acceso secuencial lento.</li>
                     <li>Overhead por almacenar punteros en cada bloque.</li>
@@ -388,7 +388,7 @@
             </div>
 
             <div class="subsection">
-                <h3>2.3 Asignación Indexada</h3>
+                <h4>2.3 Asignación Indexada</h4>
                 <p>Utiliza un bloque índice que contiene punteros a todos los bloques del archivo, permitiendo acceso
                     aleatorio eficiente.</p>
 
@@ -397,13 +397,13 @@
                     requiere almacenamiento adicional para los índices" (Silberschatz et al., 2018, p. 490).
                 </div>
 
-                <h4>Ventajas:</h4>
+                <h5>Ventajas:</h5>
                 <ul class="feature-list">
                     <li>Acceso aleatorio rápido.</li>
                     <li>Sin fragmentación externa.</li>
                 </ul>
 
-                <h4>Desventajas:</h4>
+                <h5>Desventajas:</h5>
                 <ul class="feature-list">
                     <li>Overhead por almacenar bloques de índice.</li>
                     <li>Puede requerir múltiples niveles de índices para archivos grandes.</li>
@@ -411,7 +411,7 @@
             </div>
 
             <div class="subsection">
-                <h3>Implementación de Directorios</h3>
+                <h4>Implementación de Directorios</h4>
                 <p>Los directorios pueden implementarse como:</p>
                 <ul class="feature-list">
                     <li><strong>Listas lineales:</strong> Simple pero ineficiente para búsquedas.</li>
@@ -427,7 +427,7 @@
         </div>
 
         <div class="section" id="directorios">
-            <h2>4.2.2 Implementación de Directorios en Sistemas Operativos</h2>
+            <h3>4.2.2 Implementación de Directorios en Sistemas Operativos</h3>
 
             <p>Los directorios son estructuras fundamentales en los sistemas operativos, ya que permiten organizar y
                 gestionar archivos de manera eficiente. Su implementación varía según el diseño del sistema de archivos,
@@ -435,24 +435,24 @@
                 esquemas de directorios, sus ventajas, desventajas y aplicaciones.</p>
 
             <div class="subsection">
-                <h3>1. Directorios Planos (Simples)</h3>
+                <h4>1. Directorios Planos (Simples)</h4>
                 <p>Un directorio plano almacena todos los archivos en una única lista sin subdivisión, común en sistemas
                     antiguos o embebidos.</p>
 
-                <h4>Características</h4>
+                <h5>Características</h5>
                 <ul class="feature-list">
                     <li>Estructura lineal: Todos los archivos están en el mismo nivel (Silberschatz et al., 2018, p.
                         485).</li>
                     <li>Sin subdirectorios: No permite organización jerárquica.</li>
                 </ul>
 
-                <h4>Ventajas</h4>
+                <h5>Ventajas</h5>
                 <ul class="feature-list">
                     <li>Simplicidad: Fácil implementación y bajo overhead.</li>
                     <li>Acceso rápido: Búsqueda directa sin navegación compleja.</li>
                 </ul>
 
-                <h4>Desventajas</h4>
+                <h5>Desventajas</h5>
                 <ul class="feature-list">
                     <li>Limitaciones de escalabilidad: Dificulta la gestión con miles de archivos (Tanenbaum & Bos,
                         2015, p. 320).</li>
@@ -461,53 +461,53 @@
             </div>
 
             <div class="subsection">
-                <h3>2. Directorios Jerárquicos</h3>
+                <h4>2. Directorios Jerárquicos</h4>
                 <p>Estructura en árbol con directorios y subdirectorios, utilizada en sistemas modernos (ej. Windows,
                     Linux).</p>
 
-                <h4>Características</h4>
+                <h5>Características</h5>
                 <ul class="feature-list">
                     <li>Organización en niveles: Directorios padre-hijo para clasificar archivos (Stallings, 2018, p.
                         553).</li>
                     <li>Rutas absolutas/relativas: Ejemplo: /home/usuario/documentos.</li>
                 </ul>
 
-                <h4>Ventajas</h4>
+                <h5>Ventajas</h5>
                 <ul class="feature-list">
                     <li>Escalabilidad: Soporta millones de archivos.</li>
                     <li>Control de acceso: Permisos por directorio (Silberschatz et al., 2018, p. 487).</li>
                 </ul>
 
-                <h4>Desventajas</h4>
+                <h5>Desventajas</h5>
                 <ul class="feature-list">
                     <li>Overhead adicional: Mayor complejidad en búsquedas.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-                <h3>3. Directorios con Tablas Hash</h3>
+                <h4>3. Directorios con Tablas Hash</h4>
                 <p>Emplean funciones hash para mapear nombres de archivos a ubicaciones, optimizando búsquedas.</p>
 
-                <h4>Características:</h4>
+                <h5>Características:</h5>
                 <ul class="feature-list">
                     <li>Hash → Dirección: Convierte el nombre en un índice para acceso rápido (Tanenbaum & Bos, 2015, p.
                         324).</li>
                     <li>Manejo de colisiones: Usa listas enlazadas o rehashing.</li>
                 </ul>
 
-                <h4>Ventajas:</h4>
+                <h5>Ventajas:</h5>
                 <ul class="feature-list">
                     <li>Tiempo de búsqueda constante (O(1)): Ideal para sistemas con muchos archivos.</li>
                 </ul>
 
-                <h4>Desventajas:</h4>
+                <h5>Desventajas:</h5>
                 <ul class="feature-list">
                     <li>Sobrecarga por colisiones: Degradación del rendimiento si el hash no está optimizado.</li>
                 </ul>
             </div>
 
             <div class="subsection">
-                <h3>Conclusión</h3>
+                <h4>Conclusión</h4>
                 <ul class="feature-list">
                     <li><strong>Directorios planos:</strong> Adecuados para sistemas simples con pocos archivos.</li>
                     <li><strong>Jerárquicos:</strong> Estándar en sistemas generalistas por su equilibrio entre orden y
@@ -519,19 +519,19 @@
         </div>
 
         <div class="section" id="archivos-compartidos">
-            <h2>4.2.3 Archivos compartidos</h2>
+            <h3>4.2.3 Archivos compartidos</h3>
 
             <p>Los archivos compartidos permiten que múltiples usuarios o procesos accedan a un mismo recurso en un
                 sistema. Esta funcionalidad se gestiona mediante mecanismos como enlaces duros, enlaces simbólicos y
                 control de acceso concurrente.</p>
 
             <div class="subsection">
-                <h3>Enlaces Duros (Hard Links) (Silberschatz et al., 2018, p. 487).</h3>
+                <h4>Enlaces Duros (Hard Links) (Silberschatz et al., 2018, p. 487).</h4>
                 <p>Un enlace duro es una entrada directa en el sistema de archivos que apunta a los datos físicos de un
                     archivo. Todos los enlaces duros comparten el mismo inodo (metadatos), por lo que son
                     indistinguibles del archivo original. Solo pueden crearse dentro del mismo sistema de archivos.</p>
 
-                <h4>Características clave:</h4>
+                <h5>Características clave:</h5>
                 <ul class="feature-list">
                     <li>No consumen espacio adicional en disco.</li>
                     <li>Si se elimina un enlace duro, los datos persisten hasta que todos los enlaces sean borrados.
@@ -540,12 +540,12 @@
             </div>
 
             <div class="subsection">
-                <h3>Enlaces Simbólicos (Soft Links o Symlinks)</h3>
+                <h4>Enlaces Simbólicos (Soft Links o Symlinks)</h4>
                 <p>Un enlace simbólico es un archivo especial que contiene una ruta (absoluta o relativa) a otro archivo
                     o directorio. A diferencia de los enlaces duros, estos pueden apuntar a ubicaciones en diferentes
                     sistemas de archivos.</p>
 
-                <h4>Características clave:</h4>
+                <h5>Características clave:</h5>
                 <ul class="feature-list">
                     <li>Si se elimina el archivo original, el enlace simbólico se vuelve inválido (dangling link).</li>
                     <li>Consumen espacio adicional (almacenan la ruta).</li>
@@ -553,7 +553,7 @@
             </div>
 
             <div class="subsection">
-                <h3>Control de Acceso Concurrente (Silberschatz et al., 2018, p. 552).</h3>
+                <h4>Control de Acceso Concurrente (Silberschatz et al., 2018, p. 552).</h4>
                 <p>Mecanismo para gestionar accesos simultáneos a un archivo, evitando inconsistencias. Estrategias
                     comunes incluyen:</p>
                 <ul class="feature-list">
