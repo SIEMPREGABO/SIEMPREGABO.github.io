@@ -614,12 +614,7 @@
             });
 
             $('a[href="index.html#Contactos"]').on('click', function (e) {
-                e.preventDefault(); // Evita que el enlace recargue la página
-
-                $("#div_6").slideDown(); // Abre el div si está oculto
-                $('html, body').animate({
-                    scrollTop: $("#div_6").offset().top
-                }, 800); // Desplazamiento suave
+                window.location.reload();
             });
 
             // Smooth scrolling para todos los enlaces
