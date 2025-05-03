@@ -604,7 +604,10 @@
 
             $('.boton-disp').click(function () {
                 $(this).find('i').toggleClass('rotate-180');
+                
             });
+
+
 
             /*$('#enlace, #enlaceFooter1, #enlaceFooter2, #enlaceFooter3').click(function () {
                 e.preventDefault();
@@ -620,9 +623,10 @@
                 }
             });*/
 
-            
+
             $('#enlace,#enlaceFooter1,#enlaceFooter2,#enlaceFooter3').click(function () {
-                $("#div_6").slideDown();
+
+                $("#div_6").slideToggle();
                 $('html, body').animate({
                     scrollTop: $('#Contactos').offset().top
                 }, 800);
