@@ -580,11 +580,13 @@
                 $("#div_6").slideDown(); // Abre el div si existe
                 $('html, body').animate({ scrollTop: $("#div_6").offset().top }, 800);
             }
-            console.log( window.location.hash);
-            if (window.location === "index.html") {
-                console.log('hi');
-            }
+            
 
+            if (window.location.href.includes("index.html")) {
+                $("#dropdownMenu").css({
+                    'display':'none',
+                }); // Bootstrap: oculta el botón
+            }
 
             fetch('navbar.html')
                 .then(response => response.text())
@@ -604,7 +606,7 @@
                 $(this).find('i').toggleClass('rotate-180');
             });
 
-            $('#enlace', '#').click(function () {
+            $('#enlace').click(function () {
                 $("#div_6").slideDown();
                 $('html, body').animate({
                     scrollTop: $('#Contactos').offset().top
@@ -614,17 +616,7 @@
             });
 
             // Smooth scrolling para todos los enlaces
-            $("a").on('click', function (event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-                        window.location.hash = hash;
-                    });
-                }
-            });
+            
         });
     </script>
 
