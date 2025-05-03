@@ -606,6 +606,21 @@
                 $(this).find('i').toggleClass('rotate-180');
             });
 
+            $('#enlace, #enlaceFooter1, #enlaceFooter2, #enlaceFooter3').click(function () {
+                e.preventDefault();
+                var target = $(this).attr('href');
+
+                // Si el enlace apunta a #Contactos
+                if (target.includes('#Contactos')) {
+                    $("#div_6").slideDown(400, function () {
+                        $('html, body').animate({
+                            scrollTop: $('#Contactos').offset().top - 20
+                        }, 800);
+                    });
+                }
+            });
+
+            /*
             $('#enlace','#enlaceFooter1','#enlaceFooter2','#enlaceFooter3').click(function () {
                 $("#div_6").slideDown();
                 $('html, body').animate({
@@ -613,7 +628,10 @@
                 }, 800);
             });
 
-            
+
+            */
+
+
 
             // Smooth scrolling para todos los enlaces
 
