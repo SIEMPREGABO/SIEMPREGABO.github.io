@@ -259,7 +259,7 @@
 
     <div class="container">
         <!--div class="row"-->
-        <div class="col presentacion texto-justificado" >
+        <div class="col presentacion texto-justificado">
             <h2>Bienvenido</h2>
             <p>Estimados jóvenes, es un gusto darles la bienvenida al Recurso Didáctico Digital de la unidad de
                 aprendizaje de Sistemas Operativos Unidad IV: Sistema de archivos, la cual está compuesta por 6
@@ -416,8 +416,7 @@
                         <h4>Comunicación</h4>
                         <p>La forma de comunicación con el docente será mediante correo electrónico, donde se te
                             responderá en un plazo no mayor a 48 horas. Para obtener información de contacto sobre los
-                            docentes, haz clic en el siguiente <a
-                                href="#div_6">enlace</a>
+                            docentes, haz clic en el siguiente <a href="#div_6">enlace</a>
                         </p>
                     </div>
                 </div>
@@ -594,6 +593,17 @@
 
             $('.boton-disp').click(function () {
                 $(this).find('i').toggleClass('rotate-180');
+            });
+
+            $('a[href="index.html#Contactos"]').click(function (event) {
+                event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+                const contactosDiv = $('#div_6');
+                if (!contactosDiv.hasClass('show')) {
+                    $('#Contactos button').click(); // Simular clic en el botón del acordeón
+                }
+                $('html, body').animate({
+                    scrollTop: contactosDiv.offset().top
+                }, 800); // Desplazamiento suave hacia el div de contactos
             });
 
             // Smooth scrolling para todos los enlaces
