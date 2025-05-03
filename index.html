@@ -606,16 +606,14 @@
                 $(this).find('i').toggleClass('rotate-180');
             });
 
-            $('#enlace').click(function () {
+            $('#enlace','#enlaceFooter1','#enlaceFooter2','#enlaceFooter3').click(function () {
                 $("#div_6").slideDown();
                 $('html, body').animate({
                     scrollTop: $('#Contactos').offset().top
                 }, 800);
             });
 
-            $('a[href="index.html#Contactos"]').on('click', function (e) {
-                window.location.reload();
-            });
+            
 
             // Smooth scrolling para todos los enlaces
 
