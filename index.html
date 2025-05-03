@@ -291,16 +291,15 @@
 
 
 
-        <div class="accordion" id="Intencion">
-            <div class="card mb-3 border-0">
-                <div class="card-header p-0" id="headingOne">
-                    <button class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_1"
-                        aria-expanded="true" aria-controls="div_1">
+        <div class="accordion" id="DivGeneral">
+            <div class="card mb-3 border-0" id="">
+                <div class="card-header p-0" id="Intencion">
+                    <button id="IntencionButton" class="boton-disp" type="button">
                         <span>Intención educativa</span>
                         <i class="bi bi-caret-down-fill"></i>
                     </button>
                 </div>
-                <div id="div_1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div id="div_1" class="" style="display: none;">
                     <div class="card-body">
                         <h4>Intención educativa</h4>
 
@@ -321,13 +320,12 @@
 
             <div class="card mb-3 border-0">
                 <div class="card-header p-0" id="Unidad_competencia">
-                    <button class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_2"
-                        aria-expanded="false" aria-controls="div_2">
+                    <button id="UnidadButton" class="boton-disp" type="button" >
                         <span>Unidad de competencia</span>
                         <i class="bi bi-caret-down-fill"></i>
                     </button>
                 </div>
-                <div id="div_2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div id="div_2" class="collapse" style="display: none;">
                     <div class="card-body">
                         <h4>Unidad de competencia</h4>
                         <p>Implementa la organización del sistema de archivos mediante su estructura, asignación de
@@ -338,13 +336,12 @@
 
             <div class="card mb-3 border-0">
                 <div class="card-header p-0" id="Proposito">
-                    <button class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_3"
-                        aria-expanded="false" aria-controls="div_3">
+                    <button id="PropositoButton" class="boton-disp" type="button" >
                         <span>Propósito de la unidad de aprendizaje</span>
                         <i class="bi bi-caret-down-fill"></i>
                     </button>
                 </div>
-                <div id="div_3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div id="div_3" class="" style="display: none;">
                     <div class="card-body">
                         <h4>Propósito de la unidad de aprendizaje</h4>
                         <p>Proponer soluciones a las necesidades de los sistemas computacionales actuales, basándose en
@@ -355,13 +352,12 @@
 
             <div class="card mb-3 border-0">
                 <div class="card-header p-0" id="Metodologia">
-                    <button class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_4"
-                        aria-expanded="false" aria-controls="div_4">
+                    <button id="MetodologiaButton" class="boton-disp" type="button" >
                         <span>Metodología</span>
                         <i class="bi bi-caret-down-fill"></i>
                     </button>
                 </div>
-                <div id="div_4" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div id="div_4" class="" style="display: none;">
                     <div class="card-body">
                         <h4>Metodología de estudio</h4>
                         <p>Este recurso didáctico tiene como objetivo complementar el curso presencial, proporcionando
@@ -416,21 +412,22 @@
                         <h4>Comunicación</h4>
                         <p>La forma de comunicación con el docente será mediante correo electrónico, donde se te
                             responderá en un plazo no mayor a 48 horas. Para obtener información de contacto sobre los
-                            docentes, haz clic en el siguiente <a id="enlace" href="#index.html#Contactos">enlace</a>
+                            docentes, haz clic en el siguiente <a id="enlace" href="index.html#Contactos">enlace</a>
                         </p>
                     </div>
                 </div>
             </div>
 
+
+
             <div class="card mb-3 border-0">
                 <div class="card-header p-0" id="Requerimientos">
-                    <button class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_5"
-                        aria-expanded="false" aria-controls="div_5">
+                    <button id="RequerimientosButton" class="boton-disp" type="button"  >
                         <span>Requerimientos</span>
                         <i class="bi bi-caret-down-fill"></i>
                     </button>
                 </div>
-                <div id="div_5" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div id="div_5" class="" style="display: none;">
                     <div class="card-body">
                         <h4>Requerimientos</h4>
                         <p><strong>Para hacer uso de este recurso se requiere:</strong></p>
@@ -468,14 +465,16 @@
             </div>
 
             <div class="card mb-3 border-0">
+
                 <div class="card-header p-0" id="Contactos">
-                    <button id="ContactosButton" class="boton-disp collapsed" type="button" data-toggle="collapse"
-                        data-target="#div_6" aria-expanded="false" aria-controls="div_6">
+                    <button id="ContactosButton" class="boton-disp" type="button">
                         <span>Contactos</span>
                         <i class="bi bi-caret-down-fill"></i>
                     </button>
                 </div>
-                <div id="div_6" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                
+
+                <div id="div_6" class="" style="display: none;">
                     <div class="card-body">
                         <h4>Contactos</h4>
                         <div class="row">
@@ -575,12 +574,11 @@
         crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
-            // Animación para los acordeones
+           
             if (window.location.hash === "#Contactos") {
                 $("#div_6").slideDown(); // Abre el div si existe
                 $('html, body').animate({ scrollTop: $("#div_6").offset().top }, 800);
             }
-
 
             if (window.location.href.includes("index.html")) {
                 $("#dropdownMenu").css({
@@ -602,12 +600,38 @@
                     document.getElementById('footer-container').innerHTML = data;
                 });
 
-            $('.boton-disp').click(function () {
-                $(this).find('i').toggleClass('rotate-180');
-                
+           
+
+            $('#ContactosButton').click(function () {
+                $('#div_6').slideToggle();
             });
 
+            $('#RequerimientosButton').click(function () {
+                $('#div_5').slideToggle();
+            });
 
+            $('#MetodologiaButton').click(function () {
+                $('#div_4').slideToggle();
+            });
+
+            $('#PropositoButton').click(function () {
+                $('#div_3').slideToggle();
+            });
+
+            
+            $('#UnidadButton').click(function () {
+                $('#div_2').slideToggle();
+            });
+            $('#IntencionButton').click(function () {
+                $('#div_1').slideToggle();
+            });
+
+            $('#enlace,#enlaceFooter1,#enlaceFooter2,#enlaceFooter3').click(function () {
+                $("#div_6").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Contactos').offset().top
+                }, 800);
+            });
 
             /*$('#enlace, #enlaceFooter1, #enlaceFooter2, #enlaceFooter3').click(function () {
                 e.preventDefault();
@@ -623,18 +647,6 @@
                 }
             });*/
 
-
-            $('#enlace,#enlaceFooter1,#enlaceFooter2,#enlaceFooter3').click(function () {
-
-                $("#div_6").slideToggle();
-                $('html, body').animate({
-                    scrollTop: $('#Contactos').offset().top
-                }, 800);
-            });
-
-
-
-            // Smooth scrolling para todos los enlaces
 
         });
     </script>
