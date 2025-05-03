@@ -416,7 +416,7 @@
                         <h4>Comunicación</h4>
                         <p>La forma de comunicación con el docente será mediante correo electrónico, donde se te
                             responderá en un plazo no mayor a 48 horas. Para obtener información de contacto sobre los
-                            docentes, haz clic en el siguiente <a href="#div_6">enlace</a>
+                            docentes, haz clic en el siguiente <a href="#index.html#Contactos">enlace</a>
                         </p>
                     </div>
                 </div>
@@ -469,7 +469,7 @@
 
             <div class="card mb-3 border-0">
                 <div class="card-header p-0" id="Contactos">
-                    <button class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_6"
+                    <button id="ContactosButton" class="boton-disp collapsed" type="button" data-toggle="collapse" data-target="#div_6"
                         aria-expanded="false" aria-controls="div_6">
                         <span>Contactos</span>
                         <i class="bi bi-caret-down-fill"></i>
@@ -581,7 +581,7 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar-container').innerHTML = data;
-                    initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+                    // Si necesitas inicializar scripts del navbar
                 });
 
 
@@ -596,14 +596,8 @@
             });
 
             $('a[href="index.html#Contactos"]').click(function (event) {
-                event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-                const contactosDiv = $('#div_6');
-                if (!contactosDiv.hasClass('show')) {
-                    $('#Contactos button').click(); // Simular clic en el botón del acordeón
-                }
-                $('html, body').animate({
-                    scrollTop: contactosDiv.offset().top
-                }, 800); // Desplazamiento suave hacia el div de contactos
+                $('#ContactosButton').toggleClass('rotate-180');
+                
             });
 
             // Smooth scrolling para todos los enlaces
