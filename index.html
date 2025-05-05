@@ -269,7 +269,7 @@
                     <p class="margin-padding">Recurso didáctico digital </p>
                     <p class="margin-padding">Unidad IV: Sistema de archivos</p>
                 </div>
-                <div><img src="images/logoBlancoIPN.png" width="60" height="60" alt="logo" /></div>
+                <div><img src="images/logo-ipn-blanco.png" width="60" height="60" alt="logo" /></div>
             </div>
     
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -653,7 +653,7 @@
                         <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0">Inicio</a></li>
                         <li class="nav-item mb-2"><a href="Unidad4_1.html" class="nav-link p-0">Contenido</a></li>
                         <li class="nav-item mb-2"><a href="glosario.html" class="nav-link p-0">Glosario</a></li>
-                        <li class="nav-item mb-2"><a href="referencias.html" class="nav-link p-0">Referencias</a></li>
+                        <li class="nav-item mb-2"><a href="referencias.html" class="nav-link p-0">Lista de referencias</a></li>
                         <li class="nav-item mb-2"><a href="manual_usuario.html" class="nav-link p-0">Manual de usuario</a></li>
                     </ul>
                 </div>
@@ -714,15 +714,33 @@
                 $("#div_6").slideDown(); // Abre el div si existe
                 $('html, body').animate({ scrollTop: $("#div_6").offset().top }, 800);
             }
+            if (window.location.hash === "#Requerimientos") {
+                $("#div_5").slideDown(); // Abre el div si existe
+                $('html, body').animate({ scrollTop: $("#div_5").offset().top }, 800);
+            }
+            if (window.location.hash === "#Metodologia") {
+                $("#div_4").slideDown(); // Abre el div si existe
+                $('html, body').animate({ scrollTop: $("#div_4").offset().top }, 800);
+            }
+            if (window.location.hash === "#Proposito") {
+                $("#div_3").slideDown(); // Abre el div si existe
+                $('html, body').animate({ scrollTop: $("#div_3").offset().top }, 800);
+            }
+            if (window.location.hash === "#Unidad_competencia") {
+                $("#div_2").slideDown(); // Abre el div si existe
+                $('html, body').animate({ scrollTop: $("#div_2").offset().top }, 800);
+            }
+            if (window.location.hash === "#Intencion") {
+                $("#div_1").slideDown(); // Abre el div si existe
+                $('html, body').animate({ scrollTop: $("#div_1").offset().top }, 800);
+            }
 
             if (window.location.href.includes("index.html")) {
                 $("#dropdownMenu").css({
                     'display': 'none',
                 });
                 $("#navbarDropdown").removeClass('dropdown-toggle');
-                $("#dropdownMenu").css({
-                    'display' : 'none',
-                });
+                
                 $("#footer-container").css({
                     'display': 'none',
                 });
@@ -759,7 +777,6 @@
             $('#PropositoButton').click(function () {
                 $('#div_3').slideToggle();
             });
-
             
             $('#UnidadButton').click(function () {
                 $('#div_2').slideToggle();
