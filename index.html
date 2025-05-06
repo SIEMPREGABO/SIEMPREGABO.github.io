@@ -290,6 +290,14 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Inicio
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" id="enlaceHeader1" href="index.html#Intencion">Intención Educativa</a>
+                            <a class="dropdown-item" id="enlaceHeader2" href="index.html#Unidad_competencia">Unidad de competencia</a>
+                            <a class="dropdown-item" id="enlaceHeader3" href="index.html#Proposito">Propósito de la unidad de aprendizaje</a>
+                            <a class="dropdown-item" id="enlaceHeader4" href="index.html#Metodologia">Metodología</a>
+                            <a class="dropdown-item" id="enlaceHeader5" href="index.html#Requerimientos">Requerimientos</a>
+                            <a class="dropdown-item" id="enlaceHeader6" href="index.html#Contactos">Contactos</a>
+                        </div>
                         
                     </li>
                     <li class="nav-item dropdown">
@@ -791,6 +799,43 @@
                     scrollTop: $('#Contactos').offset().top
                 }, 800);
             });
+
+            $('#enlaceHeader1').click(function () {
+                $("#div_1").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Intencion').offset().top
+                }, 800);
+            });
+
+            $('#enlaceHeader2').click(function () {
+                $("#div_2").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Unidad_competencia').offset().top
+                }, 800);
+            });
+
+            $('#enlaceHeader3').click(function () {
+                $("#div_3").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Proposito').offset().top
+                }, 800);
+            });
+
+            $('#enlaceHeader4').click(function () {
+                $("#div_4").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Metodologia').offset().top
+                }, 800);
+            });
+
+            $('#enlaceHeader5').click(function () {
+                $("#div_5").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Requerimientos').offset().top
+                }, 800);
+            });
+
+            
 
             /*$('#enlace, #enlaceFooter1, #enlaceFooter2, #enlaceFooter3').click(function () {
                 e.preventDefault();
