@@ -286,7 +286,7 @@
                 
                     <li class="nav-item dropdown">
                         
-                        <a class="nav-link " href="index.html" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Inicio
                         </a>
@@ -832,6 +832,13 @@
                 $("#div_5").slideDown();
                 $('html, body').animate({
                     scrollTop: $('#Requerimientos').offset().top
+                }, 800);
+            });
+
+            $('#enlaceHeader6').click(function () {
+                $("#div_6").slideDown();
+                $('html, body').animate({
+                    scrollTop: $('#Contactos').offset().top
                 }, 800);
             });
 
