@@ -628,7 +628,8 @@
         <div class="section" id="rendimiento-aix">
             <h4>4.5.3 Rendimiento en AIX</h4>
             
-            <p>La configuración de los diferentes tipos de sistemas de archivos en AIX® influye considerablemente en el rendimiento general del sistema y, una vez instalado, resulta complicado modificarla. AIX® (Advanced Interactive eXecutive) es un sistema operativo Unix desarrollado por IBM, ampliamente utilizado en entornos empresariales y servidores de alto rendimiento. La configuración de sus sistemas de archivos impacta directamente en la eficiencia de operaciones de E/S, la integridad de datos y la escalabilidad.</p>
+            <p>La configuración de los diferentes tipos de sistemas de archivos en AIX® influye considerablemente en el rendimiento general del sistema y, una vez instalado, resulta complicado modificarla.</p>
+            <p> AIX® (Advanced Interactive eXecutive) es un sistema operativo Unix desarrollado por IBM, ampliamente utilizado en entornos empresariales y servidores de alto rendimiento. La configuración de sus sistemas de archivos impacta directamente en la eficiencia de operaciones de E/S, la integridad de datos y la escalabilidad.</p>
 
             <div class="subsection">
                 <h4>1. Sistemas de Archivos en AIX</h4>
@@ -645,13 +646,9 @@
                 
                 <h6>Configuración de rendimiento:</h6>
                 <ul class="feature-list">
-                    <li>Tamaño del journal: Un journal más grande reduce la frecuencia de escrituras (IBM, 2001, p. 45).</li>
+                    <li>Tamaño del journal: Un journal más grande reduce la frecuencia de escrituras .</li>
                     <li>Asignación de bloques: Bloques grandes mejoran el rendimiento en archivos voluminosos (Smit, 2010, p. 89).</li>
                 </ul>
-                
-                <div class="quote">
-                    Referencia: IBM. (2001). AIX 5L Performance Tools Handbook (p. 45). IBM Redbooks.
-                </div>
                 
                 <h5>b) Enhanced Journaled File System (JFS2)</h5>
                 <p><strong>Definición:</strong> Evolución de JFS con soporte para archivos y volúmenes más grandes (introducido en AIX 5.2).</p>
@@ -667,16 +664,12 @@
                 <ul class="feature-list">
                     <li>Modos de journaling:
                         <ul>
-                            <li>data=writeback: Mejora velocidad al journalizar solo metadatos (IBM, 2007, p. 12).</li>
+                            <li>data=writeback: Mejora velocidad al journalizar solo metadatos.</li>
                             <li>data=journal: Mayor integridad, pero penaliza rendimiento.</li>
                         </ul>
                     </li>
                     <li>Fragmentación dinámica: Uso de extents para reducir fragmentación (Smit, 2010, p. 102).</li>
                 </ul>
-                
-                <div class="quote">
-                    Referencia: IBM. (2007). AIX 6 Advanced Technical Guide (p. 12). IBM Redbooks.
-                </div>
                 
                 <h5>c) IBM Spectrum Scale (GPFS)</h5>
                 <p><strong>Definición:</strong> Sistema de archivos paralelo y distribuido diseñado para Big Data y HPC.</p>
@@ -741,7 +734,7 @@
                 
                 <h5>a) Ajuste de Journaling</h5>
                 <ul class="feature-list">
-                    <li>JFS/JFS2: Usar data=writeback para cargas de escritura intensivas (IBM, 2007, p. 15).</li>
+                    <li>JFS/JFS2: Usar data=writeback para cargas de escritura intensivas.</li>
                     <li>GPFS: Desactivar journaling en nodos de solo lectura (Henson, 2015, p. 40).</li>
                 </ul>
                 
@@ -753,7 +746,7 @@
                 
                 <h5>c) Caché y Prefetching</h5>
                 <ul class="feature-list">
-                    <li>AIX LVM: Aumentar caché de LV para reducir accesos a disco (IBM, 2001, p. 50).</li>
+                    <li>AIX LVM: Aumentar caché de LV para reducir accesos a disco.</li>
                     <li>GPFS: Habilitar prefetching agresivo en cargas secuenciales (Henson, 2015, p. 38).</li>
                 </ul>
             </div>
