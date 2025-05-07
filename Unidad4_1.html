@@ -322,14 +322,18 @@
 
 
     <div class="container">
-        <h2>4.1 Estructura del sistema de archivos</h2>
+        <div class="presentacion" style="color: #f8f9fa;">
+            <h2>4.1 Estructura del sistema de archivos</h2>
+        </div>
+
+
 
         <p>La estructura del sistema de archivos según Tanenbaum (2009), es una organización jerárquica basada en
             directorios que usa inodos para almacenar los metadatos de los archivos, con una tabla de inodos que permite
             gestionar los archivos de manera eficiente. Los bloques de datos almacenan la información de los archivos, y
             el acceso a estos datos se realiza a través de las estructuras de directorios.</p>
 
-        <h3>Nomenclatura de archivos</h3>
+        <h4>Nomenclatura de archivos</h4>
 
         <p>Según Tanenbaum (1998), se refiere a cómo los archivos son nombrados, gestionados y accedidos en un sistema
             de archivos y se refiere a cómo los archivos son identificados, ubicados y organizados en el sistema de
@@ -343,7 +347,7 @@
             están organizados en una jerarquía de directorios en forma de árbol, lo que facilita la navegación y la
             gestión de archivos.</p>
 
-        <h3>Estructura de archivos</h3>
+        <h4>Estructura de archivos</h4>
 
         <p>De acuerdo con Tanenbaum (1998), la estructura de archivos se organiza en una jerarquía que permite almacenar
             y gestionar eficientemente los datos. Tanenbaum describe la estructura de archivos en términos de las
@@ -456,7 +460,7 @@
             </p>
         </div>
 
-        <h3>Tipos de archivos</h3>
+        <h4>Tipos de archivos</h4>
 
         <p>En Tanenbaum (2009, p. 260), se comenta que numerosos sistemas operativos admiten distintos tipos de
             archivos. Por ejemplo, UNIX y Windows manejan archivos y directorios regulares. Además, UNIX incluye
@@ -496,7 +500,7 @@
                 archivos binarios tienen una estructura interna específica para los programas que los utilizan.</p>
         </div>
 
-        <h3>Acceso de archivos</h3>
+        <h4>Acceso de archivos</h4>
 
         <p>En los primeros sistemas operativos, solo existía el acceso secuencial a los archivos, lo que significa que
             los datos debían leerse en orden, desde el principio hasta el final, sin poder saltarse partes. Este tipo de
@@ -507,7 +511,7 @@
             que usa una operación especial llamada seek para establecer la posición actual de lectura (Tananbaum, 2009,
             p.262).</p>
 
-        <h3>Atributos de archivos</h3>
+        <h4>Atributos de archivos</h4>
 
         <p>Cada archivo tiene un nombre y su contenido, pero los sistemas operativos también asocian información
             adicional a cada archivo, como la fecha y hora de su última modificación y su tamaño. Estos datos
@@ -525,7 +529,7 @@
         </div>
 
 
-        <h3>Archivos en sistemas operativos</h3>
+        <h4>Archivos en sistemas operativos</h4>
 
         <p>Muchos sistemas operativos permiten nombres de archivos compuestos por dos partes, separadas por un punto,
             como en "prog.c". La parte que sigue al punto se llama extensión del archivo y generalmente proporciona
@@ -628,7 +632,7 @@
                 no textuales, y técnicas de compresión para optimizar el uso del espacio.</p>
         </div>
 
-        <h3>4.1.1 Capa del sistema de archivos</h3>
+        <h4>4.1.1 Capa del sistema de archivos</h4>
 
         <p>La capa del sistema de archivos es un componente crítico de los sistemas operativos, responsable de
             organizar, almacenar y recuperar datos en dispositivos de almacenamiento.</p>
@@ -664,7 +668,7 @@
         </ul>
         <p>En sistemas UNIX, esto se almacena en un inodo.</p>
 
-        <h3>Gestión de Acceso y Permisos (Tanenbaum & Woodhull, 2006, p. 232)</h3>
+        <h4>Gestión de Acceso y Permisos (Tanenbaum & Woodhull, 2006, p. 232)</h4>
 
         <p>Controla quién puede leer, escribir o ejecutar un archivo. En sistemas UNIX/Linux, se usan permisos numéricos
             (ej. 755) o simbólicos (ej. rwxr-xr-x).</p>
