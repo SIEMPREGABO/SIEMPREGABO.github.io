@@ -375,14 +375,14 @@
                     de aplicarlos al sistema principal. Esto minimiza la corrupción de datos en caso de fallos (ej.
                     cortes de energía).</p>
 
-                <h4>Funcionamiento:</h4>
+                <h5>Funcionamiento:</h5>
                 <ul class="feature-list">
                     <li>Fase de registro: Las operaciones (ej. crear, modificar) se anotan en el diario.</li>
                     <li>Fase de confirmación: Si el sistema se interrumpe, el diario permite recuperar el estado previo.
                     </li>
                 </ul>
 
-                <h4>Ejemplos:</h4>
+                <h5>Ejemplos:</h5>
                 <ul class="feature-list">
                     <li>ext3/ext4 (Linux): Usan journals para metadatos y/o datos.</li>
                     <li>NTFS (Windows): Registra transacciones en el $LogFile.</li>
@@ -396,7 +396,7 @@
                     tolerantes a fallos. Requieren herramientas como fsck para reparar inconsistencias tras un apagado
                     abrupto.</p>
 
-                <h4>Ejemplo:</h4>
+                <h5>Ejemplo:</h5>
                 <ul class="feature-list">
                     <li>ext2: Sistema de archivos clásico de Linux. Almacena metadatos en inodos y datos en bloques, sin
                         registro de transacciones.</li>
@@ -414,7 +414,7 @@
                     <li>Journaling completo: Registra tanto metadatos como datos (ej. ext4 en modo "data=journal").</li>
                 </ul>
 
-                <h4>Ventajas:</h4>
+                <h5>Ventajas:</h5>
                 <ul class="feature-list">
                     <li>Recuperación rápida tras fallos.</li>
                     <li>Mayor integridad en sistemas críticos.</li>
@@ -429,7 +429,7 @@
         </div>
 
         <div class="section" id="journaling-bitacora">
-            <h4>Sistemas de Archivos Estructurados: Journaling por Bitácora y Diario</h4>
+            <h5>Sistemas de Archivos Estructurados: Journaling por Bitácora y Diario</h5>
 
             <p>Los sistemas de archivos estructurados con journaling (bitácora o diario) son mecanismos clave para
                 garantizar la integridad de los datos ante fallos del sistema. A continuación, se desarrolla su
@@ -444,7 +444,7 @@
                     principal. Esto permite recuperar el estado coherente del sistema tras fallos como cortes de
                     energía, errores de hardware o cierres abruptos.</p>
 
-                <h4>Ejemplos:</h4>
+                <h5>Ejemplos:</h5>
                 <ul class="feature-list">
                     <li>NTFS (Windows): Usa un archivo oculto ($LogFile) para registrar transacciones.</li>
                     <li>ext3/ext4 (Linux): Implementa journaling para metadatos y, opcionalmente, datos.</li>
@@ -456,20 +456,20 @@
                     Beneficios (Carrier, 2005, p. 125).
                 </div>
 
-                <h4>Fiabilidad de datos:</h4>
+                <h5>Fiabilidad de datos:</h5>
                 <ul class="feature-list">
                     <li>Registra cambios antes de ejecutarlos, evitando corrupción en fallos inesperados.</li>
                     <li>Ejemplo: En ext4, el journaling garantiza que los metadatos no queden en estado inconsistente.
                     </li>
                 </ul>
 
-                <h4>Recuperación optimizada:</h4>
+                <h5>Recuperación optimizada:</h5>
                 <ul class="feature-list">
                     <li>Reduce el tiempo de reparación al evitar escanear todo el disco (como en sistemas sin
                         journaling, ej. ext2).</li>
                 </ul>
 
-                <h4>Rendimiento mejorado:</h4>
+                <h5>Rendimiento mejorado:</h5>
                 <ul class="feature-list">
                     <li>Agrupa operaciones para minimizar escrituras en disco (ej. write-ahead logging).</li>
                 </ul>
@@ -480,14 +480,14 @@
                     Características (Silberschatz et al., 2018, p. 508).
                 </div>
 
-                <h4>Modos de operación:</h4>
+                <h5>Modos de operación:</h5>
                 <ul class="feature-list">
                     <li>Write-ahead logging: Registra solo metadatos (ej. modo predeterminado en ext3).</li>
                     <li>Ordered mode: Registra metadatos y datos en secuencia (equilibra velocidad y seguridad).</li>
                     <li>Data mode: Registra ambos (máxima integridad, pero mayor overhead).</li>
                 </ul>
 
-                <h4>Estructura del diario:</h4>
+                <h5>Estructura del diario:</h5>
                 <ul class="feature-list">
                     <li>Almacena transacciones en bloques dedicados, separados del sistema de archivos principal.</li>
                 </ul>
@@ -498,19 +498,19 @@
                     Limitaciones (Carrier, 2005, p.130).
                 </div>
 
-                <h4>Overhead de rendimiento:</h4>
+                <h5>Overhead de rendimiento:</h5>
                 <ul class="feature-list">
                     <li>El registro continuo consume recursos adicionales (CPU, escrituras en disco).</li>
                     <li>Ejemplo: En NTFS, el $LogFile puede ocupar hasta 4 MB por defecto.</li>
                 </ul>
 
-                <h4>Incompatibilidad:</h4>
+                <h5>Incompatibilidad:</h5>
                 <ul class="feature-list">
                     <li>Sistemas tradicionales sin journaling (ej. ext2) no pueden leer diarios de ext3/ext4 sin
                         ajustes.</li>
                 </ul>
 
-                <h4>Espacio en disco:</h4>
+                <h5>Espacio en disco:</h5>
                 <ul class="feature-list">
                     <li>El journaling completo (data mode) requiere hasta un 20% más de espacio.</li>
                 </ul>

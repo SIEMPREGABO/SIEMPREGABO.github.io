@@ -314,22 +314,22 @@
 
         <div class="section" id="ajuste-rendimiento">
             <h4>Facetas en el Ajuste de Rendimiento del Sistema de Archivos</h4>
-            
-            <div class="subsection">
+            <br>
+            <div class="subsection">    
                 <div class="quote">
-                    1. Almacenamiento en Caché (Silberschatz et al., 2018, p. 533).
+                    <h5>1. Almacenamiento en Caché (Silberschatz et al., 2018, p. 533).</h5>
                 </div>
                 
-                <h4>Definición:</h4>
+                <strong>Definición:</strong>
                 <p>Uso de memoria RAM para almacenar datos accedidos frecuentemente, reduciendo las operaciones de lectura/escritura en disco.</p>
                 
-                <h4>Beneficios:</h4>
+                <strong>Beneficios:</strong>
                 <ul class="feature-list">
                     <li>Disminuye la latencia en accesos repetidos.</li>
                     <li>Optimiza el uso de recursos del sistema.</li>
                 </ul>
                 
-                <h4>Ejemplo:</h4>
+                <strong>Ejemplo:</strong>
                 <ul class="feature-list">
                     <li>Linux: Utiliza el Page Cache para almacenar datos de archivos en memoria.</li>
                     <li>Windows: Emplea el Cache Manager integrado en el kernel.</li>
@@ -338,18 +338,18 @@
 
             <div class="subsection">
                 <div class="quote">
-                    2. Ajuste del Tamaño de Bloques (Tanenbaum y Woodhull. 2006, p. 215).
+                    <h5>2. Ajuste del Tamaño de Bloques (Tanenbaum y Woodhull. 2006, p. 215).</h5>
                 </div>
                 
-                <h4>Definición:</h4>
+                <strong>Definición:</strong>
                 <p>Configuración del tamaño de los bloques de almacenamiento para equilibrar espacio y rendimiento. Bloques grandes reducen la fragmentación, mientras que bloques pequeños minimizan el espacio desperdiciado.</p>
                 
-                <h4>Beneficios:</h4>
+                <strong>Beneficios:</strong>
                 <ul class="feature-list">
                     <li>Mejora la eficiencia en el almacenamiento de archivos pequeños o grandes.</li>
                 </ul>
                 
-                <h4>Ejemplo:</h4>
+                <strong>Ejemplo:</strong>
                 <ul class="feature-list">
                     <li>ext4: Permite bloques de 1 KB a 64 KB.</li>
                     <li>NTFS: Usa clústeres de 4 KB por defecto.</li>
@@ -358,13 +358,13 @@
 
             <div class="subsection">
                 <div class="quote">
-                    3. Reducción de la Fragmentación (Carrier, 2005, p. 89).
+                    <h5>3. Reducción de la Fragmentación (Carrier, 2005, p. 89).</h5>
                 </div>
                 
-                <h4>Definición:</h4>
+                <strong>Definición:</strong>
                 <p>Técnicas para evitar que los archivos se almacenen en bloques no contiguos, lo que ralentiza el acceso.</p>
                 
-                <h4>Estrategias:</h4>
+                <strong>Estrategias:</strong>
                 <ul class="feature-list">
                     <li>Asignación contigua: Usada en sistemas como NTFS.</li>
                     <li>Algoritmos de colocación: Como el best-fit o worst-fit.</li>
@@ -373,13 +373,13 @@
 
             <div class="subsection">
                 <div class="quote">
-                    4. Optimización del Journaling (Linux Kernel Documentation, s. f.).
+                    <h5>4. Optimización del Journaling (Linux Kernel Documentation, s. f.).</h5>
                 </div>
                 
-                <h4>Definición:</h4>
+                <strong>Definición:</strong>
                 <p>Configuración del diario (journal) para registrar operaciones críticas sin penalizar el rendimiento.</p>
                 
-                <h4>Modos:</h4>
+                <strong>Modos:</strong>
                 <ul class="feature-list">
                     <li>Write-ahead logging: Solo registra metadatos (ej. ext3).</li>
                     <li>Data journaling: Registra metadatos y datos (mayor seguridad, menor velocidad).</li>
@@ -388,13 +388,13 @@
 
             <div class="subsection">
                 <div class="quote">
-                    5. Gestión de Metadatos Eficiente (Silberschatz et al.,2018, p. 487).
+                    <h5>5. Gestión de Metadatos Eficiente (Silberschatz et al.,2018, p. 487).<h5>
                 </div>
                 
-                <h4>Definición:</h4>
+                <strong>Definición:</strong>
                 <p>Organización optimizada de metadatos (permisos, fechas, ubicación) para acelerar búsquedas.</p>
                 
-                <h4>Ejemplo:</h4>
+                <strong>Ejemplo:</strong>
                 <ul class="feature-list">
                     <li>ZFS: Almacena metadatos en árboles B+ para accesos rápidos.</li>
                 </ul>
@@ -402,13 +402,13 @@
 
             <div class="subsection">
                 <div class="quote">
-                    6. Uso de RAID y SSDs (Patterson, Gibson & Katz, 1988, p. 113).
+                    <h5>6. Uso de RAID y SSDs (Patterson, Gibson & Katz, 1988, p. 113).<h5>
                 </div>
                 
-                <h4>Definición:</h4>
+                <strong>Definición:</strong>
                 <p>Combinación de discos (RAID) o uso de unidades de estado sólido (SSDs) para mejorar velocidad y redundancia.</p>
                 
-                <h4>Beneficios:</h4>
+                <strong>Beneficios:</strong>
                 <ul class="feature-list">
                     <li>RAID 0: Aumenta la velocidad mediante striping.</li>
                     <li>SSDs: Reducen la latencia en operaciones aleatorias.</li>
@@ -420,8 +420,8 @@
 
         <div class="section" id="recuperacion-archivos">
             <h4>4.5.1 Recuperación de archivos de un dispositivo</h4>
-            
-            <h4>Introducción</h4>
+            <br>
+            <h5>Introducción</h5>
             <p>La recuperación de archivos es un proceso crítico para restaurar datos perdidos o eliminados de dispositivos de almacenamiento (discos duros, SSDs, memorias USB, etc.). Las causas comunes incluyen:</p>
             
             <ul class="feature-list">
@@ -435,13 +435,14 @@
 
             <div class="subsection">
                 <div class="quote">
-                    Métodos de Recuperación de Archivos (Carrier, 2005, pp. 150-165).
+                    <h5>Métodos de Recuperación de Archivos (Carrier, 2005, pp. 150-165).</h5>
                 </div>
+                <br>
                 
-                <h4>1. Recuperación mediante Software</h4>
+                <h5>1. Recuperación mediante Software</h5>
                 <p><strong>Definición:</strong> Uso de herramientas como Recuva, TestDisk o PhotoRec para escanear el dispositivo y reconstruir archivos eliminados.</p>
                 
-                <h5>Funcionamiento:</h5>
+                <strong>Funcionamiento:</strong>
                 <ul class="feature-list">
                     <li>Análisis de metadatos: Busca entradas en tablas como la Master File Table (MFT) en NTFS o inodos en ext4.</li>
                     <li>Búsqueda de firmas de archivos (file carving): Identifica datos basándose en cabeceras únicas (ej. FF D8 FF para JPEG)</li>
@@ -450,7 +451,7 @@
                 <h5>2. Recuperación Forense (Casey, 2011, pp 210-225).</h5>
                 <p><strong>Definición:</strong> Técnicas avanzadas usadas en investigaciones legales o corporativas para extraer datos incluso de dispositivos dañados.</p>
                 
-                <h5>Herramientas:</h5>
+                <strong>Herramientas:</strong>
                 <ul class="feature-list">
                     <li>EnCase: Analiza sectores ocultos y particiones eliminadas.</li>
                     <li>FTK Imager: Crea imágenes forenses del disco para evitar modificaciones.</li>
@@ -459,7 +460,7 @@
                 <h5>3. Recuperación Hardware (Jones, Bejtlich & Rose, 2006, pp. 95-110).</h5>
                 <p><strong>Definición:</strong> Intervención física en dispositivos con fallos mecánicos (ej. cabezales de disco dañados).</p>
                 
-                <h5>Proceso:</h5>
+                <strong>Proceso:</strong>
                 <ul class="feature-list">
                     <li>Reparación en sala limpia: Reemplazo de componentes en entornos libres de polvo.</li>
                     <li>Extracción directa de chips: Usado en SSDs o memorias NAND.</li>
@@ -468,16 +469,17 @@
 
             <div class="subsection">
                 <div class="quote">
-                    Estudios de Información de Archivos y Carpetas (Silberschatz et al.,2018, pp. 480-485).
+                    <h5>Estudios de Información de Archivos y Carpetas (Silberschatz et al.,2018, pp. 480-485).</h5>
                 </div>
+                <br>
                 
-                <h4>1. Estructura de Archivos</h4>
+                <h5>1. Estructura de Archivos</h5>
                 <ul class="feature-list">
                     <li>Metadatos: Permisos, fechas, tamaño (almacenados en inodos o MFT).</li>
                     <li>Datos: Contenido real del archivo (almacenado en bloques o clústeres).</li>
                 </ul>
                 
-                <h4>2. Comportamiento de Eliminación (Microsoft, s. f., sección "File Deletion").</h4>
+                <h5>2. Comportamiento de Eliminación (Microsoft, s. f., sección "File Deletion").</h5>
                 <ul class="feature-list">
                     <li>Marcado de espacio libre: Los sistemas de archivos marcan los bloques como disponibles, pero los datos persisten hasta ser sobrescritos.</li>
                     <li>Ejemplo: En NTFS, la entrada en la MFT se marca como no utilizada.</li>
@@ -486,21 +488,22 @@
 
             <div class="subsection">
                 <div class="quote">
-                    Técnicas de Búsqueda para Recuperación (Carrier, 2005, p. 170).
+                    <h5>Técnicas de Búsqueda para Recuperación (Carrier, 2005, p. 170).</h5>
                 </div>
+                <br>
                 
-                <h4>1. Búsqueda por Firmas</h4>
+                <h5>1. Búsqueda por Firmas</h5>
                 <p><strong>Definición:</strong> Identificación de archivos basada en patrones hexadecimales únicos (ej. PDF inicia con 25 50 44 46).</p>
                 
-                <h4>Herramientas:</h4>
+                <strong>Herramientas:</strong>
                 <ul class="feature-list">
                     <li>PhotoRec: Recupera más de 500 formatos de archivo.</li>
                 </ul>
                 
-                <h4>2. Análisis de Metadatos (Linux Kernel Documentation, s. f., Ext.4).</h4>
+                <h5>2. Análisis de Metadatos (Linux Kernel Documentation, s. f., Ext.4).</h5>
                 <p><strong>Definición:</strong> Reconstrucción de la estructura de directorios mediante registros de metadatos no sobrescritos.</p>
                 
-                <h5>Ejemplo:</h5>
+                <strong>Ejemplo:</strong>
                 <ul class="feature-list">
                     <li>En ext4, los inodos eliminados pueden contener rutas originales.</li>
                 </ul>
@@ -515,58 +518,58 @@
             <p>Los sistemas de archivos distribuyen datos en múltiples nodos para garantizar disponibilidad y escalabilidad, pero esto introduce desafíos en la coherencia de los datos. Dos modelos destacados son la consistencia fuerte y la consistencia eventual, cada uno con beneficios y limitaciones específicas.</p>
 
             <div class="subsection">
-                <h4>1. Consistencia Fuerte (Viewnext, s. f., LinkedIn, s. f.).</h4>
-                
-                <h5>Definición</h5>
+                <h5>1. Consistencia Fuerte (Viewnext, s. f., LinkedIn, s. f.).</h5>
+                <br>
+                <strong>Definición</strong>
                 <p>Garantiza que todas las réplicas de un dato reflejen la última actualización de forma inmediata. Si un usuario lee un dato, siempre obtendrá la versión más reciente, independientemente del nodo consultado.</p>
                 
-                <h5>Mecanismos de Implementación</h5>
+                <strong>Mecanismos de Implementación</strong>
                 <ul class="feature-list">
                     <li>Transacciones ACID: Atomicidad, Consistencia, Aislamiento y Durabilidad (ej. bases de datos relacionales).</li>
                     <li>Protocolos de consenso: Como Two-Phase Commit (2PC) o Paxos, que sincronizan nodos antes de confirmar operaciones.</li>
                 </ul>
                 
-                <h5>Beneficios</h5>
+                <strong>Beneficios</strong>
                 <ul class="feature-list">
                     <li>Integridad garantizada: Ideal para sistemas críticos (ej. transacciones bancarias), donde la precisión es prioritaria.</li>
                     <li>Evita conflictos: Elimina lecturas obsoletas o incoherencias temporales.</li>
                 </ul>
                 
-                <h5>Limitaciones</h5>
+                <strong>Limitaciones</strong>
                 <ul class="feature-list">
                     <li>Alta latencia: La sincronización entre nodos ralentiza las operaciones.</li>
                     <li>Escalabilidad reducida: La coordinación estricta limita el crecimiento en sistemas distribuidos.</li>
                 </ul>
                 
-                <h5>Ejemplo:</h5>
+                <strong>Ejemplo:</strong>
                 <p>Google Spanner utiliza relojes atómicos para mantener coherencia fuerte global.</p>
             </div>
 
             <div class="subsection">
-                <h4>2. Consistencia Eventual (LinkedIn, s. f.).</h4>
-                
-                <h5>Definición</h5>
+                <h5>2. Consistencia Eventual (LinkedIn, s. f.).</h5>
+                <br>
+                <strong>Definición</strong>
                 <p>Permite divergencias temporales entre réplicas, asegurando que converjan a un estado coherente tras un período sin actualizaciones. Prioriza disponibilidad y escalabilidad sobre la coherencia inmediata.</p>
                 
-                <h5>Mecanismos de Implementación</h5>
+                <strong>Mecanismos de Implementación</strong>
                 <ul class="feature-list">
                     <li>Replicación asincrónica: Las actualizaciones se propagan en segundo plano.</li>
                     <li>Técnicas de resolución de conflictos: Como CRDTs (tipos de datos replicados sin conflictos) o algoritmos de votación.</li>
                 </ul>
                 
-                <h5>Beneficios</h5>
+                <strong>Beneficios</strong>
                 <ul class="feature-list">
                     <li>Alta disponibilidad: Los nodos responden incluso en fallos de red o particiones.</li>
                     <li>Escalabilidad horizontal: Admite grandes volúmenes de datos y usuarios sin degradación.</li>
                 </ul>
                 
-                <h5>Limitaciones</h5>
+                <strong>Limitaciones</strong>
                 <ul class="feature-list">
                     <li>Incoherencias temporales: Los usuarios pueden ver datos desactualizados.</li>
                     <li>Complejidad en resolución de conflictos: Requiere lógica adicional para manejar versiones divergentes.</li>
                 </ul>
                 
-                <h5>Ejemplo:</h5>
+                <strong>Ejemplo:</strong>
                 <p>Amazon DynamoDB usa last-write-wins para resolver conflictos en réplicas.</p>
             </div>
             <caption>Tabla 3. Comparación y Contextos de Uso (Slideshare, 2022).</caption>
@@ -603,21 +606,21 @@
                 </tbody>
             </table>
             
-            <h4>Elección según Casos de Uso:</h4>
+            <strong>Elección según Casos de Uso:</strong>
             <ul class="feature-list">
                 <li>Consistencia fuerte: Transacciones financieras, sistemas de reservas.</li>
                 <li>Consistencia eventual: Registro de logs, preferencias de usuario en aplicaciones web.</li>
             </ul>
 
-            <h4>4. Técnicas para Mitigar Limitaciones (LinkedIn, s. f.).</h4>
-            
-            <h5>Patrones híbridos:</h5>
+            <h5>4. Técnicas para Mitigar Limitaciones (LinkedIn, s. f.).</h5>
+            <br>
+            <strong>Patrones híbridos:</strong>
             <ul class="feature-list">
                 <li>SAGAs: Coordinan transacciones largas mediante compensaciones en caso de fallos (ej. e-commerce).</li>
                 <li>CQRS (Segregación de Responsabilidades de Consulta/Comando): Separa lecturas y escrituras para optimizar rendimiento.</li>
             </ul>
             
-            <h5>Modelos de datos especializados:</h5>
+            <strong>Modelos de datos especializados:</strong>
             <ul class="feature-list">
                 <li>CRDTs: Permiten fusión automática de datos sin conflictos (ej. editores colaborativos).</li>
             </ul>
@@ -632,35 +635,35 @@
             <p> AIX® (Advanced Interactive eXecutive) es un sistema operativo Unix desarrollado por IBM, ampliamente utilizado en entornos empresariales y servidores de alto rendimiento. La configuración de sus sistemas de archivos impacta directamente en la eficiencia de operaciones de E/S, la integridad de datos y la escalabilidad.</p>
 
             <div class="subsection">
-                <h4>1. Sistemas de Archivos en AIX</h4>
-                
-                <h5>a) Journaled File System (JFS)</h5>
+                <h5>1. Sistemas de Archivos en AIX</h5>
+                <br>
+                <strong>a) Journaled File System (JFS)</strong>
                 <p><strong>Definición:</strong> Sistema de archivos con journaling introducido en AIX 3.1. Registra cambios en un diario (journal) para garantizar consistencia tras fallos.</p>
                 
-                <h6>Características clave:</h6>
+                <strong>Características clave:</strong>
                 <ul class="feature-list">
                     <li>Tamaño máximo de archivo: 64 GB.</li>
                     <li>Bloques de 4 KB a 128 KB.</li>
                     <li>Journaling de metadatos.</li>
                 </ul>
                 
-                <h6>Configuración de rendimiento:</h6>
+                <strong>Configuración de rendimiento:</strong>
                 <ul class="feature-list">
                     <li>Tamaño del journal: Un journal más grande reduce la frecuencia de escrituras .</li>
                     <li>Asignación de bloques: Bloques grandes mejoran el rendimiento en archivos voluminosos (Smit, 2010, p. 89).</li>
                 </ul>
                 
-                <h5>b) Enhanced Journaled File System (JFS2)</h5>
+                <strong>b) Enhanced Journaled File System (JFS2)</strong>
                 <p><strong>Definición:</strong> Evolución de JFS con soporte para archivos y volúmenes más grandes (introducido en AIX 5.2).</p>
                 
-                <h6>Características clave:</h6>
+                <strong>Características clave:</strong>
                 <ul class="feature-list">
                     <li>Tamaño máximo de archivo: 1 PB.</li>
                     <li>Bloques de 512 bytes a 16 MB.</li>
                     <li>Journaling opcional de datos (modo "data=ordered").</li>
                 </ul>
                 
-                <h6>Configuración de rendimiento:</h6>
+                <strong>Configuración de rendimiento:</strong>
                 <ul class="feature-list">
                     <li>Modos de journaling:
                         <ul>
@@ -671,17 +674,17 @@
                     <li>Fragmentación dinámica: Uso de extents para reducir fragmentación (Smit, 2010, p. 102).</li>
                 </ul>
                 
-                <h5>c) IBM Spectrum Scale (GPFS)</h5>
+                <strong>c) IBM Spectrum Scale (GPFS)</strong>
                 <p><strong>Definición:</strong> Sistema de archivos paralelo y distribuido diseñado para Big Data y HPC.</p>
                 
-                <h6>Características clave:</h6>
+                <strong>Características clave:</strong>
                 <ul class="feature-list">
                     <li>Escalabilidad horizontal: Sopeta petabytes de datos en clusters.</li>
                     <li>Replicación sincrónica/asincrónica.</li>
                     <li>Caché distribuida.</li>
                 </ul>
                 
-                <h6>Configuración de rendimiento:</h6>
+                <strong>Configuración de rendimiento:</strong>
                 <ul class="feature-list">
                     <li>Tamaño de bloque: 16 MB recomendado para cargas de trabajo intensivas (IBM, 2020, p. 7).</li>
                     <li>Políticas de almacenamiento: Tiering automático entre SSD y HDD.</li>
@@ -730,21 +733,21 @@
             </table>
 
             <div class="subsection">
-                <h4>3. Estrategias de Optimización</h4>
-                
-                <h5>a) Ajuste de Journaling</h5>
+                <h5>3. Estrategias de Optimización</h5>
+                <br>
+                <strong>a) Ajuste de Journaling</strong>
                 <ul class="feature-list">
                     <li>JFS/JFS2: Usar data=writeback para cargas de escritura intensivas.</li>
                     <li>GPFS: Desactivar journaling en nodos de solo lectura (Henson, 2015, p. 40).</li>
                 </ul>
                 
-                <h5>b) Tamaño de Bloques</h5>
+                <strong>b) Tamaño de Bloques</strong>
                 <ul class="feature-list">
                     <li>JFS2: Bloques de 16 MB para bases de datos (Smit, 2010, p. 105).</li>
                     <li>GPFS: Bloques de 16 MB para archivos científicos (IBM, 2020, p. 9).</li>
                 </ul>
                 
-                <h5>c) Caché y Prefetching</h5>
+                <strong>c) Caché y Prefetching</strong>
                 <ul class="feature-list">
                     <li>AIX LVM: Aumentar caché de LV para reducir accesos a disco.</li>
                     <li>GPFS: Habilitar prefetching agresivo en cargas secuenciales (Henson, 2015, p. 38).</li>

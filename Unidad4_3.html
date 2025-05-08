@@ -363,24 +363,24 @@
                 Asignación Contigua (Silberschatz, Galvin & Gagne, 2018, p. 500).
             </div>
 
-            <h4>Definición</h4>
+            <strong>Definición</strong>
             <p>Almacena archivos en bloques de disco consecutivos. Cada archivo ocupa una secuencia continua de
                 sectores.</p>
 
-            <h4>Funcionamiento</h4>
+            <strong>Funcionamiento</strong>
             <ul class="feature-list">
                 <li>Se requiere especificar el tamaño del archivo al crearlo (ejemplo histórico: sistemas de cintas
                     magnéticas).</li>
                 <li>La tabla de asignación registra la dirección inicial y la longitud del archivo.</li>
             </ul>
 
-            <h4>Ventajas:</h4>
+            <strong>Ventajas:</strong>
             <ul class="feature-list">
                 <li>Acceso rápido: Lectura secuencial eficiente (ideal para medios como CD-ROM).</li>
                 <li>Baja sobrecarga de metadatos: Solo se almacena la dirección inicial y el tamaño.</li>
             </ul>
 
-            <h4>Desventajas:</h4>
+            <strong>Desventajas:</strong>
             <ul class="feature-list">
                 <li>Fragmentación externa: Espacio libre disperso entre archivos, reduciendo la capacidad de
                     almacenamiento.</li>
@@ -418,22 +418,22 @@
                 Asignación Ligada (Enlazada) (Tanenbaum & Woodhull, 2006, p.220; Microsoft, s.f.)
             </div>
 
-            <h4>Definición</h4>
+            <strong>Definición</strong>
             <p>Almacena archivos en bloques no contiguos, vinculados mediante punteros al siguiente bloque.</p>
 
-            <h4>Funcionamiento</h4>
+            <strong>Funcionamiento</strong>
             <ul class="feature-list">
                 <li>Cada bloque contiene datos y un puntero al siguiente bloque.</li>
                 <li>La tabla de asignación solo guarda la dirección del primer bloque.</li>
             </ul>
 
-            <h4>Ventajas</h4>
+            <strong>Ventajas</strong>
             <ul class="feature-list">
                 <li>Sin fragmentación externa: El espacio libre se aprovecha completamente.</li>
                 <li>Flexibilidad: Los archivos pueden crecer dinámicamente sin reubicación.</li>
             </ul>
 
-            <h4>Desventajas</h4>
+            <strong>Desventajas</strong>
             <ul class="feature-list">
                 <li>Acceso secuencial obligatorio: Lectura aleatoria lenta (debe seguirse la cadena de punteros).</li>
                 <li>Sobrecarga de espacio: Cada bloque reserva espacio para el puntero (ejemplo: 4 bytes en FAT32).</li>
@@ -449,22 +449,22 @@
                 Asignación Indexada (Linux Kernel Documentation, s. f., Ext 4; Silberschatz et al., 2018, p. 505).
             </div>
 
-            <h4>Definición</h4>
+            <strong>Definición</strong>
             <p>Utiliza un bloque índice que contiene punteros a todos los bloques de un archivo.</p>
 
-            <h4>Funcionamiento</h4>
+            <strong>Funcionamiento</strong>
             <ul class="feature-list">
                 <li>El bloque índice se almacena en el inodo (UNIX/Linux) o en la MFT (NTFS).</li>
                 <li>Soporta acceso aleatorio eficiente y archivos de gran tamaño mediante índices multinivel.</li>
             </ul>
 
-            <h4>Ventajas</h4>
+            <strong>Ventajas</strong>
             <ul class="feature-list">
                 <li>Acceso aleatorio rápido: Los bloques se localizan directamente desde el índice.</li>
                 <li>Escalabilidad: Admite archivos enormes con índices jerárquicos (ejemplo: ext4 con extents).</li>
             </ul>
 
-            <h4>Desventajas</h4>
+            <strong>Desventajas</strong>
             <ul class="feature-list">
                 <li>Sobrecarga de metadatos: El bloque índice consume espacio adicional.</li>
                 <li>Complejidad: Gestión de índices multinivel requiere más cálculos.</li>
@@ -522,25 +522,25 @@
                 prácticas.</p>
 
             <div class="subsection">
-                <h4>1. Listas Enlazadas (Tanenbaum & Woodhull, 2006, p 218).</h4>
+                <h4>Listas Enlazadas (Tanenbaum & Woodhull, 2006, p 218).</h4>
 
-                <h5>Definición</h5>
+                <strong>Definición</strong>
                 <p>Método que utiliza punteros para vincular bloques libres en una cadena. Cada bloque libre contiene la
                     dirección del siguiente bloque disponible.</p>
 
-                <h5>Funcionamiento</h5>
+                <strong>Funcionamiento</strong>
                 <ul class="feature-list">
                     <li>La tabla de asignación (ej. FAT en sistemas Windows) almacena los punteros.</li>
                     <li>El sistema recorre la lista para encontrar bloques libres al asignar espacio.</li>
                 </ul>
 
-                <h5>Ventajas</h5>
+                <strong>Ventajas</strong>
                 <ul class="feature-list">
                     <li>Simplicidad: Fácil implementación y bajo consumo de metadatos.</li>
                     <li>Flexibilidad: Permite manejar espacios libres no contiguos.</li>
                 </ul>
 
-                <h5>Desventajas</h5>
+                <strong>Desventajas</strong>
                 <ul class="feature-list">
                     <li>Acceso secuencial lento: Encontrar bloques libres requiere recorrer la lista.</li>
                     <li>Fragmentación interna: Si los bloques libres son pequeños, se desperdicia espacio.</li>
@@ -550,24 +550,24 @@
             </div>
 
             <div class="subsection">
-                <h4>2. Mapas de Bits (Silberschatz, Galvin & Gagne, 2018, p. 503):</h4>
+                <h4>Mapas de Bits (Silberschatz, Galvin & Gagne, 2018, p. 503):</h4>
 
-                <h5>Definición</h5>
+                <strong>Definición</strong>
                 <p>Usa un arreglo de bits donde cada bit representa un bloque de disco (1 = ocupado, 0 = libre).</p>
 
-                <h5>Funcionamiento</h5>
+                <strong>Funcionamiento</strong>
                 <ul class="feature-list">
                     <li>El mapa se almacena en un bloque reservado del disco.</li>
                     <li>Operaciones rápidas de búsqueda mediante operaciones bit a bit.</li>
                 </ul>
 
-                <h5>Ventajas</h5>
+                <strong>Ventajas</strong>
                 <ul class="feature-list">
                     <li>Velocidad: Localiza bloques libres en tiempo constante usando hardware optimizado.</li>
                     <li>Eficiencia espacial: El mapa consume poco espacio (ej. 1 bit por bloque).</li>
                 </ul>
 
-                <h5>Desventajas</h5>
+                <strong>Desventajas</strong>
                 <ul class="feature-list">
                     <li>Alto consumo de memoria RAM: El mapa completo debe cargarse en memoria para operar.</li>
                     <li>Ineficiente en discos grandes: El tamaño del mapa crece linealmente con la capacidad del disco.
@@ -578,24 +578,24 @@
             </div>
 
             <div class="subsection">
-                <h4>3. Bloques de Grupo (Group Blocks) (Linux Kernel Documentation, s. f.):</h4>
+                <h4>Bloques de Grupo (Group Blocks) (Linux Kernel Documentation, s. f.):</h4>
 
-                <h5>Definición</h5>
+                <strong>Definición</strong>
                 <p>Agrupa bloques libres en "clusters" para reducir la fragmentación y acelerar las asignaciones.</p>
 
-                <h5>Funcionamiento</h5>
+                <strong>Funcionamiento</strong>
                 <ul class="feature-list">
                     <li>Divide el disco en grupos de bloques, cada uno con su propio mapa de bits o lista enlazada.</li>
                     <li>Usado en sistemas modernos como ext4 para optimizar localidad espacial.</li>
                 </ul>
 
-                <h5>Ventajas</h5>
+                <strong>Ventajas</strong>
                 <ul class="feature-list">
                     <li>Reducción de fragmentación: Asigna bloques cercanos entre sí.</li>
                     <li>Rendimiento mejorado: Minimiza los movimientos del cabezal del disco.</li>
                 </ul>
 
-                <h5>Desventajas</h5>
+                <strong>Desventajas</strong>
                 <ul class="feature-list">
                     <li>Complejidad: Requiere gestión adicional de grupos.</li>
                     <li>Espacio reservado: Cada grupo almacena metadatos redundantes.</li>
