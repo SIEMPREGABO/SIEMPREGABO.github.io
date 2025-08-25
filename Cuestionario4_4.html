@@ -296,189 +296,215 @@
             cursor: not-allowed;
             text-decoration: none;
         }
+
+        .pregunta p {
+            text-align: justify;
+        }
     </style>
 </head>
 
 <body>
     <div id="navbar-container"></div>
 
-    
 
-        <div class="container">
 
-            <h3>Actividad 4: Sistemas de Archivos Estructurados</h3>
-            <br>
-            <h4>Cuestionario de Verdadero y Falso</h4>
+    <div class="container">
 
-            <div class="instrucciones">
-                <h5><i class="bi bi-info-circle"></i> Instrucciones</h5>
-                <ol>
-                    <li>Lee cuidadosamente cada afirmación y selecciona si es Verdadera o Falsa</li>
-                    <li>Todas las preguntas deben ser respondidas antes de validar</li>
-                    <li>Al finalizar, podrás ver tu puntaje y retroalimentación</li>
-                    <li>Puedes reintentar el cuestionario cuantas veces desees</li>
-                </ol>
-            </div>
+        <h3>Actividad 4: Sistemas de Archivos Estructurados</h3>
+        <br>
+        <h4>Cuestionario de Verdadero y Falso</h4>
 
-            <form id="cuestionario">
-                <div class="pregunta">
-                    <p>1. Los sistemas de archivos estructurados operan bajo una lógica jerárquica (directorios,
-                        subdirectorios y archivos), la cual simplifica operaciones.</p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta1" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta1" value="false"> Falso</label>
-                    </div>
-                </div>
-
-                <div class="pregunta">
-                    <p>2. Los sistemas operativos interactúan con el hardware de almacenamiento y cómo los usuarios
-                        pueden
-                        gestionar sus datos de manera efectiva.</p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta2" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta2" value="false"> Falso</label>
-                    </div>
-                </div>
-
-                <div class="pregunta">
-                    <p>3. Los sistemas de archivos estructurados organizan los datos en dispositivos de almacenamiento
-                        mediante una arquitectura jerárquica (directorios, subdirectorios y archivos) y mecanismos para
-                        garantizar integridad, eficiencia y recuperación ante fallos.</p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta3" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta3" value="false"> Falso</label>
-                    </div>
-                </div>
-
-                <div class="pregunta">
-                    <p>4. Journaling de metadatos: solo registra cambios en metadatos (ej. ext3).</p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta4" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta4" value="false"> Falso</label>
-                    </div>
-                </div>
-
-                <div class="pregunta">
-                    <p>5. Journaling completo: registra tanto metadatos como datos (ej. ext4 en modo "data=journal").
-                    </p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta5" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta5" value="false"> Falso</label>
-                    </div>
-                </div>
-
-                <div class="pregunta">
-                    <p>6. Los sistemas de archivos estructurados con journaling (bitácora o diario) son mecanismos clave
-                        para garantizar la integridad de los datos ante fallos del sistema.</p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta6" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta6" value="false"> Falso</label>
-                    </div>
-                </div>
-
-                <div class="pregunta">
-                    <p>7. Overhead de rendimiento: Es el registro continuo consume recursos adicionales (CPU, escrituras
-                        en
-                        disco).</p>
-                    <div class="opciones">
-                        <label><input type="radio" name="pregunta7" value="true"> Verdadero</label>
-                        <label><input type="radio" name="pregunta7" value="false"> Falso</label>
-                    </div>
-                </div>
-            </form>
-
-            <div class="botones">
-                <button class="btn btn-validar" type="button" id="validar">Validar respuestas</button>
-                <button class="btn btn-reset" type="button" id="resetear">Reiniciar cuestionario</button>
-            </div>
-
-            <div class="resultados" id="resultados">
-                
-            </div>
+        <div class="instrucciones">
+            <h5><i class="bi bi-info-circle"></i> Instrucciones</h5>
+            <ol>
+                <li>Lee cuidadosamente cada afirmación y selecciona si es Verdadera o Falsa</li>
+                <li>Todas las preguntas deben ser respondidas antes de validar</li>
+                <li>Al finalizar, podrás ver tu puntaje y retroalimentación</li>
+                <li>Puedes reintentar el cuestionario cuantas veces desees</li>
+            </ol>
         </div>
 
-        <div class="paginacion">
-            <a href="Unidad4_4.html" class="btn-paginacion">Anterior</a>
-            <a href="Unidad4_5.html" class="btn-paginacion">Siguiente</a>
+        <form id="cuestionario">
+            <div class="pregunta">
+                <p>1. Los sistemas de archivos estructurados operan bajo una lógica jerárquica (directorios,
+                    subdirectorios y archivos), la cual simplifica operaciones. La sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta1" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta1" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta1"></span>
+            </div>
+
+            <div class="pregunta">
+                <p>2. Los sistemas operativos interactúan con el hardware de almacenamiento y cómo los usuarios
+                    pueden
+                    gestionar sus datos de manera efectiva. La sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta2" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta2" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta2"></span>
+            </div>
+
+            <div class="pregunta">
+                <p>3. Los sistemas de archivos estructurados organizan los datos en dispositivos de almacenamiento
+                    mediante una arquitectura jerárquica (directorios, subdirectorios y archivos) y mecanismos para
+                    garantizar integridad, eficiencia y recuperación ante fallos. La sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta3" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta3" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta3"></span>
+            </div>
+
+            <div class="pregunta">
+                <p>4. Journaling de metadatos: solo registra cambios en metadatos (ej. ext3). La sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta4" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta4" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta4"></span>
+            </div>
+
+            <div class="pregunta">
+                <p>5. Journaling completo: registra tanto metadatos como datos (ej. ext4 en modo "data=journal"). La
+                    sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta5" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta5" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta5"></span>
+            </div>
+
+            <div class="pregunta">
+                <p>6. Los sistemas de archivos estructurados con journaling (bitácora o diario) son mecanismos clave
+                    para garantizar la integridad de los datos ante fallos del sistema. La sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta6" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta6" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta6"></span>
+            </div>
+
+            <div class="pregunta">
+                <p>7. Overhead de rendimiento: Es el registro continuo consume recursos adicionales (CPU, escrituras
+                    en
+                    disco). La sentencia es</p>
+                <div class="opciones">
+                    <label><input type="radio" name="pregunta7" value="true"> Verdadero</label>
+                    <label><input type="radio" name="pregunta7" value="false"> Falso</label>
+                </div>
+                <span class="respuesta-usuario" id="respuesta7"></span>
+            </div>
+        </form>
+
+        <div class="botones">
+            <button class="btn btn-validar" type="button" id="validar">Validar respuestas</button>
+            <button class="btn btn-reset" type="button" id="resetear">Resetear marcas</button>
         </div>
 
-        <div id="footer-container"></div>
-        
+        <div class="resultados" id="resultados">
 
-        <script>
-            $(document).ready(function () {
+        </div>
+    </div>
 
-                fetch('navbar.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('navbar-container').innerHTML = data;
-                        initNavbarScripts(); // Si necesitas inicializar scripts del navbar
-                    });
+    <div class="paginacion">
+        <a href="Unidad4_4.html" class="btn-paginacion">Anterior</a>
+        <a href="Unidad4_5.html" class="btn-paginacion">Siguiente</a>
+    </div>
 
-
-                fetch('footer.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('footer-container').innerHTML = data;
-                    });
-
-                const respuestasCorrectas = {
-                    pregunta1: 'true',
-                    pregunta2: 'true',
-                    pregunta3: 'true',
-                    pregunta4: 'true',
-                    pregunta5: 'true',
-                    pregunta6: 'true',
-                    pregunta7: 'true'
-                };
-
-                // Validar respuestas
-                $('#validar').click(function () {
-                    const totalPreguntas = Object.keys(respuestasCorrectas).length;
-                    let respuestasCorrectasUsuario = 0;
-                    let todasRespondidas = true;
-
-                    // Verificar cada pregunta
-                    for (let i = 1; i <= totalPreguntas; i++) {
-                        const pregunta = 'pregunta' + i;
-                        const respuestaUsuario = $(`input[name=${pregunta}]:checked`).val();
-
-                        if (respuestaUsuario === undefined) {
-                            //console.log('efectivamente');
-                            $('#resultados').html(`<p class="alert alert-danger " style="margin:10px 0 0 0 " role="alert">Contesta todas las preguntas!</p>`);
-                            return;
-                        }
-
-                        if (respuestaUsuario == respuestasCorrectas[pregunta]) {
-                            respuestasCorrectasUsuario++;
-                        }
-
-                        $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">Tuvistre un puntaje de ${respuestasCorrectasUsuario}!</p>`);
+    <div id="footer-container"></div>
 
 
+    <script>
+        $(document).ready(function () {
+
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    initNavbarScripts(); // Si necesitas inicializar scripts del navbar
+                });
+
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            const respuestasCorrectas = {
+                pregunta1: 'true',
+                pregunta2: 'true',
+                pregunta3: 'true',
+                pregunta4: 'true',
+                pregunta5: 'true',
+                pregunta6: 'true',
+                pregunta7: 'true'
+            };
+
+            // Validar respuestas
+            $('#validar').click(function () {
+                const totalPreguntas = Object.keys(respuestasCorrectas).length;
+                let respuestasCorrectasUsuario = 0;
+                let todasRespondidas = true;
+
+                // Verificar cada pregunta
+                for (let i = 1; i <= totalPreguntas; i++) {
+                    const pregunta = 'pregunta' + i;
+                    const respuestaUsuario = $(`input[name=${pregunta}]:checked`).val();
+
+                    if (respuestaUsuario === undefined) {
+                        //console.log('efectivamente');
+                        $('#resultados').html(`<p class="alert alert-danger " style="margin:10px 0 0 0 " role="alert">Contesta todas las preguntas!</p>`);
+                        return;
                     }
 
-                
-                });
+                    if (respuestaUsuario == respuestasCorrectas[pregunta]) {
+                        respuestasCorrectasUsuario++;
+                    }
 
-                // Reiniciar cuestionario
-                $('#resetear').click(function () {
-                    $('input[type="radio"]').prop('checked', false);
-                    $('#resultados').fadeOut();
-                    $('input[type="radio"]').parent().css('background-color', '');
+                    $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Tuviste un puntaje de ${respuestasCorrectasUsuario}!</p>`);
+
+                    const darRespuestas = document.querySelectorAll('.pregunta');
+                    darRespuestas.forEach((pregunta, index) => {
+                        const respuestaUsuario = $(`input[name=pregunta${index + 1}]:checked`).val();
+                        const respuestaCorrecta = respuestasCorrectas[`pregunta${index + 1}`];
+                        if (respuestaUsuario === respuestaCorrecta) {
+
+                            $(`#respuesta${index + 1}`).html(`<p class="alert alert-success" role="alert">Respuesta correcta: ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}</p>`);
+                        } else {
+
+                            $(`#respuesta${index + 1}`).html(`<p class="alert alert-danger" role="alert">Respuesta incorrecta, la respuesta correcta es: ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}</p>`);
+                        }
+                    });
+                }
+
+
+            });
+
+            // Reiniciar cuestionario
+            $('#resetear').click(function () {
+                $('input[type="radio"]').prop('checked', false);
+                $('#resultados').fadeOut();
+                $('input[type="radio"]').parent().css('background-color', '');
+                const darRespuestas = document.querySelectorAll('.pregunta');
+                darRespuestas.forEach((pregunta, index) => {
+                    $(`#respuesta${index + 1}`).html('');
                 });
             });
-        </script>
+        });
+    </script>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

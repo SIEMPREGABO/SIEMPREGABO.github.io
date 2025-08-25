@@ -256,23 +256,31 @@
                 font-size: 12px;
             }
 
-            .minimos{
+            .minimos {
                 min-height: 70px;
             }
         }
 
-        .tamano{
+        .tamano {
             font-size: 20px;
         }
 
-        .minimos{
+        .minimos {
             min-height: 100px;
-        
+
         }
 
         .texto-justificado {
             text-align: justify;
             text-justify: inter-word;
+        }
+
+        .highlightIndex {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-bottom: 4px solid #4285f4;
+            margin: 20px 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -282,18 +290,15 @@
     <div id="navbar-container" style="display: none;"></div>
     <nav class="navbar navbar-expand-lg navbar-personalizado">
         <div class="row" style="width: 100%;">
-            <div class="col-lg-5 disposicion-logos" >
-                <div ><img src="images/logoBlancoESCOM.png" class="minimos" width="100" height="100" alt="logo" /></div>
-                <div class="color-text renglones tamano" style="text-align: center;">
+            <div class="col-lg-5 disposicion-logos">
+                <div><img src="images/EscudoNuevo.jpeg" class="minimos" width="100" height="120" alt="logo" /></div>
+
+                <div class="color-text renglones tamano flex justify-content-center" style="text-align: center;">
                     <p class="margin-padding">Instituto Politécnico Nacional</p>
                     <p class="margin-padding">Escuela Superior de Cómputo</p>
-                    <p class="margin-padding">Ingeniería en sistemas computacionales</p>
-                    <p class="margin-padding">Materia: Sistemas Operativos</p>
 
-                    <p class="margin-padding">Recurso didáctico digital </p>
-                    <p class="margin-padding">Unidad IV: Sistema de archivos</p>
                 </div>
-                <div><img src="images/logo-ipn-blanco.png" class="minimos"  width="100" height="120" alt="logo" /></div>
+                <div><img src="images/logoBlancoESCOM.png" class="minimos" width="100" height="100" alt="logo" /></div>
             </div>
 
 
@@ -377,37 +382,45 @@
 
     <div class="container">
         <!--div class="row"-->
+        
+
+        <div class="highlightIndex">
+            <h5 class="margin-padding" style="margin-bottom: 10px;">Ingeniería en sistemas computacionales</h5>
+            <h5 class="margin-padding" style="margin-bottom: 10px;">Materia: Sistemas Operativos</h5>
+            <h5 class="margin-padding" style="margin-bottom: 10px;">Recurso didáctico digital </h5>
+            <h5 class="margin-padding" style="margin-bottom: 10px;">Unidad IV: Sistema de archivos</h5>
+        </div>
+
         <div class="col presentacion texto-justificado">
-            <h2>Bienvenido</h2>
-            <p>Estimados jóvenes, es un gusto darles la bienvenida al Recurso Didáctico Digital de la unidad de
-                aprendizaje de Sistemas Operativos Unidad IV: Sistema de archivos, la cual está compuesta por 6
-                unidades y corresponde al cuarto semestre de la carrera de Ingeniería en Sistemas Computacionales de
-                la ESCOM del Instituto Politécnico Nacional.
+
+            <p>Estimadas y estimados estudiantes: Es un gusto dirigirme a ustedes para presentarles el
+                objeto de aprendizaje de recurso didáctico digital de la unidad de aprendizaje de sistemas
+                operativos, en su unidad IV, la cual se llama sistema de archivos. Este tema forma parte de
+                un conjunto de seis unidades que integran la asignatura y corresponde al cuarto semestre de
+                la carrera de Ingeniería en Sistemas Computacionales de la Escuela Superior de Cómputo (ESCOM)
+                del Instituto Politécnico Nacional.
                 <br>
                 <br>
                 Durante esta Unidad Temática IV, podrás adquirir conocimientos que te permitirán analizar,
-                reflexionar y aplicar las actividades que un analista de sistemas e ingeniero de soporte técnico
-                puede desempeñar, a través de diversas actividades, que contribuirán a que tengas un aprendizaje
-                significativo e integral.
+                reflexionar y aplicar las actividades que un analista de sistemas e ingeniero de soporte
+                técnico puede desempeñar, a través de diversas actividades, que contribuirán a que tengas un
+                aprendizaje significativo e integral.
                 <br>
                 <br>
-                Las diferentes actividades que realizarás serán de tipo individual y
-                colaborativo, lo que te permitirá el desarrollo de las competencias establecidas en la Unidad de
-                Aprendizaje.
+                Las diferentes actividades que realizarás serán de tipo individual y colaborativo, lo que te
+                permitirá el desarrollo de las competencias establecidas en la Unidad de Aprendizaje.
                 <br>
                 <br>
-                Eres muy importante para tu profesor, quien facilitará y guiará tu aprendizaje a lo largo de esta
-                unidad y del semestre, por lo tanto, considera sus indicaciones.
+                Eres muy importante para tu profesor, quien facilitará y guiará tu aprendizaje a lo largo de
+                esta unidad y del semestre, por lo tanto, considera sus indicaciones.
                 <br>
                 <br>
-                Tu entusiasmo y dedicación son un factor importante en el logro de los propósitos educativos de esta
-                unidad, por lo que te invitamos a participar activamente y juntos construiremos el aprendizaje, así
-                que comencemos.
+                Tu entusiasmo y dedicación son un factor importante en el logro de los propósitos educativos de
+                esta unidad, por lo que te invitamos a participar activamente y juntos construiremos el aprendizaje,
+                así que comencemos.
             </p>
             <!--button class="btn btn-light">Más información</button-->
         </div>
-
-
 
         <div class="accordion" id="DivGeneral">
             <div class="card mb-3 border-0" id="">
@@ -418,7 +431,7 @@
                     </button>
                 </div>
                 <div id="div_1" class="" style="display: none;">
-                    <div class="card-body">
+                    <div class="card-body texto-justificado">
                         <h4>Intención educativa</h4>
 
                         <p>Aportar al perfil de egreso de la carrera de Ingeniería en Sistemas Computacionales,
@@ -444,7 +457,7 @@
                     </button>
                 </div>
                 <div id="div_2" class="collapse" style="display: none;">
-                    <div class="card-body">
+                    <div class="card-body texto-justificado">
                         <h4>Unidad de competencia</h4>
                         <p>Implementa la organización del sistema de archivos mediante su estructura, asignación de
                             espacio, administración y optimización. </p>
@@ -460,7 +473,7 @@
                     </button>
                 </div>
                 <div id="div_3" class="" style="display: none;">
-                    <div class="card-body">
+                    <div class="card-body texto-justificado">
                         <h4>Propósito de la unidad de aprendizaje</h4>
                         <p>Proponer soluciones a las necesidades de los sistemas computacionales actuales, basándose en
                             el funcionamiento del sistema operativo</p>
@@ -476,7 +489,7 @@
                     </button>
                 </div>
                 <div id="div_4" class="" style="display: none;">
-                    <div class="card-body">
+                    <div class="card-body texto-justificado">
                         <h4>Metodología de estudio</h4>
                         <p>Este recurso didáctico tiene como objetivo complementar el curso presencial, proporcionando
                             un acceso más ágil a los recursos y actividades. Es fundamental que sigas las indicaciones y
@@ -546,7 +559,7 @@
                     </button>
                 </div>
                 <div id="div_5" class="" style="display: none;">
-                    <div class="card-body">
+                    <div class="card-body texto-justificado">
                         <h4>Requerimientos</h4>
                         <p><strong>Para hacer uso de este recurso se requiere:</strong></p>
                         <p>• Conexión a internet </p>
@@ -593,8 +606,7 @@
 
 
                 <div id="div_6" class="" style="display: none;">
-                    <div class="card-body">
-                        <h4>Contactos</h4>
+                    <div class="card-body texto-justificado">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="centrar-imagen">
@@ -602,8 +614,15 @@
                                         style="max-width: 300px; max-height: 600px;">
                                 </div>
                                 <br>
-                                <h4>Israel Salas Ramírez</h4>
-                                <p>Correo: isalasr@ipn.mx</p>
+                                <div style="text-align: center; height: 60px;">
+                                    <h4>Israel Salas Ramírez</h4>
+
+                                </div>
+                                <div style="text-align: center;">
+
+                                    <p>Correo: isalasr@ipn.mx</p>
+                                </div>
+
                                 <p>Semblanza: Israel Salas Ramirez. Docente en la Escuela Superior de Cómputo del
                                     Instituto
                                     Politécnico Nacional, es Doctor y Maestro en Ciencias de la Educación, Ingeniero en
@@ -623,8 +642,15 @@
                                         style="max-width: 300px; max-height: 600px;">
                                 </div>
                                 <br>
-                                <h4>Hermelinda Patricia Leyva López</h4>
-                                <p>Correo: hleyval@ipn.mx</p>
+                                <div style="text-align: center; height: 60px;">
+                                    <h4>Hermelinda Patricia Leyva López</h4>
+
+                                </div>
+                                <div style="text-align: center; ">
+
+                                    <p>Correo: hleyval@ipn.mx</p>
+                                </div>
+
                                 <p>Semblanza: Docente de la unidad de aprendizaje TIC aplicadas para el Turismo en la
                                     Escuela Superior de Turismo del Instituto Politécnico Nacional, Doctor en Educación,
                                     Maestría en Administración de Tecnologías de la Información, Maestría en Docencia y
@@ -641,9 +667,16 @@
                                         style="max-width: 300px; max-height: 600px;">
                                 </div>
                                 <br>
+                                <div style="text-align: center; height: 60px;">
+                                    <h4>Alicia Marcela Ramírez Guzmán</h4>
 
-                                <h4>Alicia Marcela Ramírez Guzmán</h4>
-                                <p> Correo: mrguzman@ipn.mx</p>
+                                </div>
+                                <div style="text-align: center;">
+
+                                    <p> Correo: mrguzman@ipn.mx</p>
+                                </div>
+
+
                                 <p>Semblanza: Alicia Marcela es una académica reconocida en el ámbito de la educación y
                                     la
                                     tecnología, cuenta con un Doctorado en Educación, dos Maestrías y una amplia

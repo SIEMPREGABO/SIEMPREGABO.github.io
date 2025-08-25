@@ -296,6 +296,10 @@
             cursor: not-allowed;
             text-decoration: none;
         }
+
+        .pregunta p {
+            text-align: justify;
+        }
     </style>
 </head>
 
@@ -328,69 +332,79 @@
 
         <form id="cuestionario">
             <div class="pregunta">
-                <p>1. La representación lógica y física de archivos, incluyendo su estructura interna y metadatos.</p>
+                <p>1. La representación lógica y física de archivos, incluyendo su estructura interna y metadatos. La sentencia es</p>
                 <label><input type="radio" name="pregunta1" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta1" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta1"></span>
             </div>
 
             <div class="pregunta">
                 <p>2. La organización jerárquica de directorios, que permite una navegación eficiente y una gestión
-                    estructurada de los datos.</p>
+                    estructurada de los datos. La sentencia es</p>
                 <label><input type="radio" name="pregunta2" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta2" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta2"></span>
             </div>
 
             <div class="pregunta">
                 <p>3. La asignación de espacio en disco, determinando cómo no distribuyen los bloques de almacenamiento
-                    y no minimizar la fragmentación.</p>
+                    y no minimizar la fragmentación. La sentencia es</p>
                 <label><input type="radio" name="pregunta3" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta3" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta3"></span>
             </div>
 
             <div class="pregunta">
                 <p>4. El manejo de archivos compartidos, garantizando consistencia y control de acceso en entornos
-                    multiusuario.</p>
+                    multiusuario. La sentencia es</p>
                 <label><input type="radio" name="pregunta4" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta4" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta4"></span>
             </div>
 
             <div class="pregunta">
                 <p>5. Asignación Contigua es cuando los archivos se almacenan en bloques contiguos del disco, lo que
-                    permite acceso rápido mediante aritmética de direcciones.</p>
+                    permite acceso rápido mediante aritmética de direcciones. La sentencia es</p>
                 <label><input type="radio" name="pregunta5" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta5" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta5"></span>
             </div>
 
             <div class="pregunta">
                 <p>6. La asignación enlazada elimina la fragmentación externa, pero el acceso aleatorio es lento debido
-                    a la necesidad de recorrer la cadena de bloques.</p>
+                    a la necesidad de recorrer la cadena de bloques. La sentencia es</p>
                 <label><input type="radio" name="pregunta6" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta6" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta6"></span>
             </div>
 
             <div class="pregunta">
                 <p>7. Asignación Indexada, utiliza un bloque índice que contiene punteros a todos los bloques del
-                    archivo, permitiendo acceso aleatorio eficiente.</p>
+                    archivo, permitiendo acceso aleatorio eficiente. La sentencia es</p>
                 <label><input type="radio" name="pregunta7" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta7" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta7"></span>
             </div>
 
             <div class="pregunta">
-                <p>8. Listas lineales son simple pero ineficiente para búsquedas.</p>
+                <p>8. Listas lineales son simple pero ineficiente para búsquedas. La sentencia es</p>
                 <label><input type="radio" name="pregunta8" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta8" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta8"></span>
             </div>
 
             <div class="pregunta">
-                <p>9. Tablas hash se acelera la búsqueda, pero requiere manejo de colisiones.</p>
+                <p>9. Tablas hash se acelera la búsqueda, pero requiere manejo de colisiones. La sentencia es</p>
                 <label><input type="radio" name="pregunta9" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta9" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta9"></span>
             </div>
 
             <div class="pregunta">
-                <p>10. Árboles B/B+, son usados en sistemas de archivos modernos para búsquedas rápidas.</p>
+                <p>10. Árboles B/B+, son usados en sistemas de archivos modernos para búsquedas rápidas. La sentencia es</p>
                 <label><input type="radio" name="pregunta10" value="true"> Verdadero</label>
                 <label><input type="radio" name="pregunta10" value="false"> Falso</label>
+                <span class="respuesta-usuario" id="respuesta10"></span>
             </div>
         </form>
 
@@ -457,7 +471,7 @@
 
                 if (usuarioRes === undefined) {
                     //console.log('efectivamente');
-                    $('#resultados').html(`<p class="alert alert-danger " style="margin:10px 0 0 0 " role="alert">Contesta todas las preguntas!</p>`);
+                    $('#resultados').html(`<p class="alert alert-danger " style="margin:10px 0 0 0 " role="alert">¡Debes responder todas las preguntas!</p>`);
                     return;
                 }
                 //console.log(usuarioRes);
@@ -467,7 +481,20 @@
                 }
             }
 
-            $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">Tuviste un puntaje de ${aciertos} de ${totalPreguntas}!</p>`);
+            $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Tuviste un puntaje de ${aciertos}!</p>`);
+
+            const darRespuestas = document.querySelectorAll('.pregunta');
+            darRespuestas.forEach((pregunta, index) => {
+                const respuestaUsuario = $(`input[name=pregunta${index + 1}]:checked`).val();
+                const respuestaCorrecta = respuestas[`pregunta${index + 1}`];
+                if (respuestaUsuario === respuestaCorrecta) {
+
+                    $(`#respuesta${index + 1}`).html(`<p class="alert alert-success" role="alert">Respuesta correcta: ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}</p>`);
+                } else {
+
+                    $(`#respuesta${index + 1}`).html(`<p class="alert alert-danger" role="alert">Respuesta incorrecta, la respuesta correcta es: ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}</p>`);
+                }
+            });
 
             //console.log(aciertos);
         }
@@ -475,6 +502,10 @@
         function reset() {
             $('#resultados').html('');
             $('input[type="radio"]').prop('checked', false);
+            const darRespuestas = document.querySelectorAll('.pregunta');
+            darRespuestas.forEach((pregunta, index) => {
+                $(`#respuesta${index + 1}`).html('');
+            });
         }
     </script>
 
