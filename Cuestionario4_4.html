@@ -463,22 +463,29 @@
                     if (respuestaUsuario == respuestasCorrectas[pregunta]) {
                         respuestasCorrectasUsuario++;
                     }
-
-                    $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Tuviste un puntaje de ${respuestasCorrectasUsuario}!</p>`);
-
-                    const darRespuestas = document.querySelectorAll('.pregunta');
-                    darRespuestas.forEach((pregunta, index) => {
-                        const respuestaUsuario = $(`input[name=pregunta${index + 1}]:checked`).val();
-                        const respuestaCorrecta = respuestasCorrectas[`pregunta${index + 1}`];
-                        if (respuestaUsuario === respuestaCorrecta) {
-
-                            $(`#respuesta${index + 1}`).html(`<p class="alert alert-success" role="alert">Respuesta correcta: ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}</p>`);
-                        } else {
-
-                            $(`#respuesta${index + 1}`).html(`<p class="alert alert-danger" role="alert">Respuesta incorrecta, la respuesta correcta es: ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}</p>`);
-                        }
-                    });
                 }
+
+                if (respuestasCorrectasUsuario ===  Object.keys(respuestasCorrectas).length) {
+                    $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Felicidades! Lograste contestar todo el cuestionario correctamente. Esto refleja tu esfuerzo y comprensión del tema. Mantén esa constancia y sigue retándote, porque cada paso que das te acerca más a la excelencia. ¡Excelente trabajo!</p>`);
+                } else if ((respuestasCorrectasUsuario / (Object.keys(respuestasCorrectas).length / 10)) >= 0.5) {
+                    $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Tuviste un puntaje de ${respuestasCorrectasUsuario}!</p>`);
+                } else if ((respuestasCorrectasUsuario / (Object.keys(respuestasCorrectas).length / 10)) < 0.5) {
+                    $('#resultados').html(`<p class="alert alert-warning " style="margin:10px 0 0 0 " role="alert">Recuerda que lo importante es seguir aprendiendo. Cada intento te acerca más a dominar el tema. ¡Ánimo, estás en el camino correcto!</p>`);
+
+                }
+                const darRespuestas = document.querySelectorAll('.pregunta');
+                darRespuestas.forEach((pregunta, index) => {
+                    const respuestaUsuario = $(`input[name=pregunta${index + 1}]:checked`).val();
+                    const respuestaCorrecta = respuestasCorrectas[`pregunta${index + 1}`];
+                    if (respuestaUsuario === respuestaCorrecta) {
+
+                        $(`#respuesta${index + 1}`).html(`<p class="alert alert-success" role="alert">Muy bien, esa es la respuesta correcta! Se nota que comprendiste el tema</p>`);
+                    } else {
+
+                        $(`#respuesta${index + 1}`).html(`<p class="alert alert-danger" role="alert">Tu respuesta no es correcta; la opción adecuada es ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}. Revisa el tema: ahí encontrarás la explicación para reforzar este punto. En clase, plantea tus dudas para aclararlas. ¡Ánimo, vas avanzando bien! </p>`);
+                    }
+                });
+
 
 
             });
