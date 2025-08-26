@@ -467,9 +467,9 @@
 
                 if (respuestasCorrectasUsuario ===  Object.keys(respuestasCorrectas).length) {
                     $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Felicidades! Lograste contestar todo el cuestionario correctamente. Esto refleja tu esfuerzo y comprensión del tema. Mantén esa constancia y sigue retándote, porque cada paso que das te acerca más a la excelencia. ¡Excelente trabajo!</p>`);
-                } else if ((respuestasCorrectasUsuario / (Object.keys(respuestasCorrectas).length / 10)) >= 0.5) {
+                } else if ((respuestasCorrectasUsuario / (Object.keys(respuestasCorrectas).length / 10)) >= 5) {
                     $('#resultados').html(`<p class="alert alert-success " style="margin:10px 0 0 0 " role="alert">¡Tuviste un puntaje de ${respuestasCorrectasUsuario}!</p>`);
-                } else if ((respuestasCorrectasUsuario / (Object.keys(respuestasCorrectas).length / 10)) < 0.5) {
+                } else if ((respuestasCorrectasUsuario / (Object.keys(respuestasCorrectas).length / 10)) < 5) {
                     $('#resultados').html(`<p class="alert alert-warning " style="margin:10px 0 0 0 " role="alert">Recuerda que lo importante es seguir aprendiendo. Cada intento te acerca más a dominar el tema. ¡Ánimo, estás en el camino correcto!</p>`);
 
                 }
