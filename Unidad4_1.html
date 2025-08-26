@@ -664,11 +664,32 @@
             de Archivos Abiertos (TFA) para rastrear ubicaciones y metadatos. Algunos sistemas emplean tablas hash para
             acelerar búsquedas en directorios grandes (Silberschatz, Galvin & Gagne, 2018, p. 485).</p>
 
-        <caption>Codigo 1. Ejemplo de impresión de contenido en archivo.</caption>
+        <figure>
+            <span>Codigo 1. Ejemplo de impresión de contenido en archivo.</span>
+        </figure>
 
         <div class="centrar-imagen">
             <img src="images/Codigo_1.jpeg" alt="Codigo_1" style="max-width: 400px; max-height: 400px;">
         </div>
+        <br />
+
+
+        <p>Por ejemplo, en sistemas operativos como Linux, la estructura jerárquica se organiza en forma de árbol, donde
+            el directorio raíz (/) es la raíz del sistema de archivos, y debajo de él se encuentran otros directorios y
+            archivos organizados de manera recursiva.</p>
+
+
+        <figure>
+            <span>Codigo 1. Ejemplo de impresión de contenido en archivo.</span>
+        </figure>
+
+        <div class="centrar-imagen">
+            <img src="images/figuraN.png" alt="FiguraN" style="max-width: 400px; max-height: 400px;">
+        </div>
+        <br />
+
+        <p>En este ejemplo, los archivos están organizados bajo varios directorios, siguiendo una estructura jerárquica
+            clara.</p>
 
         <h4>Gestión del Espacio en Disco (Carrier, 2005, p. 95)</h4>
 
@@ -697,6 +718,21 @@
         <p>Algunos sistemas de archivos emplean tablas hash para almacenar entradas de directorios, lo que mejora el
             rendimiento al buscar archivos en directorios grandes gracias a la capacidad del hash de encontrar
             rápidamente la entrada correcta. Sin embargo, este método es más complejo de implementar y mantener.</p>
+
+        <p>Por ejemplo, en sistemas como ext4, los metadatos se almacenan en inodos, que contienen toda la información
+            necesaria para localizar los datos de un archivo en el disco y para mantener los atributos del archivo. Cada
+            archivo y directorio tiene un inodo asociado que el sistema utiliza para gestionar su ubicación y
+            propiedades. </p>
+
+        <figure>
+            <span>Codigo 1. Ejemplo de impresión de contenido en archivo.</span>
+        </figure>
+
+        <div class="centrar-imagen">
+            <img src="images/Imagen2.png" alt="FiguraN" style="max-width: 400px; max-height: 400px;">
+        </div>
+        <br />
+        <p>En este caso, los metadatos incluyen los permisos (-rw-r—r—), el propietario (usuario), el grupo (grupo), el tamaño del archivo (1024 bytes) y la fecha de la última modificación (5 de octubre a las 10:32).</p>
     </div>
 
     <div class="paginacion">
