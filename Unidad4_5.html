@@ -27,7 +27,7 @@
         }
 
         * {
-             text-align: justify;
+            text-align: justify;
         }
 
         body {
@@ -80,7 +80,7 @@
             align-items: center;
         }
 
-        
+
 
         .navbar-brand {
             color: white !important;
@@ -231,6 +231,11 @@
             padding: 0;
         }
 
+        .max-table {
+            width: 100%;
+            height: 100%;
+        }
+
         @media (max-width: 768px) {
             .disposicion {
                 flex-direction: column;
@@ -242,6 +247,13 @@
 
             .presentacion {
                 padding: 20px;
+            }
+            .max-table {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 100%;
+
             }
         }
 
@@ -420,7 +432,8 @@
             </div>
 
             <div class="subsection">
-                <p>A continuación, se proporcionan los siguientes materiales audiovisuales con el fin de ahondar más sobre el tema.
+                <p>A continuación, se proporcionan los siguientes materiales audiovisuales con el fin de ahondar más
+                    sobre el tema.
                 </p>
             </div>
 
@@ -436,7 +449,8 @@
             <div class="highlight">
                 <p>En caso de requerir más información sobre el tema, se proporciona el siguiente material audiovisual.
                 </p>
-                <p>Optimización del sistema de archivos. López Y. A. Rivera C. D. Rodríguez R. Sandoval M. A. (2024). Optimización del sistema de archivos [Video]. YouTube. <a
+                <p>Optimización del sistema de archivos. López Y. A. Rivera C. D. Rodríguez R. Sandoval M. A. (2024).
+                    Optimización del sistema de archivos [Video]. YouTube. <a
                         href="https://www.youtube.com/watch?v=LvQWKYcMVGc"
                         target="_blank">https://www.youtube.com/watch?v=LvQWKYcMVGc</a>
                 </p>
@@ -662,36 +676,35 @@
             </div>
             <caption>Tabla 4. Comparación y contextos de uso (Slideshare, 2022).</caption>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Aspecto</th>
-                        <th>Consistencia fuerte</th>
-                        <th>Consistencia Eventual</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Prioridad</td>
-                        <td>Precisión (ej. finanzas, salud)</td>
-                        <td>Disponibilidad (ej. redes sociales, IoT)</td>
-                    </tr>
-                    <tr>
-                        <td>Latencia</td>
-                        <td>Alta</td>
-                        <td>Baja</td>
-                    </tr>
-                    <tr>
-                        <td>Escalabilidad</td>
-                        <td>Limitada</td>
-                        <td>Alta</td>
-                    </tr>
-                    <tr>
-                        <td>Complejidad</td>
-                        <td>Protocolos rígidos (ej. 2PC)</td>
-                        <td>Técnicas flexibles (ej. CRDTs)</td>
-                    </tr>
-                </tbody>
+            <table class="max-table">
+
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Consistencia fuerte</th>
+                    <th>Consistencia Eventual</th>
+                </tr>
+
+                <tr>
+                    <td>Prioridad</td>
+                    <td>Precisión (ej. finanzas, salud)</td>
+                    <td>Disponibilidad (ej. redes sociales, IoT)</td>
+                </tr>
+                <tr>
+                    <td>Latencia</td>
+                    <td>Alta</td>
+                    <td>Baja</td>
+                </tr>
+                <tr>
+                    <td>Escalabilidad</td>
+                    <td>Limitada</td>
+                    <td>Alta</td>
+                </tr>
+                <tr>
+                    <td>Complejidad</td>
+                    <td>Protocolos rígidos (ej. 2PC)</td>
+                    <td>Técnicas flexibles (ej. CRDTs)</td>
+                </tr>
+
             </table>
 
             <strong>Elección según Casos de Uso:</strong>
@@ -736,7 +749,7 @@
             <div class="subsection">
                 <h5>1. Sistemas de archivos en AIX</h5>
                 <br>
-                <strong>a) Journaled File System (JFS)</strong>
+                <strong>a) Journaled file system (JFS)</strong>
                 <p><strong>Definición:</strong> Sistema de archivos con journaling introducido en AIX 3.1. Registra
                     cambios en un diario (journal) para garantizar consistencia tras fallos.</p>
 
@@ -754,7 +767,7 @@
                         2010, p. 89).</li>
                 </ul>
 
-                <strong>b) Enhanced Journaled File System (JFS2)</strong>
+                <strong>b) Enhanced journaled file system (JFS2)</strong>
                 <p><strong>Definición:</strong> Evolución de JFS con soporte para archivos y volúmenes más grandes
                     (introducido en AIX 5.2).</p>
 
@@ -776,7 +789,7 @@
                     <li>Fragmentación dinámica: Uso de extents para reducir fragmentación (Smit, 2010, p. 102).</li>
                 </ul>
 
-                <strong>c) IBM Spectrum Scale (GPFS)</strong>
+                <strong>c) IBM Spectrum scale (GPFS)</strong>
                 <p><strong>Definición:</strong> Sistema de archivos paralelo y distribuido diseñado para Big Data y HPC.
                 </p>
 
@@ -797,17 +810,16 @@
 
             </div>
             <caption>Tabla 5. Comparativa de rendimiento</caption>
-            <table>
+            <table class="max-table">
 
-                <thead>
+                
                     <tr>
                         <th>Parámetro</th>
                         <th>JFS</th>
                         <th>JFS2</th>
                         <th>GPFS</th>
                     </tr>
-                </thead>
-                <tbody>
+                
                     <tr>
                         <td>Tamaño máximo</td>
                         <td>64 GB</td>
@@ -832,7 +844,7 @@
                         <td>Servidores empresariales</td>
                         <td>Big Data/HPC</td>
                     </tr>
-                </tbody>
+                
             </table>
 
             <div class="subsection">

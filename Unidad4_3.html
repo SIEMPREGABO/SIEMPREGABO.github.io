@@ -80,7 +80,7 @@
             align-items: center;
         }
 
-        
+
 
         .navbar-brand {
             color: white !important;
@@ -231,6 +231,22 @@
             padding: 0;
         }
 
+        .centrar-imagen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centrar-imagen img {
+            max-width: 600px;
+            max-height: 600px;
+        }
+
+        .max-table {
+            width: 100%;
+            height: 100%;
+        }
+
         @media (max-width: 768px) {
             .disposicion {
                 flex-direction: column;
@@ -242,6 +258,19 @@
 
             .presentacion {
                 padding: 20px;
+            }
+
+            .centrar-imagen img {
+                max-width: 400px;
+                max-height: 400px;
+            }
+
+            .max-table {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 100%;
+
             }
         }
 
@@ -317,12 +346,6 @@
             background-color: #95a5a6;
             cursor: not-allowed;
             text-decoration: none;
-        }
-
-        .centrar-imagen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
     </style>
 </head>
@@ -400,15 +423,15 @@
             <br>
             <figure>
 
-                <span>Figura 5. Asignación Contigua de espacio en disco (Silberschatz, Galvin & Gagne, 2018, p.
+                <span>Figura 5. Asignación contigua de espacio en disco (Silberschatz, Galvin & Gagne, 2018, p.
                     573).</span>
             </figure>
             <div class="centrar-imagen">
                 <img src="images/Unidad4_3_1.png" alt="Figura_5" style="max-width: 400px; max-height: 400px;">
             </div>
 
-            <caption>Tabla 1. DIRECTORIO</caption>
-            <table>
+            <caption>Tabla 1. Directorio</caption>
+            <table class="max-table ">
                 <!-- <caption>DIRECTORIO</caption> -->
                 <tr>
                     <th>IDENTIFICADOR</th>
@@ -511,36 +534,33 @@
 
 
             <caption>Tabla 2. Comparativa</caption>
-            <table>
+            <table class="max-table">
 
-                <thead>
-                    <tr>
-                        <th>Método</th>
-                        <th>Ventajas</th>
-                        <th>Desventajas</th>
-                        <th>Caso de Uso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Contigua</td>
-                        <td>Acceso rápido, simple</td>
-                        <td>Fragmentación externa, inflexibilidad</td>
-                        <td>Medios de solo lectura</td>
-                    </tr>
-                    <tr>
-                        <td>Ligada</td>
-                        <td>Sin fragmentación, flexible</td>
-                        <td>Acceso lento, sobrecarga de punteros</td>
-                        <td>Sistemas FAT, dispositivos USB</td>
-                    </tr>
-                    <tr>
-                        <td>Indexada</td>
-                        <td>Acceso aleatorio rápido, escalabilidad</td>
-                        <td>Sobrecarga de metadatos, complejidad</td>
-                        <td>Sistemas modernos (NTFS/ext4)</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <th>Método</th>
+                    <th>Ventajas</th>
+                    <th>Desventajas</th>
+                    <th>Caso de Uso</th>
+                </tr>
+
+                <tr>
+                    <td>Contigua</td>
+                    <td>Acceso rápido, simple</td>
+                    <td>Fragmentación externa, inflexibilidad</td>
+                    <td>Medios de solo lectura</td>
+                </tr>
+                <tr>
+                    <td>Ligada</td>
+                    <td>Sin fragmentación, flexible</td>
+                    <td>Acceso lento, sobrecarga de punteros</td>
+                    <td>Sistemas FAT, dispositivos USB</td>
+                </tr>
+                <tr>
+                    <td>Indexada</td>
+                    <td>Acceso aleatorio rápido, escalabilidad</td>
+                    <td>Sobrecarga de metadatos, complejidad</td>
+                    <td>Sistemas modernos (NTFS/ext4)</td>
+                </tr>
             </table>
 
             <p>La elección del método de asignación depende del equilibrio entre rendimiento, gestión de espacio y
@@ -641,36 +661,35 @@
                 <p>Ejemplo: Sistema de archivos ext4 (Linux).</p>
             </div>
             <caption>Tabla 3. Comparativa</caption>
-            <table>
+            <table class="max-table">
 
-                <thead>
-                    <tr>
-                        <th>Método</th>
-                        <th>Ventajas</th>
-                        <th>Desventajas</th>
-                        <th>Caso de Uso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Listas Enlazadas</td>
-                        <td>Simple, flexible</td>
-                        <td>Lento en discos grandes</td>
-                        <td>Sistemas FAT, dispositivos USB</td>
-                    </tr>
-                    <tr>
-                        <td>Mapas de Bits</td>
-                        <td>Rápido, eficiente en espacio</td>
-                        <td>Consumo de RAM, ineficiente en discos grandes</td>
-                        <td>NTFS, ext2/ext3</td>
-                    </tr>
-                    <tr>
-                        <td>Bloques de Grupo</td>
-                        <td>Reduce fragmentación, optimiza rendimiento</td>
-                        <td>Complejidad de implementación</td>
-                        <td>ext4, sistemas modernos</td>
-                    </tr>
-                </tbody>
+
+                <tr>
+                    <th>Método</th>
+                    <th>Ventajas</th>
+                    <th>Desventajas</th>
+                    <th>Caso de Uso</th>
+                </tr>
+
+                <tr>
+                    <td>Listas Enlazadas</td>
+                    <td>Simple, flexible</td>
+                    <td>Lento en discos grandes</td>
+                    <td>Sistemas FAT, dispositivos USB</td>
+                </tr>
+                <tr>
+                    <td>Mapas de Bits</td>
+                    <td>Rápido, eficiente en espacio</td>
+                    <td>Consumo de RAM, ineficiente en discos grandes</td>
+                    <td>NTFS, ext2/ext3</td>
+                </tr>
+                <tr>
+                    <td>Bloques de Grupo</td>
+                    <td>Reduce fragmentación, optimiza rendimiento</td>
+                    <td>Complejidad de implementación</td>
+                    <td>ext4, sistemas modernos</td>
+                </tr>
+
             </table>
         </div>
 
