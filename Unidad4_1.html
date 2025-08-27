@@ -341,7 +341,7 @@
             gestionar los archivos de manera eficiente. Los bloques de datos almacenan la información de los archivos, y
             el acceso a estos datos se realiza a través de las estructuras de directorios.</p>
 
-        <h4>Nomenclatura de archivos</h4>
+    <h4>Nomenclatura de archivos</h4>
 
         <p>Según Tanenbaum (1998), se refiere a cómo los archivos son nombrados, gestionados y accedidos en un sistema
             de archivos y se refiere a cómo los archivos son identificados, ubicados y organizados en el sistema de
@@ -355,7 +355,7 @@
             están organizados en una jerarquía de directorios en forma de árbol, lo que facilita la navegación y la
             gestión de archivos.</p>
 
-        <h4>Estructura de archivos</h4>
+    <h4>Estructura de archivos</h4>
 
         <p>De acuerdo con Tanenbaum (1998, pp. 223-240), la estructura de archivos se organiza en una jerarquía que
             permite almacenar
@@ -472,7 +472,7 @@
             </p>
         </div>
 
-        <h4>Tipos de archivos</h4>
+    <h4>Tipos de archivos</h4>
 
         <p>En Tanenbaum (2009, p. 260), se comenta que numerosos sistemas operativos admiten distintos tipos de
             archivos. Por ejemplo, UNIX y Windows manejan archivos y directorios regulares. Además, UNIX incluye
@@ -512,7 +512,7 @@
                 archivos binarios tienen una estructura interna específica para los programas que los utilizan.</p>
         </div>
 
-        <h4>Acceso de archivos</h4>
+    <h4>Acceso de archivos</h4>
 
         <p>En los primeros sistemas operativos, solo existía el acceso secuencial a los archivos, lo que significa que
             los datos debían leerse en orden, desde el principio hasta el final, sin poder saltarse partes. Este tipo de
@@ -523,7 +523,7 @@
             que usa una operación especial llamada seek para establecer la posición actual de lectura (Tananbaum, 2009,
             p.262).</p>
 
-        <h4>Atributos de archivos</h4>
+    <h4>Atributos de archivos</h4>
 
         <p>Cada archivo tiene un nombre y su contenido, pero los sistemas operativos también asocian información
             adicional a cada archivo, como la fecha y hora de su última modificación y su tamaño. Estos datos
@@ -541,7 +541,7 @@
         </div>
         <br>
 
-        <h4>Archivos en sistemas operativos</h4>
+    <h4>Archivos en sistemas operativos</h4>
 
         <p>Muchos sistemas operativos permiten nombres de archivos compuestos por dos partes, separadas por un punto,
             como en "prog.c". La parte que sigue al punto se llama extensión del archivo y generalmente proporciona
@@ -552,7 +552,7 @@
             programa zip. La figura 3, muestra algunas de las extensiones más comunes y su significado (Tanenbaum, 2009,
             p. 258).</p>
 
-        <h4>Tipo Binario</h4>
+    <h4>Tipo binario</h4>
 
         <p>Los archivos binarios según Tanenbaum (2009) son aquellos que contienen datos en un formato que no es legible
             para los humanos directamente, ya que están codificados en una secuencia de 1s y 0s (binario). A diferencia
@@ -647,18 +647,18 @@
                 no textuales, y técnicas de compresión para optimizar el uso del espacio.</p>
         </div>
 
-        <h4>IV.I.I Capa del sistema de archivos</h4>
+    <h4>IV.I.I Capa del sistema de archivos</h4>
 
         <p>La capa del sistema de archivos es un componente crítico de los sistemas operativos, responsable de
             organizar, almacenar y recuperar datos en dispositivos de almacenamiento.</p>
 
-        <h4>Interfaz del Sistema de Archivos</h4>
+    <h4>Interfaz del sistema de archivos</h4>
 
         <p>La interfaz del sistema de archivos actúa como un puente entre las aplicaciones y el almacenamiento físico.
             Proporciona llamadas al sistema como open(), read(), write() y close(), que permiten a los programas
             interactuar con archivos sin manejar detalles de bajo nivel (Tanenbaum & Woodhull, 2006, p. 210).</p>
 
-        <h4>Gestión de Nombres y Directorios</h4>
+    <h4>Gestión de nombres y directorios</h4>
 
         <p>Organiza archivos en una estructura jerárquica (directorios y subdirectorios). Utiliza tablas como la Tabla
             de Archivos Abiertos (TFA) para rastrear ubicaciones y metadatos. Algunos sistemas emplean tablas hash para
@@ -680,7 +680,7 @@
 
 
         <figure>
-            <span>Codigo 1. Ejemplo de impresión de contenido en archivo.</span>
+            <span>Figura 5. Ejemplo de clasificación de directorios.</span>
         </figure>
 
         <div class="centrar-imagen">
@@ -691,7 +691,7 @@
         <p>En este ejemplo, los archivos están organizados bajo varios directorios, siguiendo una estructura jerárquica
             clara.</p>
 
-        <h4>Gestión del Espacio en Disco (Carrier, 2005, p. 95)</h4>
+    <h4>Gestión del espacio en disco (Carrier, 2005, p. 95)</h4>
 
         <p>Asigna bloques de almacenamiento a archivos y optimiza el espacio para minimizar la fragmentación.
             Estrategias comunes incluyen:</p>
@@ -700,7 +700,7 @@
             <li>Asignación enlazada (ext4 usa bloques y extents).</li>
         </ul>
 
-        <h4>Gestión de Metadatos (Silberschatz et al., 2018, p. 467)</h4>
+    <h4>Gestión de metadatos (Silberschatz et al., 2018, p. 467)</h4>
 
         <p>Administra información descriptiva como:</p>
         <ul>
@@ -710,7 +710,7 @@
         </ul>
         <p>En sistemas UNIX, esto se almacena en un inodo.</p>
 
-        <h4>Gestión de Acceso y Permisos (Tanenbaum & Woodhull, 2006, p. 232)</h4>
+    <h4>Gestión de acceso y permisos (Tanenbaum & Woodhull, 2006, p. 232)</h4>
 
         <p>Controla quién puede leer, escribir o ejecutar un archivo. En sistemas UNIX/Linux, se usan permisos numéricos
             (ej. 755) o simbólicos (ej. rwxr-xr-x).</p>
