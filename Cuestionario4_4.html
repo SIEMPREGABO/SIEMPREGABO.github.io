@@ -310,7 +310,7 @@
 
     <div class="container">
 
-        <h3>Actividad 4: Sistemas de Archivos Estructurados</h3>
+        <h3>Actividad 4: Sistemas de archivos estructurados</h3>
         <br>
         <h4>Cuestionario de Verdadero y Falso</h4>
 
@@ -502,8 +502,9 @@
             // Reiniciar cuestionario
             $('#resetear').click(function () {
                 $('input[type="radio"]').prop('checked', false);
-                $('#resultados').fadeOut();
-                $('input[type="radio"]').parent().css('background-color', '');
+                
+                $('#resultados').html('');
+                
                 const darRespuestas = document.querySelectorAll('.pregunta');
                 darRespuestas.forEach((pregunta, index) => {
                     $(`#respuesta${index + 1}`).html('');

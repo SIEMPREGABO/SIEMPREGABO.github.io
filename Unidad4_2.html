@@ -79,9 +79,6 @@
             align-items: center;
         }
 
-        .disposicion-logos img {
-            max-height: 60px;
-        }
 
         .navbar-brand {
             color: white !important;
@@ -361,7 +358,7 @@
             </div>
 
             <div class="subsection">
-                <h4>Asignación Contigua</h4>
+                <h4>Asignación contigua</h4>
                 <p>En este método, los archivos se almacenan en bloques contiguos del disco, lo que permite acceso
                     rápido mediante aritmética de direcciones. Sin embargo, puede sufrir de fragmentación externa.</p>
 
@@ -384,7 +381,7 @@
             </div>
             <br>
             <div class="subsection">
-                <h4>Asignación Enlazada</h4>
+                <h4>Asignación enlazada</h4>
                 <p>Cada bloque del archivo contiene un puntero al siguiente bloque, formando una lista enlazada. No hay
                     fragmentación externa, pero el acceso aleatorio es ineficiente.</p>
 
@@ -407,7 +404,7 @@
             </div>
 
             <div class="subsection">
-                <h4>Asignación Indexada</h4>
+                <h4>Asignación indexada</h4>
                 <p>Utiliza un bloque índice que contiene punteros a todos los bloques del archivo, permitiendo acceso
                     aleatorio eficiente.</p>
 
@@ -430,7 +427,7 @@
             </div>
 
             <div class="subsection">
-                <h4>Implementación de Directorios</h4>
+                <h4>Implementación de edirectorios</h4>
                 <p>Los directorios pueden implementarse como:</p>
                 <ul class="feature-list">
                     <li><strong>Listas lineales:</strong> Simple pero ineficiente para búsquedas.</li>
@@ -480,7 +477,7 @@
             </div>
             <br>
             <div class="subsection">
-                <h4>Directorios Jerárquicos</h4>
+                <h4>Directorios jerárquicos</h4>
                 <p>Estructura en árbol con directorios y subdirectorios, utilizada en sistemas modernos (ej. Windows,
                     Linux).</p>
 
@@ -504,7 +501,7 @@
             </div>
             <br>
             <div class="subsection">
-                <h4>Directorios con Tablas Hash</h4>
+                <h4>Directorios con tablas hash</h4>
                 <p>Emplean funciones hash para mapear nombres de archivos a ubicaciones, optimizando búsquedas.</p>
 
                 <h5>Características:</h5>
@@ -545,7 +542,7 @@
                 control de acceso concurrente.</p>
 
             <div class="subsection">
-                <h4>Enlaces Duros (Hard Links) (Silberschatz et al., 2018, p. 487).</h4>
+                <h4>Enlaces duros (Hard Links) (Silberschatz et al., 2018, p. 487).</h4>
                 <p>Un enlace duro es una entrada directa en el sistema de archivos que apunta a los datos físicos de un
                     archivo. Todos los enlaces duros comparten el mismo inodo (metadatos), por lo que son
                     indistinguibles del archivo original. Solo pueden crearse dentro del mismo sistema de archivos.</p>
@@ -559,7 +556,7 @@
             </div>
 
             <div class="subsection">
-                <h4>Enlaces Simbólicos (Soft Links o Symlinks)</h4>
+                <h4>Enlaces simbólicos (Soft Links o Symlinks)</h4>
                 <p>Un enlace simbólico es un archivo especial que contiene una ruta (absoluta o relativa) a otro archivo
                     o directorio. A diferencia de los enlaces duros, estos pueden apuntar a ubicaciones en diferentes
                     sistemas de archivos.</p>
@@ -572,7 +569,7 @@
             </div>
 
             <div class="subsection">
-                <h4>Control de Acceso Concurrente (Silberschatz et al., 2018, p. 552).</h4>
+                <h4>Control de acceso concurrente (Silberschatz et al., 2018, p. 552).</h4>
                 <p>Mecanismo para gestionar accesos simultáneos a un archivo, evitando inconsistencias. Estrategias
                     comunes incluyen:</p>
                 <ul class="feature-list">

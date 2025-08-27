@@ -76,9 +76,7 @@
             align-items: center;
         }
 
-        .disposicion-logos img {
-            max-height: 60px;
-        }
+        
 
         .navbar-brand {
             color: white !important;
@@ -375,11 +373,11 @@
                 información crítica sobre el sistema de archivos, como el tamaño total del sistema de archivos, el
                 número de bloques libres, la ubicación de los bloques de inodos y la cantidad total de bloques de datos
                 disponibles. Es utilizado para gestionar la integridad y el espacio del sistema de archivos.</li>
-            <li><strong>Bloques de Datos (Data Blocks):</strong> Los bloques de datos son unidades de almacenamiento
+            <li><strong>Bloques de datos (Data Blocks):</strong> Los bloques de datos son unidades de almacenamiento
                 donde se guardan los datos reales de los archivos. Los archivos pueden estar distribuidos en uno o
                 varios bloques de datos en el disco, y el sistema de archivos gestiona cómo y dónde se almacenan estos
                 bloques.</li>
-            <li><strong>Estructura Jerárquica:</strong> Tanenbaum describe que los sistemas de archivos suelen
+            <li><strong>Estructura jerárquica:</strong> Tanenbaum describe que los sistemas de archivos suelen
                 organizarse en una estructura jerárquica o en un árbol de directorios. La raíz del sistema de archivos
                 es el punto de inicio, y desde allí se ramifican los subdirectorios y archivos. Esta estructura facilita
                 la navegación y el acceso a los archivos.</li>
@@ -394,7 +392,7 @@
                 <li>Inodos: Contienen metadatos de archivos.</li>
                 <li>Directorios: Enlazan nombres de archivos con inodos.</li>
                 <li>Superbloque: Información general sobre el sistema de archivos.</li>
-                <li>Bloques de Datos: Donde se almacenan los datos de los archivos.</li>
+                <li>Bloques de datos: Donde se almacenan los datos de los archivos.</li>
                 <li>Jerarquía: Organización de archivos en una estructura de árbol.</li>
                 <li>Caché: Almacenamiento temporal para mejorar la eficiencia.</li>
             </ul>
@@ -418,7 +416,7 @@
             archivos que se pueden encontrar en un sistema de archivos:</p>
 
         <ol>
-            <li><strong>Archivos de Datos:</strong>
+            <li><strong>Archivos de datos:</strong>
                 <p>Descripción: Son los archivos que contienen información que puede ser utilizada por los usuarios o
                     aplicaciones. Este tipo de archivo almacena los datos reales, como documentos, imágenes, videos, y
                     más.</p>
@@ -430,7 +428,7 @@
                 </ul>
             </li>
             <br>
-            <li><strong>Archivos de Programa:</strong>
+            <li><strong>Archivos de programa:</strong>
                 <p>Descripción: Son los archivos que contienen programas ejecutables, es decir, instrucciones o código
                     que el sistema puede ejecutar.</p>
                 <p>Ejemplo: Archivos ejecutables como .exe (en sistemas Windows), o programas binarios como a.out en
@@ -444,7 +442,7 @@
                 </ul>
             </li>
             <br>
-            <li><strong>Archivos Especiales:</strong>
+            <li><strong>Archivos especiales:</strong>
                 <p>Descripción: Son archivos que no contienen datos o programas directamente, sino que sirven para
                     representar dispositivos físicos u otros recursos del sistema operativo.</p>
                 <p>Ejemplo: Archivos de dispositivos en sistemas Unix, como /dev/sda (dispositivo de almacenamiento),
@@ -463,9 +461,9 @@
         <div class="highlight">
             <h4>Resumen:</h4>
             <ul>
-                <li>Archivos de Datos: Contienen información de usuario o aplicación.</li>
-                <li>Archivos de Programa: Contienen código ejecutable para el sistema.</li>
-                <li>Archivos Especiales: Representan dispositivos o recursos del sistema operativo.</li>
+                <li>Archivos de datos: Contienen información de usuario o aplicación.</li>
+                <li>Archivos de programa: Contienen código ejecutable para el sistema.</li>
+                <li>Archivos especiales: Representan dispositivos o recursos del sistema operativo.</li>
             </ul>
             <p>Estos tres tipos de archivos son fundamentales para el funcionamiento de un sistema operativo, cada uno
                 con un propósito distinto, pero todos gestionados dentro de la misma estructura de sistema de archivos.
@@ -680,11 +678,11 @@
 
 
         <figure>
-            <span>Figura 5. Ejemplo de clasificación de directorios.</span>
+            <span>Figura 4. Ejemplo de clasificación de directorios.</span>
         </figure>
 
         <div class="centrar-imagen">
-            <img src="images/figuraN.png" alt="FiguraN" style="max-width: 400px; max-height: 400px;">
+            <img src="images/figuraN.png" alt="Figura_4" style="max-width: 400px; max-height: 400px;">
         </div>
         <br />
 
@@ -729,7 +727,7 @@
         </figure>
 
         <div class="centrar-imagen">
-            <img src="images/Imagen2.png" alt="FiguraN" style="max-width: 400px; max-height: 400px;">
+            <img src="images/Imagen2.png" alt="Codigo_1" style="max-width: 400px; max-height: 400px;">
         </div>
         <br />
         <p>En este caso, los metadatos incluyen los permisos (-rw-r—r—), el propietario (usuario), el grupo (grupo), el tamaño del archivo (1024 bytes) y la fecha de la última modificación (5 de octubre a las 10:32).</p>

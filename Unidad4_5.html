@@ -80,9 +80,7 @@
             align-items: center;
         }
 
-        .disposicion-logos img {
-            max-height: 60px;
-        }
+        
 
         .navbar-brand {
             color: white !important;
@@ -347,7 +345,7 @@
             <br>
             <div class="subsection">
                 <div class="quote">
-                    <h5>1. Almacenamiento en Caché (Silberschatz et al., 2018, p. 533).</h5>
+                    <h5>1. Almacenamiento en caché (Silberschatz et al., 2018, p. 533).</h5>
                 </div>
 
                 <strong>Definición:</strong>
@@ -369,7 +367,7 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>2. Ajuste del Tamaño de Bloques (Tanenbaum y Woodhull. 2006, p. 215).</h5>
+                    <h5>2. Ajuste del tamaño de bloques (Tanenbaum y Woodhull. 2006, p. 215).</h5>
                 </div>
 
                 <strong>Definición:</strong>
@@ -391,7 +389,7 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>3. Reducción de la Fragmentación (Carrier, 2005, p. 89).</h5>
+                    <h5>3. Reducción de la fragmentación (Carrier, 2005, p. 89).</h5>
                 </div>
 
                 <strong>Definición:</strong>
@@ -407,7 +405,7 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>4. Optimización del Journaling (Linux Kernel Documentation, s. f.).</h5>
+                    <h5>4. Optimización del journaling (Linux Kernel Documentation, s. f.).</h5>
                 </div>
 
                 <strong>Definición:</strong>
@@ -446,7 +444,7 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>5. Gestión de Metadatos Eficiente (Silberschatz et al.,2018, p. 487).<h5>
+                    <h5>5. Gestión de metadatos eficiente (Silberschatz et al.,2018, p. 487).<h5>
                 </div>
 
                 <strong>Definición:</strong>
@@ -460,7 +458,7 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>6. Uso de RAID y SSDs (Patterson, Gibson & Katz, 1988, p. 113).<h5>
+                    <h5>6. Uso de raid y ssds (Patterson, Gibson & Katz, 1988, p. 113).<h5>
                 </div>
 
                 <strong>Definición:</strong>
@@ -501,11 +499,11 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>Métodos de Recuperación de Archivos (Carrier, 2005, pp. 150-165).</h5>
+                    <h5>Métodos de recuperación de archivos (Carrier, 2005, pp. 150-165).</h5>
                 </div>
                 <br>
 
-                <h5>1. Recuperación mediante Software</h5>
+                <h5>1. Recuperación mediante software</h5>
                 <p><strong>Definición:</strong> Uso de herramientas como Recuva, TestDisk o PhotoRec para escanear el
                     dispositivo y reconstruir archivos eliminados.</p>
 
@@ -517,7 +515,7 @@
                         (ej. FF D8 FF para JPEG)</li>
                 </ul>
 
-                <h5>2. Recuperación Forense (Casey, 2011, pp 210-225).</h5>
+                <h5>2. Recuperación forense (Casey, 2011, pp 210-225).</h5>
                 <p><strong>Definición:</strong> Técnicas avanzadas usadas en investigaciones legales o corporativas para
                     extraer datos incluso de dispositivos dañados.</p>
 
@@ -527,7 +525,7 @@
                     <li>FTK Imager: Crea imágenes forenses del disco para evitar modificaciones.</li>
                 </ul>
 
-                <h5>3. Recuperación Hardware (Jones, Bejtlich & Rose, 2006, pp. 95-110).</h5>
+                <h5>3. Recuperación hardware (Jones, Bejtlich & Rose, 2006, pp. 95-110).</h5>
                 <p><strong>Definición:</strong> Intervención física en dispositivos con fallos mecánicos (ej. cabezales
                     de disco dañados).</p>
 
@@ -540,17 +538,17 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>Estudios de Información de Archivos y Carpetas (Silberschatz et al.,2018, pp. 480-485).</h5>
+                    <h5>Estudios de información de archivos y carpetas (Silberschatz et al.,2018, pp. 480-485).</h5>
                 </div>
                 <br>
 
-                <h5>1. Estructura de Archivos</h5>
+                <h5>1. Estructura de archivos</h5>
                 <ul class="feature-list">
                     <li>Metadatos: Permisos, fechas, tamaño (almacenados en inodos o MFT).</li>
                     <li>Datos: Contenido real del archivo (almacenado en bloques o clústeres).</li>
                 </ul>
 
-                <h5>2. Comportamiento de Eliminación (Microsoft, s. f., sección "File Deletion").</h5>
+                <h5>2. Comportamiento de eliminación (Microsoft, s. f., sección "File Deletion").</h5>
                 <ul class="feature-list">
                     <li>Marcado de espacio libre: Los sistemas de archivos marcan los bloques como disponibles, pero los
                         datos persisten hasta ser sobrescritos.</li>
@@ -560,11 +558,11 @@
 
             <div class="subsection">
                 <div class="quote">
-                    <h5>Técnicas de Búsqueda para Recuperación (Carrier, 2005, p. 170).</h5>
+                    <h5>Técnicas de búsqueda para recuperación (Carrier, 2005, p. 170).</h5>
                 </div>
                 <br>
 
-                <h5>1. Búsqueda por Firmas</h5>
+                <h5>1. Búsqueda por firmas</h5>
                 <p><strong>Definición:</strong> Identificación de archivos basada en patrones hexadecimales únicos (ej.
                     PDF inicia con 25 50 44 46).</p>
 
@@ -573,7 +571,7 @@
                     <li>PhotoRec: Recupera más de 500 formatos de archivo.</li>
                 </ul>
 
-                <h5>2. Análisis de Metadatos (Linux Kernel Documentation, s. f., Ext.4).</h5>
+                <h5>2. Análisis de metadatos (Linux Kernel Documentation, s. f., Ext.4).</h5>
                 <p><strong>Definición:</strong> Reconstrucción de la estructura de directorios mediante registros de
                     metadatos no sobrescritos.</p>
 
@@ -598,14 +596,14 @@
                 consistencia fuerte y la consistencia eventual, cada uno con beneficios y limitaciones específicas.</p>
 
             <div class="subsection">
-                <h5>1. Consistencia Fuerte (Viewnext, s. f., LinkedIn, s. f.).</h5>
+                <h5>1. Consistencia fuerte (Viewnext, s. f., LinkedIn, s. f.).</h5>
                 <br>
                 <strong>Definición</strong>
                 <p>Garantiza que todas las réplicas de un dato reflejen la última actualización de forma inmediata. Si
                     un usuario lee un dato, siempre obtendrá la versión más reciente, independientemente del nodo
                     consultado.</p>
 
-                <strong>Mecanismos de Implementación</strong>
+                <strong>Mecanismos de implementación</strong>
                 <ul class="feature-list">
                     <li>Transacciones ACID: Atomicidad, Consistencia, Aislamiento y Durabilidad (ej. bases de datos
                         relacionales).</li>
@@ -632,7 +630,7 @@
             </div>
 
             <div class="subsection">
-                <h5>2. Consistencia Eventual (LinkedIn, s. f.).</h5>
+                <h5>2. Consistencia eventual (LinkedIn, s. f.).</h5>
                 <br>
                 <strong>Definición</strong>
                 <p>Permite divergencias temporales entre réplicas, asegurando que converjan a un estado coherente tras
@@ -662,13 +660,13 @@
                 <strong>Ejemplo:</strong>
                 <p>Amazon DynamoDB usa last-write-wins para resolver conflictos en réplicas.</p>
             </div>
-            <caption>Tabla 4. Comparación y Contextos de Uso (Slideshare, 2022).</caption>
+            <caption>Tabla 4. Comparación y contextos de uso (Slideshare, 2022).</caption>
 
             <table>
                 <thead>
                     <tr>
                         <th>Aspecto</th>
-                        <th>Consistencia Fuerte</th>
+                        <th>Consistencia fuerte</th>
                         <th>Consistencia Eventual</th>
                     </tr>
                 </thead>
@@ -702,7 +700,7 @@
                 <li>Consistencia eventual: Registro de logs, preferencias de usuario en aplicaciones web.</li>
             </ul>
 
-            <h5>4. Técnicas para Mitigar Limitaciones (LinkedIn, s. f.).</h5>
+            <h5>4. Técnicas para mitigar limitaciones (LinkedIn, s. f.).</h5>
             <br>
             <strong>Patrones híbridos:</strong>
             <ul class="feature-list">
@@ -736,7 +734,7 @@
                 escalabilidad.</p>
 
             <div class="subsection">
-                <h5>1. Sistemas de Archivos en AIX</h5>
+                <h5>1. Sistemas de archivos en AIX</h5>
                 <br>
                 <strong>a) Journaled File System (JFS)</strong>
                 <p><strong>Definición:</strong> Sistema de archivos con journaling introducido en AIX 3.1. Registra
@@ -798,7 +796,7 @@
 
 
             </div>
-            <caption>Tabla 5. Comparativa de Rendimiento</caption>
+            <caption>Tabla 5. Comparativa de rendimiento</caption>
             <table>
 
                 <thead>
@@ -838,7 +836,7 @@
             </table>
 
             <div class="subsection">
-                <h5>3. Estrategias de Optimización</h5>
+                <h5>3. Estrategias de optimización</h5>
                 <br>
                 <strong>a) Ajuste de Journaling</strong>
                 <ul class="feature-list">
@@ -846,13 +844,13 @@
                     <li>GPFS: Desactivar journaling en nodos de solo lectura (Henson, 2015, p. 40).</li>
                 </ul>
 
-                <strong>b) Tamaño de Bloques</strong>
+                <strong>b) Tamaño de bloques</strong>
                 <ul class="feature-list">
                     <li>JFS2: Bloques de 16 MB para bases de datos (Smit, 2010, p. 105).</li>
                     <li>GPFS: Bloques de 16 MB para archivos científicos (IBM, 2020, p. 9).</li>
                 </ul>
 
-                <strong>c) Caché y Prefetching</strong>
+                <strong>c) Caché y prefetching</strong>
                 <ul class="feature-list">
                     <li>AIX LVM: Aumentar caché de LV para reducir accesos a disco.</li>
                     <li>GPFS: Habilitar prefetching agresivo en cargas secuenciales (Henson, 2015, p. 38).</li>
