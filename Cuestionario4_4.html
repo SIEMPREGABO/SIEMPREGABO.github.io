@@ -490,8 +490,7 @@
 
                         $(`#respuesta${index + 1}`).html(`<p class="alert alert-success" role="alert">Muy bien, esa es la respuesta correcta! Se nota que comprendiste el tema</p>`);
                     } else {
-
-                        $(`#respuesta${index + 1}`).html(`<p class="alert alert-danger" role="alert">Tu respuesta no es correcta; la opción adecuada es ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}. Revisa el tema: ahí encontrarás la explicación para reforzar este punto. En clase, plantea tus dudas para aclararlas. ¡Ánimo, vas avanzando bien! </p>`);
+                        $(`#respuesta${index + 1}`).html(`<p class="alert alert-danger" role="alert">Tu respuesta no es correcta; la opción adecuada es ${respuestaCorrecta === 'true' ? 'Verdadero' : 'Falso'}. Revisa el tema en la siguiente liga y aquí debe de estar la liga del tema en (<a href="https://siempregabo.github.io/Unidad4_4.html" target="_blank">click aquí</a>): ahí encontrarás la explicación para reforzar este punto. En clase, plantea tus dudas para aclararlas. ¡Ánimo, vas avanzando bien! </p>`);
                     }
                 });
 
@@ -502,9 +501,9 @@
             // Reiniciar cuestionario
             $('#resetear').click(function () {
                 $('input[type="radio"]').prop('checked', false);
-                
+
                 $('#resultados').html('');
-                
+
                 const darRespuestas = document.querySelectorAll('.pregunta');
                 darRespuestas.forEach((pregunta, index) => {
                     $(`#respuesta${index + 1}`).html('');
